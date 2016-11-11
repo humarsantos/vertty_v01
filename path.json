@@ -1,0 +1,5 @@
+{
+    webpack: 'xampp\htdocs\vertty_theme_0.4\webpack',
+    sass: 'Users\Humar\Desktop\Design\01_VDF\workspace\business_portal\08_SVN\HTML\sass',
+    sassWatch: 'sass --watch _main.scss:../css/main.css --style expanded'
+}

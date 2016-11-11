@@ -1,0 +1,25 @@
+{% if settings.towel_video != blank or settings.bikini_vertty_video != blank or settings.bikini_sport_video != blank or settings.bikini_tryangle_video != blank or settings.backpack_video != blank %}
+
+<div class="featured-video">        
+    <div id="player" class="video-cont"></div>
+    <span id="video-id" style="display:none">
+{% case product.type %}
+  {% when 'Towel' %}
+        {{ settings.towel_video }}
+  {% when 'Bikini-shape' %}
+        {{ settings.bikini_vertty_video }}
+  {% when 'Bikini-sport' %}
+        {{ settings.bikini_sport_video }}
+  {% when 'Bikini-tryangle' %}
+        {{ settings.bikini_tryangle_video}}
+  {% when 'Bikini-trykini' %}
+        {{ settings.bikini_trykini_video}}
+  {% when 'Backpack' %}
+        {{ settings.backpack_video }}  
+  {% else %}
+        <p></p>
+{% endcase %} 
+    </span>
+</div>
+
+{% endif %}
