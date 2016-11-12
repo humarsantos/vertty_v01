@@ -8,6 +8,6 @@
     Au_Secret: '8564c0d969d76db3cb29f25ff39224b8'
 },
 {
-    theme_bootstrap: 'theme bootstrap --password=[your-password] --store=[you-store.myshopify.com]',
-    theme_configuration: 'theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=79628293'
+    theme_bootstrap: 'theme bootstrap --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com',
+    theme_configuration: 'theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=79634181 '
 }
