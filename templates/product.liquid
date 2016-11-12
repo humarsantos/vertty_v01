@@ -1,0 +1,824 @@
+{% if product.type contains '-' %}
+    {% assign prodType = product.type | replace: '-', '_' | downcase %} 
+{% else %}
+    {% assign prodType = product.type | downcase %}
+{% endif %}
+                       
+{% assign detailname = prodType | append: '_detail' %}
+{% assign slidename = prodType | append: '_slide' %}
+{% assign featurename = prodType | append: '_feature' %}
+       
+        <div class="main-featured {{ product.type | downcase }}">
+            <div id="loader"></div>
+            <div id="overlay"></div>
+            <div class="slide-controls">
+                <div class="container">
+                    <div class="nav-bullets"></div>
+                </div>
+            </div>    
+        {% if product.type != 'Towel' %}
+            <div class="slideCont slide-products">
+                <div class="slideItem txt-right" style="background-image: url({{ slidename | append: '_1.jpg' | asset_url }});">
+                    <div class="container">
+                        <section>
+            {% case product.type %}
+              {% when 'Bikini-shape' %}
+                        {% if settings.check_shape_slide_1 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-sport' %}
+                        {% if settings.check_sport_slide_1 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-tryangle' %}
+                        {% if settings.check_tryangle_slide_1 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-trykini' %}
+                        {% if settings.check_tryangle_slide_1 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Backpack' %}
+                        {% if settings.check_backpack_slide_1 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %} 
+              {% else %}
+                            <div>
+            {% endcase %} 
+            
+            {% case product.type %}
+                  {% when 'Bikini-shape' %}
+                                <h2>{{ settings.slideshapeText1 }}</h2>
+                  {% when 'Bikini-sport' %}
+                                <h2>{{ settings.slideSportText1 }}</h2>
+                  {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.slideTryangleText1 }}</h2>
+                  {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.slidetrykiniText1 }}</h2>
+                  {% when 'Backpack' %}
+                                <h2>{{ settings.slideBackpackText1 }}</h2>
+                  {% else %}
+                                <h2> reinventing the beach towel concept </h2>
+            {% endcase %}                                   
+                                <div class='btn-box'>
+                                    <a href='#' class='shop'></a>
+                                </div>
+                            </div>
+                        </section>  
+                    </div>
+                </div>
+                <div class="slideItem" style="background-image: url({{ slidename | append: '_2.jpg' | asset_url }});">
+                    <div class="container">
+                        <section>
+            {% case product.type %}
+              {% when 'Bikini-shape' %}
+                        {% if settings.check_shape_slide_2 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-sport' %}
+                        {% if settings.check_sport_slide_2 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-tryangle' %}
+                        {% if settings.check_tryangle_slide_2 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-trykini' %}
+                        {% if settings.check_tryangle_slide_2 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Backpack' %}
+                        {% if settings.check_backpack_slide_2 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %} 
+              {% else %}
+                            <div>
+            {% endcase %} 
+            
+            {% case product.type %}
+                  {% when 'Bikini-shape' %}
+                                <h2>{{ settings.slideshapeText2 }}</h2>
+                  {% when 'Bikini-sport' %}
+                                <h2>{{ settings.slideSportText2 }}</h2>
+                  {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.slideTryangleText2 }}</h2>
+                  {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.slidetrykiniText2 }}</h2>
+                  {% when 'Backpack' %}
+                                <h2>{{ settings.slideBackpackText2 }}</h2>
+                  {% else %}
+                                <h2> reinventing the beach towel concept </h2>
+            {% endcase %} 
+                                <div class='btn-box'>
+                                    <a href='#' class='shop'></a>
+                                </div>
+                            </div>
+                        </section>  
+                    </div>
+                </div>
+                <div class="slideItem txt-right" style="background-image: url({{ slidename | append: '_3.jpg' | asset_url }});">
+                    <div class="container">
+                        <section>
+            {% case product.type %}
+              {% when 'Bikini-shape' %}
+                        {% if settings.check_shape_slide_3 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-sport' %}
+                        {% if settings.check_sport_slide_3 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-tryangle' %}
+                        {% if settings.check_tryangle_slide_3 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-trykini' %}
+                        {% if settings.check_tryangle_slide_3 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Backpack' %}
+                        {% if settings.check_backpack_slide_3 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %} 
+              {% else %}
+                            <div>
+            {% endcase %} 
+            
+            {% case product.type %}
+                  {% when 'Bikini-shape' %}
+                                <h2>{{ settings.slideshapeText3 }}</h2>
+                  {% when 'Bikini-sport' %}
+                                <h2>{{ settings.slideSportText3 }}</h2>
+                  {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.slideTryangleText3 }}</h2>
+                  {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.slidetrykiniText3 }}</h2>
+                  {% when 'Backpack' %}
+                                <h2>{{ settings.slideBackpackText3 }}</h2>
+                  {% else %}
+                                <h2> reinventing the beach towel concept </h2>
+            {% endcase %} 
+                                <div class='btn-box'>
+                                    <a href='#' class='shop'></a>
+                                </div>
+                            </div>
+                        </section>  
+                    </div>
+                </div>
+                <div class="slideItem" style="background-image: url({{ slidename | append: '_4.jpg' | asset_url }});">
+                    <div class="container">
+                        <section>
+            {% case product.type %}
+              {% when 'Bikini-shape' %}
+                        {% if settings.check_shape_slide_4 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-sport' %}
+                        {% if settings.check_sport_slide_4 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-tryangle' %}
+                        {% if settings.check_tryangle_slide_4 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Bikini-trykini' %}
+                        {% if settings.check_tryangle_slide_4 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %}
+              {% when 'Backpack' %}
+                        {% if settings.check_backpack_slide_4 == true %}
+                            <div class="txt-black">
+                        {% else %}
+                            <div>
+                        {% endif %} 
+              {% else %}
+                            <div>
+            {% endcase %} 
+            
+            {% case product.type %}
+                  {% when 'Bikini-shape' %}
+                                <h2>{{ settings.slideshapeText4 }}</h2>
+                  {% when 'Bikini-sport' %}
+                                <h2>{{ settings.slideSportText4 }}</h2>
+                  {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.slideTryangleText4 }}</h2>
+                  {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.slidetrykiniText4 }}</h2>
+                  {% when 'Backpack' %}
+                                <h2>{{ settings.slideBackpackText4 }}</h2>
+                  {% else %}
+                                <h2> reinventing the beach towel concept </h2>
+            {% endcase %} 
+                                <div class='btn-box'>
+                                    <a href='#' class='shop'></a>
+                                </div>
+                            </div>
+                        </section>  
+                    </div>
+                </div>                                   
+            </div> 
+        {% else %}
+            <div class="slideCont">
+                <div class="slideItem active">
+                    <div class="container" style="background-image: url({{ slidename | append: '_1.png' | asset_url }}); background-size: 2000px; background-position: center bottom;">
+                        <section>
+                            <div>
+                                <h2> reinventing the beach towel concept </h2>
+                                <a href="#" class="btn-box shop-now"></a>
+                            </div>
+                        </section>  
+                    </div> 
+                    <video class="slide-video" poster="{{ 'videopaginatoalhas.jpg' | asset_url }}" title="shape" loop="true" autoplay>
+                        <source src="{{ 'videopaginatoalhas.mp4' | asset_url }}" type="video/mp4" />
+                        <source src="{{ 'videopaginatoalhas.webm' | asset_url }}" type="video/webm" />
+                        <source src="{{ 'videopaginatoalhas.ogv' | asset_url }}" type="video/ogg" />
+                    </video>
+                </div>
+            </div>
+               
+        {% endif %}           
+        </div>
+        
+        {% unless settings.quote_1 == blank %}
+        <section class="quote-dividers">
+            <div class="container">
+                <h3>{{ settings.quote_1 }}</h3>    
+            </div>   
+        </section>
+        {% endunless %}
+
+{% if product.type == 'Bikini-shape' or product.type == 'Bikini-sport' or product.type == 'Bikini-tryangle' or product.type == 'Bikini-trykini' %}
+        <div class="product women swimwear">                                  
+{% else %}
+    <div class="product {{ product.type | downcase }}">
+{% endif %}    
+            <div id="loader-operations"></div>
+            <div id="overlay-operations"></div>
+
+{% if product.type != 'Towel' %}
+    {% if settings.use_details == true %}
+            <div class="img-details">
+                <ul>
+                {% if product.featured_image %}
+                    {% for image in product.images %}
+                        {% if image.src contains 'detail' %}
+                            <li><a class="fancybox" href="{{ image.src | product_img_url: 'original' }}"><img src="{{ image.src | product_img_url: 'original' }}" alt=""></a></li> 
+                        {% endif %}
+                    {% endfor %} 
+               {% endif %}                    
+                </ul>
+            </div>    
+    {% endif %}
+{% endif %}
+
+            <div class="container">
+                <div class="col w-50 preview">
+                    <img src="{{ product.featured_image  | product_img_url: 'grande' }}" alt="">
+                </div>           
+                <div class="col w-50 details">
+                {% if product.type == 'Bikini-shape' or product.type == 'Bikini-sport' or product.type == 'Bikini-tryangle' or product.type == 'Bikini-trykini' %}
+                    <h6>SWIMWEAR</h6>
+                {% elsif product.type == 'Towel' %}
+                    <h6>BEACH TOWEL</h6>
+                {% else %}                   
+                    <h6>BACKPACK</h6>                                     
+                {% endif %}
+                    <h2 id="title">{{ product.title }}</h2>
+            {% case product.type %}
+              {% when 'Towel' %}
+                    <p id="prod-description">{{ settings.towel_description }}</p>
+              {% when 'Bikini-shape' %}
+                    <p id="prod-description">{{ settings.bikini_shape_description }}</p>
+              {% when 'Bikini-sport' %}
+                    <p id="prod-description">{{ settings.bikini_sport_description }}</p>
+              {% when 'Bikini-tryangle' %}
+                    <p id="prod-description">{{ settings.bikini_tryangle_description }}</p>
+              {% when 'Bikini-trykini' %}
+                    <p id="prod-description">{{ settings.bikini_trykini_description }}</p>
+              {% when 'Backpack' %}
+                    <p id="prod-description">{{ settings.backpack_description }}</p>  
+              {% else %}
+                    <p>Default description text</p>
+            {% endcase %} 
+                    <div class="nav-towel first">
+                {% if product.type == 'Backpack' %}       
+                        <ul>
+                            <li class="backpack i-blue" data-color="Teal"><a href="#"></a></li>
+                            <li class="backpack i-red" data-color="Chilli"><a href="#"></a></li>
+                            <li class="backpack i-grey" data-color="Stealth"><a href="#"></a></li>
+                            <li class="item-price"><span>{{ product.price | money }}</span></li>
+                        </ul>
+                {% elsif product.type == 'Towel' %}                        
+                        <ul>
+                            <!--li class="towel i-violet" data-color="Savvy"><a href="#"></a></li>
+                            <li class="towel i-light-blue" data-color="Classic-blue"><a href="#"></a></li>
+                            <li class="towel i-grey" data-color="Enigma"><a href="#"></a></li>
+                            <li class="towel i-dark-blue" data-color="Midnight-blue"><a href="#"></a></li-->
+                            <li class="towel i-green" data-color="Classic-green"><a href="#"></a></li>
+                            <li class="towel i-orange" data-color="Classic-orange"><a href="#"></a></li>
+                            <li class="towel i-yellow" data-color="Classic-yellow"><a href="#"></a></li>
+                            <li class="towel i-blue" data-color="Jade"><a href="#"></a></li>
+                            <!--li class="towel i-pink" data-color="Coral"><a href="#"></a></li-->
+                            <li class="item-price"><span>{{ product.price | money }}</span></li>
+                        </ul>
+                {% endif %}                 
+                {% if product.type == 'Bikini-shape' or product.type == 'Bikini-sport' or product.type == 'Bikini-tryangle' or product.type == 'Bikini-trykini' %}
+                        <ul id="top">
+                        {% unless product.type == 'Bikini-trykini' %}
+                            <li class="bikini i-blue {{ product.type | downcase }}" data-color="Blue"><a href="#"></a></li>
+                            <li class="bikini i-black {{ product.type | downcase }}" data-color="Black"><a href="#"></a></li>
+                            <li class="bikini i-pink {{ product.type | downcase }}" data-color="Pink"><a href="#"></a></li>
+                        {% else %}                            
+                            <li class="bikini trykini i-blue" data-color="Blue"><a href="#"></a></li>
+                            <li class="bikini trykini i-black" data-color="Black"><a href="#"></a></li>
+                            <li class="bikini trykini i-pink" data-color="Pink"><a href="#"></a></li>
+                        {% endunless %}
+                            <li class="close"><a href="#"></a></li>
+                            <li class="item-price"><span>{{ product.price | money }}</span></li>
+                        </ul>
+                {% endif %}
+                    </div>  
+                {% unless product.type == 'Bikini-trykini' or product.type == 'Towel' or product.type == 'Backpack' %} 
+                    <div class="specs">
+                        <div class="accordion">
+                            <ul>
+                                <li>
+                                    <span class="spec-name">Select your size</span>
+                                    <ul class="sizes">
+                                        <li><a href="#">XS</a></li>
+                                        <li><a href="#">S</a></li>
+                                        <li><a href="#">M</a></li>
+                                        <li><a href="#">L</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                      
+                    <div class="nav-towel">
+                        <ul id="briefs">
+                            <li class="bikini briefs i-blue {{ product.type | downcase }}" data-color="Blue"><a href="#"></a></li>
+                            <li class="bikini briefs i-black {{ product.type | downcase }}" data-color="Black"><a href="#"></a></li>
+                            <li class="bikini briefs i-pink {{ product.type | downcase }}" data-color="Pink"><a href="#"></a></li>                            
+                            <li class="close"><a href="#"></a></li>
+                            <li class="item-price"><span>{{ product.price | money }}</span></li>
+                        </ul>
+                    </div>
+                    {% endunless %}   
+                    
+                    <div class="price">
+                        <span></span>
+                    </div> 
+                    <div class="specs">
+
+                        <div class="accordion">
+                            <ul>        
+                                {% unless product.type == 'Backpack' or product.type == 'Towel' %}                         
+                                <li>
+                                    <span class="spec-name">Select your size</span>
+                                    <ul class="sizes">
+                                        <li><a href="#">XS</a></li>
+                                        <li><a href="#">S</a></li>
+                                        <li><a href="#">M</a></li>
+                                        <li><a href="#">L</a></li>
+                                    </ul>
+                                </li>      
+                                <li>  
+                                    <a href="#" class="spec-name">Sizing</a>
+                                    <div class="spec-toggle">
+                                        <div>
+                                         {% case product.type %}
+                                          {% when 'Bikini-shape' %}
+                                                <img src="{{ 'bikini_shape_size.png' | asset_url }}" alt="" style="display: block;">
+                                          {% when 'Bikini-sport' %}
+                                                <img src="{{ 'bikini_sport_size.png' | asset_url }}" alt="" style="display: block;">
+                                          {% when 'Bikini-tryangle' %}
+                                                <img src="{{ 'bikini_tryangle_size.png' | asset_url }}" alt="" style="display: block;">
+                                          {% when 'Bikini-trykini' %}
+                                                <img src="{{ 'bikini_trykini_size.png' | asset_url }}" alt="" style="display: block;">
+                                          {% else %}
+                                                <p>Default description text</p>
+                                        {% endcase %}
+                                        </div>
+                                    </div>  
+                                </li>
+                                {% endunless %} 
+                                <li>
+                                    <a href="#" class="spec-name">Worldwide Shipping</a>
+                                    <div class="spec-toggle">
+                                        <div><p>{{ settings.worldwideShipping }}</p></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="spec-name">Description</a>
+                                    <div class="spec-toggle">
+                                        <div>                                            
+                                    {% case product.type %}
+                                      {% when 'Towel' %}
+                                            <p>{{ settings.towel_description }}</p>
+                                      {% when 'Bikini-shape' %}
+                                            <p>{{ settings.bikini_shape_description }}</p>
+                                      {% when 'Bikini-sport' %}
+                                            <p>{{ settings.bikini_sport_description }}</p>
+                                      {% when 'Bikini-tryangle' %}
+                                            <p>{{ settings.bikini_tryangle_description }}</p>
+                                      {% when 'Bikini-trykini' %}
+                                            <p>{{ settings.bikini_trykini_description }}</p>
+                                      {% when 'Backpack' %}
+                                            <p>{{ settings.backpack_description }}</p>  
+                                      {% else %}
+                                            <p>Brevemente teremos o product.description</p>
+                                      {% endcase %}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="spec-name">Features</a>
+                                    <div class="spec-toggle">
+                                        <div>
+                                         {% case product.type %}
+                                          {% when 'Towel' %}
+                                                <img class="hide-m" src="{{ 'features_towel.png' | asset_url }}" alt="" style="display: block;">
+                                                <img class="show-m" src="{{ 'features_towel_mobile.png' | asset_url }}" alt="" style="display: none;">
+                                          {% when 'Backpack' %}
+                                                <img class="hide-m" src="{{ 'features_backpack.png' | asset_url }}" alt="" style="display: block;">
+                                                <img class="show-m" src="{{ 'features_backpack_mobile.png' | asset_url }}" alt="" style="display: none;">
+                                          {% when 'Bikini-shape' %}
+                                                <img class="hide-m" src="{{ 'features_bikini.png' | asset_url }}" alt="" style="display: block;">
+                                                <img class="show-m" src="{{ 'features_bikini_mobile.png' | asset_url }}" alt="" style="display: none;">
+                                          {% when 'Bikini-sport' %}
+                                                <img class="hide-m" src="{{ 'features_bikini.png' | asset_url }}" alt="" style="display: block;">
+                                                <img class="show-m" src="{{ 'features_bikini_mobile.png' | asset_url }}" alt="" style="display: none;">
+                                          {% when 'Bikini-tryangle' %}
+                                                <img class="hide-m" src="{{ 'features_bikini.png' | asset_url }}" alt="" style="display: block;">
+                                                <img class="show-m" src="{{ 'features_bikini_mobile.png' | asset_url }}" alt="" style="display: none;">
+                                          {% when 'Bikini-trykini' %}
+                                                <img class="hide-m" src="{{ 'features_trykini.png' | asset_url }}" alt="" style="display: block;">
+                                                <img class="show-m" src="{{ 'features_trykini_mobile.png' | asset_url }}" alt="" style="display: none;">
+                                          {% else %}
+                                                <p>Default description text</p>
+                                        {% endcase %}
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul> 
+                        </div>
+        
+                    {% if product.type == 'Towel' %}  
+                        <div class="btn-box col w-100 txt-black">
+                    {% else %}
+                        <div class="btn-box col w-100">
+                    {% endif %}
+                           {% if product.available %}
+                        
+                                {% if product.metafields.button.Availability == 'Pre-order' %}
+                                    <a id="purchase-button" href="#" class="add-cart" onclick="product.addItem();return false;"></a>
+                                {% else %}
+                                {% if product.type == 'Bikini-shape' or product.type == 'Bikini-sport' or product.type == 'Bikini-tryangle' or product.type == 'Bikini-trykini' %}  
+                                    <a id="purchase-button" href='#' class='add-cart' onclick="productBikini.addItem();return false;"></a>
+                                    {% else %}                                  
+                                    <a id="purchase-button" href='#' class='add-cart' onclick="product.addItem();return false;"></a>
+                                    {% endif %}                         
+                                {% endif %}
+                            {% else %} 
+                                <a id="purchase-button" href="#" class="solded-out" onclick="return false;"></a>
+                            {% endif %}                            
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+        
+        {% unless settings.quote_2 == blank %}
+        <section class="quote-dividers">
+            <div class="container">
+                <h3>{{ settings.quote_2 }}</h3>    
+            </div>   
+        </section>
+        {% endunless %}
+                    
+        {% include 'product-video' %}  
+        
+        {% unless settings.quote_2 == blank %}
+        <section class="quote-dividers">
+            <div class="container">
+                <h3>{{ settings.quote_3 }}</h3>    
+            </div>   
+        </section>
+        {% endunless %}
+
+        <div class="main-featured ft-products">
+            <div class="slide-controls">
+                <div class="container">
+                    <div class="nav-bullets"></div>
+                </div>
+            </div>
+        <div class="featureCont slide-products">
+            <div class="featureItem" style="background-image: url({{ featurename | append: '_1.jpg' | asset_url }});">
+    {% case product.type %}
+      {% when 'Towel' %}
+                {% if settings.check_towel_feature_1 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}      
+      {% when 'Bikini-shape' %}
+                {% if settings.check_shape_feature_1 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-sport' %}
+                {% if settings.check_sport_feature_1 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-tryangle' %}
+                {% if settings.check_tryangle_feature_1 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Backpack' %}
+                {% if settings.check_backpack_feature_1 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-trykini' %}
+                {% if settings.check_trykini_feature_1 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+    {% endcase %}
+                        <section>
+                            <div>
+                        {% case product.type %}
+                          {% when 'Towel' %}
+                                <h2>{{ settings.feature_towel_text_1 }}</h2>
+                          {% when 'Bikini-shape' %}
+                                <h2>{{ settings.feature_shape_text_1 }}</h2>
+                          {% when 'Bikini-sport' %}
+                                <h2>{{ settings.feature_sport_text_1 }}</h2>
+                          {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.feature_tryangle_text_1 }}</h2>
+                          {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.feature_trykini_text_1 }}</h2>
+                          {% when 'Backpack' %}
+                                <h2>{{ settings.feature_backpack_text_1 }}</h2>  
+                          {% else %}
+                                <h2>>Default description text</h2>
+                        {% endcase %} 
+                            </div>
+                        </section>
+                    </div>               
+            </div>
+            
+            <div class="featureItem"  style="background-image: url({{ featurename | append: '_2.jpg' | asset_url }});">
+    {% case product.type %}
+      {% when 'Towel' %}
+                {% if settings.check_towel_feature_2 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}      
+      {% when 'Bikini-shape' %}
+                {% if settings.check_shape_feature_2 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-sport' %}
+                {% if settings.check_sport_feature_2 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-tryangle' %}
+                {% if settings.check_tryangle_feature_2 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Backpack' %}
+                {% if settings.check_backpack_feature_2 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-trykini' %}
+                {% if settings.check_trykini_feature_2 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+    {% endcase %} 
+                        <section>
+                            <div>
+                        {% case product.type %}
+                          {% when 'Towel' %}
+                                <h2>{{ settings.feature_towel_text_2 }}</h2>
+                          {% when 'Bikini-shape' %}
+                                <h2>{{ settings.feature_shape_text_2 }}</h2>
+                          {% when 'Bikini-sport' %}
+                                <h2>{{ settings.feature_sport_text_2 }}</h2>
+                          {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.feature_tryangle_text_2 }}</h2>
+                          {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.feature_trykini_text_2 }}</h2>
+                          {% when 'Backpack' %}
+                                <h2>{{ settings.feature_backpack_text_2 }}</h2>  
+                          {% else %}
+                                <h2>>Default description text</h2>
+                        {% endcase %} 
+                            </div>
+                        </section>
+                    </div>              
+            </div>
+            
+            <div class="featureItem" style="background-image: url({{ featurename | append: '_3.jpg' | asset_url }});">
+    {% case product.type %}
+      {% when 'Towel' %}
+                {% if settings.check_towel_feature_3 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}      
+      {% when 'Bikini-shape' %}
+                {% if settings.check_shape_feature_3 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-sport' %}
+                {% if settings.check_sport_feature_3 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-tryangle' %}
+                {% if settings.check_tryangle_feature_3 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Backpack' %}
+                {% if settings.check_backpack_feature_3 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-trykini' %}
+                {% if settings.check_trykini_feature_3 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+    {% endcase %} 
+                        <section>
+                            <div>
+                        {% case product.type %}
+                          {% when 'Towel' %}
+                                <h2>{{ settings.feature_towel_text_3 }}</h2>
+                          {% when 'Bikini-shape' %}
+                                <h2>{{ settings.feature_shape_text_3 }}</h2>
+                          {% when 'Bikini-sport' %}
+                                <h2>{{ settings.feature_sport_text_3 }}</h2>
+                          {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.feature_tryangle_text_3 }}</h2>
+                          {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.feature_trykini_text_3 }}</h2>
+                          {% when 'Backpack' %}
+                                <h2>{{ settings.feature_backpack_text_3 }}</h2>  
+                          {% else %}
+                                <h2>>Default description text</h2>
+                        {% endcase %} 
+                            </div>
+                        </section>
+                    </div>
+            </div>
+
+            <div class="featureItem" style="background-image: url({{ featurename | append: '_4.jpg' | asset_url }});">
+    {% case product.type %}
+      {% when 'Towel' %}
+                {% if settings.check_towel_feature_4 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}      
+      {% when 'Bikini-shape' %}
+                {% if settings.check_shape_feature_4 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-sport' %}
+                {% if settings.check_sport_feature_4 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-tryangle' %}
+                {% if settings.check_tryangle_feature_4 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Backpack' %}
+                {% if settings.check_backpack_feature_4 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+      {% when 'Bikini-trykini' %}
+                {% if settings.check_trykini_feature_4 == true %}
+                    <div class="container txt-black">
+                {% else %}      
+                    <div class="container">
+                {% endif %}
+    {% endcase %} 
+                        <section>
+                            <div>
+                        {% case product.type %}
+                          {% when 'Towel' %}
+                                <h2>{{ settings.feature_towel_text_4 }}</h2>
+                          {% when 'Bikini-shape' %}
+                                <h2>{{ settings.feature_shape_text_4 }}</h2>
+                          {% when 'Bikini-sport' %}
+                                <h2>{{ settings.feature_sport_text_4 }}</h2>
+                          {% when 'Bikini-tryangle' %}
+                                <h2>{{ settings.feature_tryangle_text_4 }}</h2>
+                          {% when 'Bikini-trykini' %}
+                                <h2>{{ settings.feature_trykini_text_4 }}</h2>
+                          {% when 'Backpack' %}
+                                <h2>{{ settings.feature_backpack_text_4 }}</h2>  
+                          {% else %}
+                                <h2>>Default description text</h2>
+                        {% endcase %} 
+                            </div>
+                        </section>
+                    </div>
+            </div>       
+        </div>
+        
+        <section class="concept">
+            <div class="container">
+            <h3>Concept</h3>
+            <hr>
+    {% case product.type %}
+      {% when 'Towel' %}
+            <p>{{ settings.towel_concept }}</p>
+      {% when 'Bikini-shape' %}
+            <p>{{ settings.bikini_shape_concept }}</p>
+      {% when 'Bikini-sport' %}
+            <p>{{ settings.bikini_sport_concept }}</p>
+      {% when 'Bikini-tryangle' %}
+            <p>{{ settings.bikini_tryangle_concept }}</p>
+      {% when 'Backpack' %}
+            <p>{{ settings.backpack_concept }}</p>
+      {% when 'Bikini-trykini' %}
+            <p>{{ settings.bikini_trykini_concept }}</p>  
+      {% else %}  
+            <p>Concept Default Text</p>
+    {% endcase %} 
+          </div>   
+        </section>

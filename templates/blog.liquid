@@ -1,0 +1,20 @@
+<div id="loader"></div>
+<div id="overlay"></div>
+
+<div id="freewall" class="free-wall clearfix" style="margin-top: 70px; width: 100%;">
+    
+    {% for article in blog.articles %}
+    
+    <div class="brick" style="background-image: url({{ article.image.src | img_url: 'master' }}); background-size: cover; background-position: center;">
+        <div class="ambassador">
+            <a class="fancybox" href="{{ article.image.src | img_url: 'master' }} }}" title="{{ article.excerpt_or_content }}"></a>
+            <h3>{{ article.title | escape }}</h3>
+            {% comment %}
+                {{ article.excerpt_or_content }}
+            {% endcomment %}
+        </div>
+    </div>
+    
+    {% endfor %}
+    
+</div>

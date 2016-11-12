@@ -1,0 +1,181 @@
+{% assign slidename = 'home_slide' %}
+
+<div class="main-featured">
+    <div id="loader"></div>
+    <div id="overlay"></div>
+            
+    <div class="slide-controls">
+        <div class="container">
+            <div class="nav-bullets"></div>
+        </div>
+    </div>
+            
+    <div class="slideCont">
+        <div class="slideItem txt-right" style="background-image: url({{ slidename | append: '_1.jpg' | asset_url }});">
+            <div class="container">
+                <section>
+                {% if settings.check_home_slide_1 == true %}
+                    <div class="txt-black">
+                {% else %}
+                    <div>
+                {% endif %}
+                        <h2>{{ settings.slideHomeText1 }}</h2>
+                        <div class='btn-box'>
+                            <a href='{{ settings.slideHomeLink1 }}' class='shop'></a>
+                        </div>
+                    </div>
+                </section>  
+            </div>            
+        </div>
+        <div class="slideItem" style="background-image: url({{ slidename | append: '_2.jpg' | asset_url }});">
+            <div class="container">
+                <section>
+                {% if settings.check_home_slide_2 == true %}
+                    <div class="txt-black">
+                {% else %}
+                    <div>
+                {% endif %}
+                        <h2>{{ settings.slideHomeText2 }}</h2>
+                        <div class='btn-box'>
+                            <a href='{{ settings.slideHomeLink2 }}' class='shop'></a>
+                        </div>
+                    </div>
+                </section>  
+            </div>                        
+        </div>
+        <div class="slideItem txt-right" style="background-image: url({{ slidename | append: '_3.jpg' | asset_url }});">
+            <div class="container">
+                <section>
+                {% if settings.check_home_slide_3 == true %}
+                    <div class="txt-black">
+                {% else %}
+                    <div>
+                {% endif %}
+                        <h2>{{ settings.slideHomeText3 }}</h2>
+                        <div class='btn-box'>
+                            <a href='{{ settings.slideHomeLink3 }}' class='shop'></a>
+                        </div>
+                    </div>
+                </section>  
+            </div>                        
+        </div>
+        <div class="slideItem" style="background-image: url({{ slidename | append: '_4.jpg' | asset_url }});">
+            <div class="container">
+                <section>
+                {% if settings.check_home_slide_4 == true %}
+                    <div class="txt-black">
+                {% else %}
+                    <div>
+                {% endif %}
+                        <h2>{{ settings.slideHomeText4 }}</h2>
+                        <div class='btn-box'>
+                            <a href='{{ settings.slideHomeLink4 }}' class='shop'></a>
+                        </div>
+                    </div>
+                </section>  
+            </div>                        
+        </div>
+    </div>
+</div>
+
+<section class="quote-dividers">
+    <div class="container">
+        <h3>{{ settings.quote_home_1 }}</h3>    
+    </div>   
+</section>
+
+<div class="featured-products">
+    <div class="col w-70">
+        <div class="bl-img w-100 bl-lines" style="background-image: url({{ 'mosaic_1.jpg' | asset_url }});"> 
+            <svg class="vertty-lines" width="415" height="450">                        
+                <path class="v-path" start="M31,4" d="M31,4" points="L310,27 L365,135 L413,2" px="31" py="4" style="fill:none;stroke:white;stroke-width:1"></path>     
+                <path class="v-path" start="M31,4" d="M31,4" points="L6,144 L106,328 L2,338 L48,450 L106,328" px="31" py="4" style="fill:none;stroke:white;stroke-width:1"></path> 
+                <path class="v-path" start="M48,445" d="M48,445" points="L364,136" px="48" py="445" style="fill:none;stroke:white;stroke-width:1"></path>     
+            </svg> 
+            <svg class="vertty-link" width="415" height="450" style="top:0px;left:0px;">
+                <a xlink:href="{{ settings.mosaic_link_1 }}">
+                    <g>
+                        <path d="M32,4 L360,132 L106,328 Z" style="fill:rgba(255, 255, 255, 0.4)"></path> 
+                        <text class="subtitle" x="100" y="120">{{ settings.mosaic_subtitle_1 }}</text>          
+                        <text class="title name" x="100" y="155">{{ settings.mosaic_title_1 }}</text> 
+                        <line x1="100" y1="200" x2="130" y2="200" style="stroke:#191818;stroke-width:2"></line>         
+                        <text class="action" x="100" y="220">shop now</text>       
+                    </g>
+                </a>   
+            </svg>
+        </div>
+        <div class="w-100">
+            <div class="bl-img col w-45 bl-lines" style="background-image: url({{ 'mosaic_2.jpg' | asset_url }});">
+                <svg class="vertty-lines" width="330" height="375">                        
+                    <path class="v-path" start="M84,40" d="M84,40" points="L25,142 L2,2 L84,40 L304,20 L216,2 L84,40" px="84" py="40" style="fill:none;stroke:white;stroke-width:1"></path>     
+                    <path class="v-path" start="M25,142" d="M25,142" points="L290,374 L260,306 L25,142" px="25" py="142" style="fill:none;stroke:white;stroke-width:1"></path>      
+                    <path class="v-path" start="M290,374" d="M290,374" points="L330,284 L264,264 L260,306 L330,284" px="290" py="374" style="fill:none;stroke:white;stroke-width:1"></path>
+                    <path class="v-path" start="M264,264" d="M264,264" points="L328,130 L304,20 L330,2" px="264" py="264" style="fill:none;stroke:white;stroke-width:1"></path>
+                </svg>
+                <svg class="vertty-link" width="330" height="375" style="top:0;right:0;">
+                    <a xlink:href="{{ settings.mosaic_link_2 }}">
+                        <g>
+                            <path d="M24,144 L264,264 L299,24 Z" style="fill:rgba(255, 255, 255, 0.4)"></path>  
+                            <text class="subtitle" x="170" y="105">{{ settings.mosaic_subtitle_2 }}</text>          
+                            <text class="title name" x="170" y="140">{{ settings.mosaic_title_2 }}</text> 
+                            <line x1="170" y1="170" x2="210" y2="170" style="stroke:#191818;stroke-width:2"></line>         
+                            <text class="action" x="170" y="190">shop now</text>       
+                        </g>
+                    </a>   
+                </svg>                       
+            </div>
+            <div class="bl-img col w-55" style="background-image: url({{ 'mosaic_3.gif' | asset_url }});">
+                <a href="{{ settings.mosaic_link_3 }}" style="position:Relative;display:block;width:100%;height:100%;z-index:999"></a>
+            </div>
+        </div>
+    </div>
+    <div class="bl-img col w-30  bl-lines" style="background-image: url({{ 'mosaic_4.jpg' | asset_url }});">
+        <svg class="vertty-lines" width="512" height="632" style="top:5px;right:0;">  
+            <path class="v-path" start="M84,2" d="M84,2" points="L128,132 L282,32 L510,6 L484,32 L282,32 L84,6" px="84" py="2" style="fill:none;stroke:rgba(255, 255, 255, 0.35);stroke-width:2" />
+            <path class="v-path" start="M132,134" d="M132,134" points="L214,340 L284,355" px="132" py="134" style="fill:none;stroke:rgba(255, 255, 255, 0.35);stroke-width:2"></path>
+            <path class="v-path" start="M420,388" d="M420,388" points="L510,416 L398,520 L216,336" px="420" py="388" style="fill:none;stroke:rgba(255, 255, 255, 0.35);stroke-width:2"></path>
+            <path class="v-path" start="M504,420" d="M504,420" points="L482,36" px="504" py="420" style="fill:none;stroke:rgba(255, 255, 255, 0.35);stroke-width:2"></path>
+        </svg>
+        <svg class="vertty-link" width="512" height="632" style="top:5px;right:0;">
+            <a xlink:href="{{ settings.mosaic_link_4 }}">
+                <g> 
+                    <path d="M131,133 L481,36 L398,520 Z" style="fill:rgba(255, 255, 255, 0.4)"></path>  
+                    <text class="subtitle" x="290" y="188">{{ settings.mosaic_subtitle_4 }}</text>          
+                    <text class="title name" x="290" y="223">{{ settings.mosaic_title_4 }}</text> 
+                    <line x1="290" y1="268" x2="320" y2="268" style="stroke:#191818;stroke-width:2"></line>         
+                    <text class="action" x="290" y="290">more info</text>       
+                </g>
+            </a>   
+        </svg>                              
+    </div>                
+</div>
+
+<section class="quote-dividers">
+    <div class="container">
+        <h3>{{ settings.quote_home_2 }}</h3> 
+    </div>   
+</section>                
+
+<section class="newsletter">
+   <div class="container">
+        <h4>Let's take our relationship to the next level</h4>
+     	{% include 'newsletter' %}
+   </div>
+</section>
+
+<section class="quote-dividers instagram">
+   <div class="container">
+       <img src="{{ 'insta_vertty.png' | asset_url }}" alt="">              
+   </div>
+</section>
+
+<div id="demo" class="instagram-container"></div>
+
+<div class="vertty-press">
+    <div class="container">
+        <!--img src="assets/press.jpg" alt="" style="display:block;width:100%"-->
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        {{ settings.press_svg }}
+    </div>
+</div>
