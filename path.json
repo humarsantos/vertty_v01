@@ -2,4 +2,14 @@
     webpack: 'xampp\htdocs\vertty_theme_0.4\webpack',
     sass: 'Users\Humar\Desktop\Design\01_VDF\workspace\business_portal\08_SVN\HTML\sass',
     sassWatch: 'sass --watch _main.scss:../css/main.css --style expanded'
+},
+{
+    Au_id: '79628293',
+    Au_APIKey: '6fff352d3ac53133316a46f713aec225',
+    Au_Password: 'b4327aaee07306b7399535d256e664c2',
+    Au_Secret: '8564c0d969d76db3cb29f25ff39224b8'
+},
+{
+    theme_bootstrap: 'theme bootstrap --password=[your-password] --store=[you-store.myshopify.com]',
+    theme_configuration: 'theme configure --password=[your-password] --store=[you-store.myshopify.com] --themeid=[your-theme-id]'
 }
