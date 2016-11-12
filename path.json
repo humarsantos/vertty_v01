@@ -1,7 +1,5 @@
 {
-    webpack: 'xampp\htdocs\vertty_theme_0.4\webpack',
-    sass: 'Users\Humar\Desktop\Design\01_VDF\workspace\business_portal\08_SVN\HTML\sass',
-    sassWatch: 'sass --watch _main.scss:../css/main.css --style expanded'
+    webpack: 'C:\Repos\Vertty'
 },
 {
     Au_id: '79628293',
@@ -11,5 +9,5 @@
 },
 {
     theme_bootstrap: 'theme bootstrap --password=[your-password] --store=[you-store.myshopify.com]',
-    theme_configuration: 'theme configure --password=[your-password] --store=[you-store.myshopify.com] --themeid=[your-theme-id]'
+    theme_configuration: 'theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=79628293'
 }
