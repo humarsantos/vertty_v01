@@ -1,5 +1,5 @@
 {
-    webpack: 'C:\Repos\Vertty'
+    webpack: 'C:\Repos\Vertty\webpack'
 },
 {
     Au_id: '79628293',
@@ -8,6 +8,29 @@
     Au_Secret: '8564c0d969d76db3cb29f25ff39224b8'
 },
 {
-    theme_bootstrap: 'theme bootstrap --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com',
-    theme_configuration: 'theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=79634181 '
+    Us_id: '79628293',
+    Us_APIKey: '1ff74c9e3a689bc54d1f4dbe2b49367c',
+    Us_Password: 'c60657f39822bf4f07d7d96a517a5d73',
+    Us_Secret: '499d77b6a9646d2392f1bcaceb0a79c0'
+},
+{
+    Eu_id: '79628293',
+    Eu_APIKey: '2c53ad1e056c624c2a7c20dc5b025d93',
+    Eu_Password: '7ea9f0b42ff302525199725eca0fe83d',
+    Eu_Secret: '9ee114617f1f9fa73fad378aae8b4ab2'
+},
+{
+    themeKit_Au: {
+        theme_bootstrap: 'theme bootstrap --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com',
+        theme_configuration: 'theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=79634181'
+    },
+    themeKit_Us: {
+        theme_bootstrap: 'theme bootstrap --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com',
+        theme_configuration: 'theme configure --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com --themeid=79634181'
+    },
+    themeKit_Eu: {
+        theme_bootstrap: 'theme bootstrap --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com',
+        theme_configuration: 'theme configure --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com --themeid=79634181'
+    }
+    
 }

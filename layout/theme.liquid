@@ -45,7 +45,7 @@
 {{ 'main.css' | asset_url | stylesheet_tag }}
 
 {% if template == 'product' %}
-{{ 'jquery.fancybox.css' | asset_url | stylesheet_tag }}
+    {{ 'jquery.fancybox.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
 {% if blog.handle == 'community' %}
@@ -58,11 +58,13 @@
         .footer { display: none; }   
     </style>
     {% endif %}
-    {% if page.handle == 'country' %}
+{% endif %}
+
+{% if template == 'index' %}
     <style>
         .footer, header { display: none;} 
     </style>
-    {% endif %}
+    {{ 'country.js' | asset_url | script_tag }}
 {% endif %}
 
 {{ content_for_header }}
@@ -96,7 +98,7 @@
             <li class="hide-m"><a href="/pages/essence">Essence</a></li>
             <li class="hide-m"><a href="/pages/community">Community</a></li>
             <li class="logo">
-                <a href="/">
+                <a href="/pages/home">
                     <h1>Vertty</h1>
                 </a>
             </li>
@@ -194,12 +196,14 @@
     </div>
 </footer>
 
-{% if template == 'index' %}
-    {{ 'general.bundle.js' | asset_url | script_tag }}
-    {{ 'pageGeneral.bundle.js' | asset_url | script_tag }}
+{% if template == 'page' %}
+    {% if page.handle == 'home' %}
+        {{ 'general.bundle.js' | asset_url | script_tag }}
+        {{ 'pageGeneral.bundle.js' | asset_url | script_tag }}
+    {% endif %}
 {% endif %}
 
-{% unless page.handle == 'country' %}
+{% unless template == 'index' %}
 
 <script type="text/javascript">
     
@@ -252,30 +256,30 @@
 {% endif %}
 
 {% if template == 'page' %}  
-    {% unless page.handle == 'country' %}
+    {% unless page.handle == 'home' %}
 
         {% case page.handle %}
+    
+            {% when 'essence' %}
+                {{ 'essence.bundle.js' | asset_url | script_tag }}
+                {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
+                {{ 'parallax.min.js' | asset_url | script_tag }}
+                {{ 'pageEssence.bundle.js' | asset_url | script_tag }}
+            {% when 'help-page' %}
 
-        {% when 'essence' %}
-            {{ 'essence.bundle.js' | asset_url | script_tag }}
-            {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
-            {{ 'parallax.min.js' | asset_url | script_tag }}
-            {{ 'pageEssence.bundle.js' | asset_url | script_tag }}
-        {% when 'help-page' %}
-
-        {% when 'stores' %}
-            {{ 'general.bundle.js' | asset_url | script_tag }}
-            {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
-            {{ 'menu.bundle.js' | asset_url | script_tag }}
-            {{ 'googleMaps.js' | asset_url | script_tag }}
-            {{ 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAsJ6rfjzYe82Z9fNXb07KUDge8ukp7Uh4&callback=initMap' | script_tag }}
-        {% when 'help-page' %}
-            {{ 'general.bundle.js' | asset_url | script_tag }}
-            {{ 'menu.bundle.js' | asset_url | script_tag }}
-            {{ 'help.bundle.js' | asset_url | script_tag }}    
-        {% else %}
-            {{ 'general.bundle.js' | asset_url | script_tag }}
-            {{ 'menu.bundle.js' | asset_url | script_tag }}
+            {% when 'stores' %}
+                {{ 'general.bundle.js' | asset_url | script_tag }}
+                {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
+                {{ 'menu.bundle.js' | asset_url | script_tag }}
+                {{ 'googleMaps.js' | asset_url | script_tag }}
+                {{ 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAsJ6rfjzYe82Z9fNXb07KUDge8ukp7Uh4&callback=initMap' | script_tag }}
+            {% when 'help-page' %}
+                {{ 'general.bundle.js' | asset_url | script_tag }}
+                {{ 'menu.bundle.js' | asset_url | script_tag }}
+                {{ 'help.bundle.js' | asset_url | script_tag }}    
+            {% else %}
+                {{ 'general.bundle.js' | asset_url | script_tag }}
+                {{ 'menu.bundle.js' | asset_url | script_tag }}
         {% endcase %}
 
     {% endunless %}
