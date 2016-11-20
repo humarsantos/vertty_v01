@@ -925,7 +925,7 @@ COMPONENTS: SLIDESHOW
 }
 .main-featured .slideItem h2,
 .main-featured .featureItem h2 {
-  font: 16px "BariolBd", sans-serif;
+  font: 20px "BariolBd", sans-serif;
   font-weight: 100;
   display: block;
   color: white;
@@ -2393,7 +2393,7 @@ PAGES: ESSENCE
   width: 100%;
   height: 200vh;
   background-size: 100%;
-  z-index: 0;
+  z-index: 6;
 }
 .main-essence .vertty-about {
   position: absolute;
@@ -3277,7 +3277,7 @@ PAGES: COMMUNITY
     .main-essence {
         height: auto!important;
         padding-top: 80px;
-        background: url({{ 'trama.png' | asset_url }}) repeat #fff;
+        background: url({{ 'trama.png' | asset_url }}) repeat #fff!important;
         background-size: 315px auto;
     }
     .main-essence .vertty-about {
