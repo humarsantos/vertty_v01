@@ -2187,6 +2187,7 @@ COMPONENTS: PRESS
   width: 500px;
   overflow-y: scroll;
   overflow-x: hidden;
+  background: rgba(255,255,255,.9);
 }
 
 #open-places-btn {

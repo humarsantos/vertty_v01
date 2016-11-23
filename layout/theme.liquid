@@ -272,7 +272,7 @@
                 {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
                 {{ 'menu.bundle.js' | asset_url | script_tag }}
                 {{ 'googleMaps.js' | asset_url | script_tag }}
-                {{ 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAsJ6rfjzYe82Z9fNXb07KUDge8ukp7Uh4&callback=initMap' | script_tag }}
+                {{ 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAsJ6rfjzYe82Z9fNXb07KUDge8ukp7Uh4&callback=initMap&libraries=geometry' | script_tag }}
             {% when 'help-page' %}
                 {{ 'general.bundle.js' | asset_url | script_tag }}
                 {{ 'menu.bundle.js' | asset_url | script_tag }}

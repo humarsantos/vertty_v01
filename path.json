@@ -1,5 +1,5 @@
 {
-    webpack: 'C:\Repos\Vertty\webpack'
+    webpack: 'Repos\Vertty\webpack'
 },
 {
     Au_id: '79628293',
@@ -34,3 +34,5 @@
     }
     
 }
+
+// theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=160955664
