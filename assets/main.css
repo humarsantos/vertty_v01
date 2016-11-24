@@ -79,9 +79,9 @@ body.loaded {
   top: 0px;
   left: 0px;
   text-align: center;
-  -moz-transition: all 0.7s ease-out;
-  -webkit-transition: all 0.7s ease-out;
-  transition: all 0.7s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 @-moz-keyframes progressAnime {
@@ -2864,6 +2864,7 @@ PAGES: COMMUNITY
 }
 
 .brick .ambassador {
+    position: relative;
     display: table-cell;
     width: 100%;
     height: 100%;
@@ -2877,6 +2878,7 @@ PAGES: COMMUNITY
     -o-transition: all 0.5s ease-out;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+    z-index: 10;
 }
 
 .brick .ambassador a {
@@ -2914,6 +2916,36 @@ PAGES: COMMUNITY
 
 .brick:hover .ambassador {
     font-size: 14px;
+    color: white;
+}
+
+.brick:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: transparent;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;    
+}
+
+.brick.size33:hover:after {
+    background: rgba(90, 55, 73, 0.9);
+}
+
+.brick.size43:hover:after {
+    background: rgba(59, 75, 136, 0.9);
+}
+
+.brick.size53:hover:after {
+    background: rgba(90, 89, 55, 0.9);
 }
 
 @keyframes rotateIcon {
@@ -3472,6 +3504,9 @@ PAGES: COMMUNITY
     }
     header {
         height: 50px;    
+    }
+    .free-wall {
+        margin-top: 50px!important;
     }
     header .menu ul li.logo {
         background-size: 45%; 
