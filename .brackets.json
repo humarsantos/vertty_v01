@@ -1,0 +1,12 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Repos/Vertty/assets/towel.bundle.js",
+        "C:/Repos/Vertty/webpack/webpack.config.js",
+        "C:/Repos/Vertty/webpack/stores/search.js",
+        "C:/Repos/Vertty/webpack/pageTowel.bundle.js",
+        "C:/Repos/Vertty/webpack/stores/googleMaps_old.js",
+        "C:/Repos/Vertty/webpack/towel.bundle.js",
+        "C:/Repos/Vertty/webpack/pageGeneral.bundle.js",
+        "C:/Repos/Vertty/webpack/bikini/productBikini.js"
+    ]
+}

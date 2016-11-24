@@ -1,8 +1,5 @@
 development:
-  theme_id: 79628293
-  password: b4327aaee07306b7399535d256e664c2
-  acess_token: 8564c0d969d76db3cb29f25ff39224b8
-  store: vertty-au.myshopify.com
-  ignores:
-  - C:\Repos\Vertty\plugins;
-  - C:\Repos\Vertty\webpack;
+  password: 7ea9f0b42ff302525199725eca0fe83d
+  theme_id: "171581508"
+  store: vertty-2.myshopify.com
+  timeout: 30s
