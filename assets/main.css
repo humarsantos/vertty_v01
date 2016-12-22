@@ -3461,7 +3461,7 @@ PAGES: COMMUNITY
     opacity: 0;
 }
 .modal-ambassador {
-    position: absolute;
+    position: fixed;
     display: table;
     top: 0%;
     left: 50%;
@@ -4067,12 +4067,23 @@ PAGES: COMMUNITY
 }
 
 @media screen and (max-width: 768px) {
+    .modal-ambassador.showUp {
+        top: 3%;
+    }
+    .modal-ambassador {
+        left: 5%;
+        margin-left: 0;
+        width: 96%;
+    }
     .modal-ambassador div {
         display: block;
         width: 100%;
     }
     .modal-ambassador .bl-img {
-        min-height: 250px;
+        display: none;
+    }
+    .modal-ambassador .bl-text {
+        padding: 45px 20px 50px;
     }
     .main-essence {
         padding-top: 35px;
