@@ -1,88 +1,29 @@
-<style>
-    #overlay.showUp {
-        cursor: pointer;
-        opacity: 1!important;
-        background: rgba(0, 0, 0, 0.55);        
-    }
-    .modal-ambassador.showUp {
-        top: 10%;
-        opacity: 1;
-    }
-    .modal-ambassador.hide {
-        top: 0%;
-        opacity: 0;
-    }
-    .modal-ambassador {
-        position: absolute;
-        display: table;
-        top: 0%;
-        left: 50%;
-        margin-left: -40%;
-        width: 80%;
-        min-height: 80%;
-        background: white;
-        z-index: 99999;   
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-        filter: alpha(opacity=0);
-        -moz-opacity: 0;
-        -khtml-opacity: 0;
-        opacity: 0;
-        -moz-transition: all 0.3s ease;
-        -wekkit-transition: all 0.3s ease;
-        transition: all 0.3s ease;     
-    }
-    .modal-ambassador div {
-        display: table-cell;
-        width: 50%;
-        height: 100%;
-        vertical-align: middle;
-    }
-    .bl-img {
-        background-size: cover;
-        background-position: center;
-    }
-    .bl-text {
-        text-align: center;
-        padding: 45px 25px 50px;
-    }
-    .bl-text h2 {
-        font: 20px "BariolBd", sans-serif;
-        line-height: 20px;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-        letter-spacing: 6px;
-    }
-    .bl-text .hashtag {
-        font: 12px "BariolRg", sans-serif;
-        display: block;
-        margin-bottom: 30px;
-        letter-spacing: 6px;        
-    }    
-    .bl-text hr {
-        width: 25px;
-        color: #abacad;
-        margin-bottom: 20px;
-    }
-    .bl-text p {
-        font: 15px "BariolRg", sans-serif;
-        line-height: 24px;
-        color: #58595b;
-        letter-spacing: 2px;
-    }
-</style>
-
 <div id="loader"></div>
 <div id="overlay"></div>
+
+<div id="_stores-search" class="stores-search">            
+    <form class="form-stores" action="">
+        <section class="container">
+            <h2>Search in our community</h2>
+            <div>
+                <label for="search-portal-input" class="visually-hidden">Search on the website</label>
+                <input id="filter-results" required="" placeholder="Search for an ambassador and [ PRESS ENTER ]" type="text" autocomplete="off">
+            </div>
+        </section>    
+    </form>
+</div> 
 
 <div class="lightbox">
 
 {% for article in blog.articles %}
 
+    {% assign words = article.title | split: '-' %}
+    
     <div id="modal-{{ forloop.index }}" class="modal-ambassador" style="display:none">
         <div class="bl-img" style="background-image: url({{ article.image.src | img_url: 'master' }});"></div>
         <div class="bl-text">
-            <h2>{{ article.title | escape }}</h2>
-            <span class="hashtag">#Verttytowel</span>
+            <h2>{{ words[0] }}</h2>
+            <span class="hashtag">{{ words[1] }}</span>
             <hr>
             <p>{{ article.excerpt_or_content }}</p>    
         </div>
@@ -92,15 +33,20 @@
 
 </div>
     
-<div id="freewall" class="free-wall clearfix" style="margin-top: 70px; width: 100%;">
+<div id="freewall" class="free-wall clearfix" style="margin-top: 249px; width: 100%;">
     
     {% for article in blog.articles %}
                 
-    <div class="brick" style="background-image: url({{ article.image.src | img_url: 'master' }}); background-size: cover; background-position: center;" onclick="modal.init('modal-{{ forloop.index }}', 'overlay')">
+    <div class="brick" style="background-image: url({{ article.image.src | img_url: 'master' }}); background-size: cover; background-position: center;" onclick="window.modal.init('modal-{{ forloop.index }}', 'overlay')" data-tags="{{ article.tags }}">
 
+    {% assign words = article.title | split: '-' %}
+        
         <div class="ambassador">
-            <h3>{{ article.title | escape }}</h3>
+            <h3>{{ words[0] }}</h3>
+            <hr>
+            <span class="hashtag">{{ words[1] }}</span>
             {% comment %}
+                {{ article.title | escape }}
                 {{ article.excerpt_or_content }}
             {% endcomment %}
         </div>
@@ -109,113 +55,3 @@
     {% endfor %}
     
 </div>
-
-
-<script>
-'use strict';
-
-var input = document.getElementById('filter-results');
-    
-input.addEventListener('keypress', function (e) {
-
-    if (e.keyCode == 13) {
-
-        var val = this.value.toLowerCase();
-        
-        $('.ambassador').each(function (i) {
-
-            var ambassador = this.getElementsByTagName('h3')[0].innerText.toLowerCase(),
-                ambassadorBox = this.parentElement,
-                tags = ambassadorBox.getAttribute('data-tags');
-            
-            if (ambassador.indexOf(val) > -1 || tags.indexOf(val) > -1) {
-                
-                if (ambassadorBox.style.display == 'none') {
-                    TweenLite.to(ambassadorBox, 0.2, {
-                        scale: 1,     
-                        alpha: 1,
-                        display: 'table',
-                        ease: Expo.easeOut
-                    });                    
-                }
-                else {
-                    TweenLite.to(ambassadorBox, 0.2, {
-                        ease: Expo.easeOut
-                    });
-                }
-            }
-            else {
-                TweenLite.to(ambassadorBox, 0.2, {
-                    scale: 0.01,     
-                    alpha: 0,
-                    display: 'none',
-                    ease: Expo.easeOut
-                });
-            }
-
-        });        
-        
-        e.preventDefault();
-
-    }
-});
-    
-var modal = { 
-    init: function (modal, overlay) {
-        
-        var obj = this;
-        
-        this.overlay = document.getElementById(overlay);
-        this.modal = document.getElementById(modal);
-            
-        if (this.anime == true || this.modal == undefined || this.overlay == undefined) {
-            return;
-        }
-        else {
-            this.anime = true;
-            this.overlay.style.display = 'block';
-            this.modal.style.display = 'table';
-            
-            if (this.modal.getAttribute('data-cls') == null) {
-                this.modal.setAttribute('data-cls', this.modal.className);
-                this.modalCls = this.modal.getAttribute('data-cls');
-            }
-            else {
-                this.modalCls = this.modal.getAttribute('data-cls'); 
-            }
-        }
-        
-        this.overlay.addEventListener('click', function (e) {
-            
-            var thisObj = this;
-            
-            obj.modal.className = obj.modalCls + ' hide';
-            this.className = 'hide';
-            
-            setTimeout(function () {
-                thisObj.style.display = 'none';
-                obj.modal.style.display = 'none';
-                obj.anime = false;
-            }, 400)
-            
-            e.preventDefault();
-        });
-    
-        setTimeout(function () {
-            obj.fire()
-        }, 200)
-    },
-    fire: function () {
-
-        if (this.modal.className.indexOf('hide') < 0 && this.overlay.className.indexOf('hide') < 0) {
-            this.modal.className = this.modalCls + ' showUp';
-            this.overlay.className = 'showUp';
-        }
-        else {
-            this.modal.className = this.modalCls + ' showUp';
-            this.overlay.className = 'showUp';
-        }
-        
-    }  
-}
-</script>
