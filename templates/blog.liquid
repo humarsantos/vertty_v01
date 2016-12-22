@@ -114,6 +114,52 @@
 <script>
 'use strict';
 
+var input = document.getElementById('filter-results');
+    
+input.addEventListener('keypress', function (e) {
+
+    if (e.keyCode == 13) {
+
+        var val = this.value.toLowerCase();
+        
+        $('.ambassador').each(function (i) {
+
+            var ambassador = this.getElementsByTagName('h3')[0].innerText.toLowerCase(),
+                ambassadorBox = this.parentElement,
+                tags = ambassadorBox.getAttribute('data-tags');
+            
+            if (ambassador.indexOf(val) > -1 || tags.indexOf(val) > -1) {
+                
+                if (ambassadorBox.style.display == 'none') {
+                    TweenLite.to(ambassadorBox, 0.2, {
+                        scale: 1,     
+                        alpha: 1,
+                        display: 'table',
+                        ease: Expo.easeOut
+                    });                    
+                }
+                else {
+                    TweenLite.to(ambassadorBox, 0.2, {
+                        ease: Expo.easeOut
+                    });
+                }
+            }
+            else {
+                TweenLite.to(ambassadorBox, 0.2, {
+                    scale: 0.01,     
+                    alpha: 0,
+                    display: 'none',
+                    ease: Expo.easeOut
+                });
+            }
+
+        });        
+        
+        e.preventDefault();
+
+    }
+});
+    
 var modal = { 
     init: function (modal, overlay) {
         
