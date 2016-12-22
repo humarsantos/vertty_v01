@@ -1,0 +1,77 @@
+/* ==============
+PAGES: SWIMWEAR
+================= */
+
+.women-swimwear {
+    @include full-absolute;
+    
+    ul {
+        @include full-relative;
+        display: table;
+        
+        li {
+            position: relative;
+            @include full-table-cell;
+            width: 25%;
+            text-align: center;
+            background-size: cover!important;
+            @include transitionAll($target: all, $speed: 0.4s, $ease: ease-out);
+            overflow: hidden;
+            
+            &:after {
+                content: " ";
+                position: absolute;
+                display: block;
+                background: black;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                @include opacity6;
+                @include transitionAll($target: all, $speed: 0.4s, $ease: ease-out);
+                z-index: 0;
+            }
+            a {
+                position: relative;
+                display: table;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                color: white;
+                text-decoration: none;
+                vertical-align: middle;
+                z-index: 10;
+                
+                span {
+                    position: relative;
+                    font: $BariolBd16;
+                    text-transform: uppercase;
+                    letter-spacing: 9px;
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+            &.b-vertty {
+                background: url(bg_vertty.jpg) center no-repeat;    
+            }
+            &.b-tryangle {
+                background: url(bg_tryangle.jpg) center no-repeat;  
+                
+            }
+            &.b-sport {
+                background: url(bg_sport.jpg) center no-repeat;  
+                
+            }
+            &.b-trykini {
+                background: url(bg_trykini.jpg) center no-repeat;                   
+            }
+            &:hover {
+                width: 27%;
+                
+                &:after {
+                    @include opacity0; 
+                }
+            }
+        }
+    }
+}

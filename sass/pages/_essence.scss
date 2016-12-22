@@ -1,0 +1,67 @@
+/* =============
+PAGES: ESSENCE
+================ */
+
+.main-essence {
+    position: relative;
+    margin-top: 70px;
+    width: 100%;
+    height: 200vh;
+    background: url(04_banner.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    
+    .vertty-about {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        .container {
+            position: relative;
+            display: inline-block;
+            width: 49%;
+            margin-left: 50%;
+            text-align: center;
+            color: #232425;
+            top: 85px;
+            
+            hr {
+                width: 100px;
+                color: #abacad;
+                margin-bottom: 20px;
+            }
+            .hashtag {
+                font: $Bariol12;
+                display: block;
+                margin-bottom: 30px;
+                letter-spacing: 6px;
+            }
+            p {               
+                font: $Bariol15;
+                line-height: 24px;
+                color: #58595b;
+                max-width: 80%;
+                margin: 0 auto;
+                letter-spacing: 2px;
+                text-align: justify;
+            }
+        }
+        &:before {
+            content: " ";
+            position: relative;
+            display: inline-block;
+            width: 1px;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    h2 {
+        font: $BariolBd20;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,50 @@
+/* =======================
+COMPONENTS: SUBSCRIPTION
+========================== */
+
+.newsletter {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 100px 0;
+    background: url(newsletter_trama.jpg) no-repeat;
+    background-size: cover; 
+    overflow: hidden;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    
+    h4 {
+        font: $BariolBd15;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        margin-bottom: 20px;
+    }
+    input {
+        font: $BariolBd14;
+        letter-spacing: 2px;
+        width: 100%;
+        max-width: 840px;
+        padding: 15px 20px 15px 35px;
+        border: 1px solid #cbc9c9;
+    }
+    &:before {
+        content: " ";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(newsletter_trama_cor.jpg) no-repeat;
+        background-size: cover; 
+        z-index: 0;
+        @include opacity0;
+        @include transitionAll($target: all, $speed: 0.5s, $ease: ease-out);
+    }
+    &:hover {
+        
+        &:before {
+            @include opacity1;
+        }
+    }
+}

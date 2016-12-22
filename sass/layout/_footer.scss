@@ -1,0 +1,64 @@
+/* =============
+LAYOUT: FOOTER
+================ */
+
+.footer {
+    padding: 60px 0 80px;
+    color: white;
+    background: #242424;
+    
+    h5 {
+        font: $BariolBd10;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid white;
+    }
+    .container {
+        position: relative;
+        display: table;
+        width: 100%;
+
+        & > ul {
+            display: block;
+            width: 100%;
+            max-width: 1090px;
+            margin: 0 auto;
+
+            & > li {
+                float: left;
+                font: $Bariol15;
+                /*background: #313131;*/
+                width: 100%;
+                max-width: 160px;
+                margin-right: 150px;
+                
+                a {
+                    text-decoration: none;
+                    color: white;
+                    
+                    &:hover {
+                        color: #a7a7a7;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                ul {
+                    
+                    li {                        
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            &:before,
+            &:after {
+                content: " ";
+                width: 100%;
+                clear: both;
+                display: block;
+            }            
+        }          
+    }
+}

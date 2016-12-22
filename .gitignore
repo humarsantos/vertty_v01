@@ -1,3 +1,4 @@
 *.dat
 webpack/
 *.zip
+node_modules/

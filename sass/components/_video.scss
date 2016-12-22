@@ -1,0 +1,22 @@
+/* =========================
+COMPONENTS: FEATURED-VIDEO
+============================ */
+
+.featured-video {
+    position: relative;
+    overflow: hidden;
+    
+    video {
+        position: absolute;
+        top: -200px;
+        z-index: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: scale(1);
+    }
+}
+#player {
+  transform: scale(2);
+}

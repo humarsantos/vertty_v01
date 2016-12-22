@@ -1,0 +1,139 @@
+/* ====================
+COMPONENTS: SLIDESHOW
+======================= */
+
+.main-featured {
+    position: relative;
+    margin-top: 70px;
+    overflow: hidden;
+    background: black;
+      
+    &.ft-products {
+        margin-top: 0;
+    }
+    .slide-controls {
+        position: absolute;
+        width: 100%;
+        height: 18px;
+        bottom: 60px;
+        z-index: 20;
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+        .nav-bullets {
+            bottom: 0;
+        }
+    }
+    .slideCont,
+    .featureCont{
+        position: relative;
+        display: table;
+        width: 100%;
+    }
+    .slideItem,
+    .featureItem {
+        top: 0;
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        background-position: bottom;
+        overflow: hidden;
+        @include transition;
+
+        h2 {
+            font: $BariolBd16;
+            font-weight: 100;
+            display: block;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 9px;
+            margin-bottom: 40px;
+            text-align: left;
+
+            span {
+                display: block;
+                margin-left: -50px;
+                opacity: 0;
+                @include transitionAll ($target: all, $speed: 1s, $ease: ease-out);
+            }
+            &.active {
+
+                span {
+                    margin-left: 0px;
+                    opacity: 1;
+                }
+            }
+        }
+        .btn-box {
+            text-align: left;
+        }
+        .container {
+            display: table;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            background-repeat: no-repeat;
+            z-index: 9;
+
+            section {
+                display: table-cell;
+                vertical-align: middle;
+                opacity: 0;  
+                
+                & > div {
+                    position: relative;
+                    display: block;
+                    width: 50%;
+                    text-align: center;
+                }
+            }
+        }
+        &.txt-right {
+            text-align: right;
+            
+            .container section {
+                
+                & > div {
+                    margin-left: 50%;
+                }
+            }
+            h2,
+            .btn-box {
+                text-align: right;
+            }
+        }
+        &.active {
+            position: absolute;
+            z-index: 9;
+            top: 0; 
+            @include opacity1;
+        }
+    }
+    &.towel {
+        
+        .slideCont,
+        .slideItem {
+            width: 100%!important;
+            display: block;
+        }    
+    }
+}
+
+.main-featured.towel .slideItem .container h2 {
+    display: none;
+}
+
+.slide-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: scale(1);
+}

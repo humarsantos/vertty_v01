@@ -1,0 +1,612 @@
+/* ==================
+COMPONENTS: PRODUCT
+===================== */
+
+.product {
+    position: relative;
+    padding: 100px 0;
+    background-size: 100% 100%!important;
+    
+    .container {
+        display: table;
+        width: 100%;
+    
+        & > .col {
+            position: relative;
+            float: none;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        h6 {
+            font: $BariolBd12;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font: $BariolBd35;
+            margin-bottom: 5px;
+            margin-left: -3px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            
+            & + p {
+                font: $Bariol12;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+            }
+        }
+        .preview {
+            
+            img {
+                display: block;
+                width: auto;
+                max-width: 100%;
+                max-height: 650px;
+                margin: 0 auto;
+                position: relative;
+                bottom: 0;
+            }
+        }
+        .details {
+            padding: 0 50px;
+        }
+    }
+    .price { 
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none; 
+        
+        span {
+            float: right;
+            font: $Bariol14;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 26px;        
+            
+            &.value,
+            &.value span {
+                float: left;
+                font: $BariolBd20;
+            }            
+        }
+        &:before,
+        &:after {
+            content: " ";
+            clear: both;
+            display: table;
+        }
+    }
+    .specs {
+        
+        p {
+            font: $Bariol18;   
+            line-height: 22px;
+        }
+        &:before,
+        &:after {
+            content: " ";
+            clear: both;
+            display: table;
+        }
+        .btn-box {
+            text-align: right; 
+            margin-top: 30px;
+        }
+    }
+    .btn-box.more {
+        bottom: 0;
+    }
+    &.swimwear {
+        background-size: cover;
+        
+        .nav-towel {
+            margin-bottom: 0;
+        }
+        .btn-box {
+            float: right;
+            margin-top: 30px;
+        }
+    }
+    &.backpack {
+        
+        .price {
+            padding-top: 0; 
+        }
+    }
+    .img-details {
+        position: absolute;
+        left: 0px;
+        display: block;
+        top: 172px;
+        width: 105px;
+        height: 550px;
+        
+        ul {
+            display: block;
+            
+            li {
+                display: block;
+                width: 100%;
+                opacity: 1;
+                box-shadow: 1px 4px 5px rgba(3, 3, 3, 0.05);     
+
+                a {
+                    display: block;
+                    background: white;
+                    width: 100%;
+                    height: 100%;
+                    margin-bottom: 10px;
+                    
+                    &.disabled {
+                        @include opacity6;
+                    }
+                }
+                img {
+                    width: 100%;
+                }           
+            }
+        }
+    }
+}
+
+.concept {
+    padding: 60px 0 80px;
+    background: #f8f8f7;
+
+    .container {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 750px;
+        text-align: justify;
+        color: #232425;
+
+        hr {
+            width: 100px;
+            color: #abacad;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font: $BariolBd22;
+            display: block;
+            margin: 0 0 40px 0;
+            text-transform: uppercase;
+            letter-spacing: 7px;
+            text-align: center;
+        }
+        p {               
+            font: $Bariol15;
+            line-height: 22px;
+            color: #58595b;
+            margin: 0 auto 20px auto;
+        }
+    }
+}
+
+.nav-towel {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    
+    ul {
+        display: block;
+        padding: 15px 0;
+        border-top: 1px solid #232425;
+        border-bottom: 1px solid #232425;
+        height: 100%;
+        
+        li {
+            float: left;
+            width: 64px;
+            height: 81px;
+            
+            &.towel {
+                position: relative;
+                margin-top: 0px;
+                margin-right: 3px;
+                @include transitionAll($target: all, $speed: 0.3s, $ease: ease-out);
+                background: url(towel_sprite.png) no-repeat;
+                background-color: transparent; 
+                @include opacity3;
+                
+                &.i-blue {
+                    background-position: 0 0;
+                }
+                &.i-orange {
+                    background-position: -74px 0;                    
+                }
+                &.i-yellow {
+                    background-position: -148px 0;                    
+                }
+                &.i-violet {
+                    background-position: -222px 0;                    
+                }
+                &.i-light-blue {
+                    background-position: -296px 0;                    
+                }
+                &.i-grey {
+                    background-position: -370px 0;                    
+                }
+                &.i-green {
+                    background-position: -444px 0;                    
+                }
+                &.i-dark-blue {
+                    background-position: -518px 0;                    
+                }
+                &.i-pink {
+                    background-position: -592px 0;                    
+                }
+                &:hover {
+                    margin-top: -5px;
+                }
+                &.active {
+                    
+                    &:after {
+                        content: " ";
+                        display: block;
+                        position: absolute;
+                        left: 15px;
+                        margin-top: -1px;
+                        border-bottom: 5px solid #000000;
+                        border-top: 10px solid transparent;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        -moz-transition: all 0.6s ease-out;
+                        -webkit-transition: all 0.6s ease-out;
+                        transition: all 0.6s ease-out;
+                        -webkit-animation: moveY .8s infinite;
+                        animation: moveY .8s infinite;            
+                    }               
+                }
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &.bikini {
+                position: relative;
+                width: 93px;
+                height: 75px;
+                margin-top: 0px;
+                margin-right: 30px;
+                background-color: transparent; 
+                @include opacity6;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: url(women_sprite.png) no-repeat;
+                    @include transitionAll($target: all, $speed: 0.3s, $ease: ease-out);
+                    
+                    &:hover {
+                        margin-top: -5px;
+                    } 
+                }                
+                &.i-blue {
+                    
+                    a {
+                        background-position: -553px -3px;                    
+                    }
+                }
+                &.i-black {
+                    
+                    a { 
+                        background-position: -683px -3px;                    
+                    }
+                }
+                &.i-pink {
+                    
+                    a { 
+                        background-position: -421px -3px;                    
+                    }
+                }
+                &.briefs {
+                    
+                    &.i-blue {
+
+                        a {
+                            background-position: -553px -97px;                    
+                        }
+                    }
+                    &.i-black {
+
+                        a { 
+                            background-position: -683px -97px;                    
+                        }
+                    }
+                    &.i-pink {
+
+                        a { 
+                            background-position: -421px -97px;                    
+                        }
+                    }                   
+                } 
+                &.bikini-tryangle {
+                    
+                    &.i-blue {
+
+                        a {
+                            background-position: 0 0;                    
+                        }
+                    }
+                    &.i-black {
+
+                        a { 
+                            background-position: -130px 0;                    
+                        }
+                    }
+                    &.i-pink {
+
+                        a { 
+                            background-position: -260px 0;                    
+                        }
+                    }
+                    &.briefs {
+
+                        &.i-blue {
+
+                            a {
+                                background-position: 2px -95px;                             
+                            }                   
+                        }
+                        &.i-black {
+
+                            a {
+                                background-position: -130px -95px;                                    
+                            }        
+                        }
+                        &.i-pink {
+
+                            a {
+                                background-position: -263px -95px;                                 
+                            }           
+                        }                     
+                    }                     
+                }
+                &.bikini-sport {
+                    
+                    &.i-blue {
+
+                        a {
+                            background-position: -961px 3px;                    
+                        }
+                    }
+                    &.i-black {
+
+                        a { 
+                            background-position: -1088px 3px;                    
+                        }
+                    }
+                    &.i-pink {
+
+                        a { 
+                            background-position: -841px 3px;                    
+                        }
+                    }
+                    &.briefs {
+
+                        &.i-blue {
+
+                            a {
+                                background-position: -961px -89px;                             
+                            }                   
+                        }
+                        &.i-black {
+
+                            a {
+                                background-position: -1088px -89px;                                    
+                            }        
+                        }
+                        &.i-pink {
+
+                            a {
+                                background-position: -841px -89px;                                 
+                            }           
+                        }                     
+                    }                     
+                }
+                &.active {
+                    @include opacity1;
+                    
+                    &:after {
+                        content: " ";
+                        display: block;
+                        position: absolute;
+                        left: 36px;
+                        margin-top: 7px;
+                        border-bottom: 5px solid #000000;
+                        border-top: 10px solid transparent;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        -moz-transition: all 0.6s ease-out;
+                        -webkit-transition: all 0.6s ease-out;
+                        transition: all 0.6s ease-out;
+                        -webkit-animation: moveY .8s infinite;
+                        animation: moveY .8s infinite;            
+                    }               
+                }
+                &.trikini {
+                    width: 62px;
+                    height: 95px;
+                    
+                    a {
+                        background: url(trykini_sprite.svg) no-repeat;
+                        background-size: auto 100%;
+                    }
+                    &.i-blue {
+                        a {
+                            background-position: -5px 0;
+                        }
+                    }
+                    &.i-black {
+                        a {
+                            background-position: -89px 0;
+                        }
+                    }
+                    &.i-pink {
+                        a {
+                            background-position: -176px 0;
+                        }
+                    }
+                    &.active:after {
+                        left: 21px;
+                        margin-top: 0;
+                    }
+                }
+                
+            }
+            &.backpack {
+                position: relative;
+                width: 60px;
+                height: 75px;
+                margin-top: 0px;
+                margin-right: 30px;
+                background-color: transparent; 
+                @include opacity3;
+
+                &.i-blue {
+                    
+                    a {
+                        background-position: -168px 0;
+                    }
+                }
+                &.i-red {
+                    
+                    a {
+                        background-position: 6px 0;
+                    }
+                }
+                &.i-grey {
+                    
+                    a {
+                        background-position: -168px 0;
+                    }
+                }
+                &.active {
+                    @include opacity1;
+                    
+                    &:after {
+                        content: " ";
+                        display: block;
+                        position: absolute;
+                        left: 20px;
+                        margin-top: 7px;
+                        border-bottom: 5px solid #000000;
+                        border-top: 10px solid transparent;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        -moz-transition: all 0.6s ease-out;
+                        -webkit-transition: all 0.6s ease-out;
+                        transition: all 0.6s ease-out;
+                        -webkit-animation: moveY .8s infinite;
+                        animation: moveY .8s infinite;            
+                    }               
+                }
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: url(backpack_sprite.png) no-repeat;
+                    background-size: auto 100%;
+                    @include transitionAll($target: all, $speed: 0.3s, $ease: ease-out);
+                    
+                    &:hover {
+                        margin-top: -5px;
+                    } 
+                }
+                
+            }
+        }
+        .close {
+            float: right;
+            text-align: right;
+            
+            &:before {
+                content: " ";
+                display: inline-block;
+                width: 1px;
+                height: 100%;
+                float: none;
+                vertical-align: middle;
+            }
+            a {
+                display: inline-block;
+                vertical-align: middle;
+                width: 15px;
+                height: 15px;
+                border: 2px solid #232425;
+                border-radius: 3px;
+                background: url(sprite_icons.svg) no-repeat;
+                background-position: -269px -146px;
+            }
+        }
+        &.disabled {
+            
+            li {
+                @include opacity3;
+                
+                &.close {
+                    @include opacity1;
+                }
+                &:hover {
+                    margin-top: 0;
+                }
+            }
+            .close {
+                
+                a {
+                    background: none;
+                }
+            }            
+        }
+        &:before,
+        &:after {
+            content: " ";
+            clear: both;
+            display: table;
+        }
+    }
+}
+.nav-towel.first {
+    margin-top: 30px;
+    
+    & + .specs .accordion > ul > li {
+        border-bottom: none;
+    }
+}
+
+.item-price {
+    font: $BariolBd16;
+    float: right!important;
+    text-align: right;
+
+    &:before {
+        content: " ";
+        display: inline-block;
+        width: 1%;
+        height: 100%;
+        float: none;
+        vertical-align: middle;
+    }
+    & * {
+        display: inline-block;
+        vertical-align: middle;
+        width: 99%;
+    }        
+    &:after {
+        content: " ";
+        clear: both;
+        display: table;
+    }
+}
+
+.video-cont #player {
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
+}

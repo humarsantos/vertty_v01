@@ -1,0 +1,152 @@
+/* =======================
+COMPONENTS: vertty_loading
+========================== */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 9px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #5eaace;
+}
+::-webkit-scrollbar-track {
+  background: #5f5f5f;
+  border: 12px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #606060;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+html {
+    background: black;
+}
+
+body {
+    overflow: hidden;
+    background: white;
+}
+body.loaded {
+    overflow: auto;
+}
+#loader {
+    position: fixed;
+    width: 150px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -75px;
+    z-index: 999999;
+    border-radius: 5px;
+}
+#loader::before {                
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url({{ 'vertty_loading.gif' | asset_url }}) top center no-repeat;
+}
+#overlay {
+    z-index: 99999;
+    background: url({{ 'trama_bg.svg' | asset_url }}) repeat #d9d9d9;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    -moz-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+@-moz-keyframes progressAnime {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+@-webkit-keyframes progressAnime {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+@keyframes progressAnime {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+#loader-operations {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -5px;
+  z-index: 999999;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 20px solid #f43a22;
+  -webkit-animation: spin .8s infinite;
+  animation: spin .8s infinite;
+}
+
+#overlay-operations {
+  display: none;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  -moz-transition: all 0.7s ease-out;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}   
+
+@-moz-keyframes moveY {
+    0% { -webkit-transform: translate3d(0,0px,0); transform: translate3d(0,0px,0); }
+    50% { -webkit-transform: translate3d(0,-3px,0); transform: translate3d(0,-3px,0); }
+    100% { -webkit-transform: translate3d(0,0px,0); transform: translate3d(0,0px,0); }
+}
+@-webkit-keyframes moveY {
+    0% { -webkit-transform: translate3d(0,0px,0); transform: translate3d(0,0px,0); }
+    50% { -webkit-transform: translate3d(0,-3px,0); transform: translate3d(0,-3px,0); }
+    100% { -webkit-transform: translate3d(0,0px,0); transform: translate3d(0,0px,0); }
+}
+@keyframes moveY {
+    0% { -webkit-transform: translate3d(0,0px,0); transform: translate3d(0,0px,0); }
+    50% { -webkit-transform: translate3d(0,-3px,0); transform: translate3d(0,-3px,0); }
+    100% { -webkit-transform: translate3d(0,0px,0); transform: translate3d(0,0px,0); }
+}   
