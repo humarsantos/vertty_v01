@@ -1,0 +1,173 @@
+/* ===================
+LAYOUT: GLOBALSEARCH
+====================== */
+
+._overlay-search {
+    position: fixed;
+    display: none;
+    top: -110%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999999;
+    overflow: scroll;
+    
+    ._close-search {
+        position: fixed;
+        display: block;
+        width: 48px;
+        height: 48px;
+        top: 30px;
+        right: 20px;
+        z-index: 999999;
+        
+        &:before,
+        &:after {
+            content: " ";
+            display: block;
+        }  
+        span {
+            width: 0%;
+            opacity: 0;
+        }
+        span,
+        &:before,
+        &:after {
+            height: 3px;
+            background: black;  
+            position: absolute;
+        }
+        &:before {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            left: 8px;
+            top: 23px;
+            width: 65%;
+        }
+
+        &:after {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            left: 8px;
+            top: 23px;
+            width: 65%;
+        }
+    }
+    .form-stores {
+        height: 235px;
+        
+        .fixed-search {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 999;
+            padding: 100px 0 50px;            
+        }
+        .search-error-msg {
+            color: #333;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 3px;
+            background: grey;
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+
+                &.i-search-msg {
+                    width: 19px;
+                    height: 19px;
+                    background: url(../img/ws2_alert_icons.png) no-repeat;
+                    margin-right: 6px;
+                }
+            }        
+        }
+        .arrow-top {
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            width: 5px;
+            border: 5px solid transparent;
+            border-bottom-color: white;   
+            z-index: 99;
+        }
+    }
+    .search-results {
+        position: relative;
+        width: 100%;
+        max-width: 750px;
+        margin: 50px auto;
+        
+        .grid {
+            display: table;
+            width: 100%;
+            border: 1px solid #dedede;
+            
+            a {
+                display: block;
+                text-decoration: none;
+                padding: 20px 20px 15px;
+                color: black;
+                
+                &:hover {
+                    background: #f7f7f7;     
+                }
+            }
+            .w-50 {
+                display: table-cell;
+                vertical-align: middle;
+                width: 50%;
+                padding: 0 20px;
+            }
+        }
+        .result-properties {
+            font: $Bariol12;  
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            
+            hr {
+                margin: 20px 0;
+                width: 60px;
+                border-bottom: 1px solid #b7b7b7;
+                border-top: none; 
+            }
+        }
+        .result-image {
+            
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.results-cont .container > div:after {
+    display: none;
+}
+
+.ui-helper-hidden-accessible {
+    display: block;
+    padding: 10px 0;
+    font-family: $Bariol;
+    font-size: 10px;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #c7c7c7;
+    text-align: center;
+    margin-bottom: 5px;
+    position: absolute;
+}

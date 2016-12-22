@@ -22,11 +22,11 @@
 {
     themeKit_Au: {
         theme_bootstrap: 'theme bootstrap --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com',
-        theme_configuration: 'theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=79634181'
+        theme_configuration: 'theme configure --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com --themeid=162991952'
     },
     themeKit_Us: {
         theme_bootstrap: 'theme bootstrap --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com',
-        theme_configuration: 'theme configure --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com --themeid=168281416'
+        theme_configuration: 'theme configure --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com --themeid=168949457'
     },
     themeKit_Eu: {
         theme_bootstrap: 'theme bootstrap --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com',

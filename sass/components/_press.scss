@@ -1,0 +1,20 @@
+/* ================
+COMPONENTS: PRESS
+=================== */
+
+.st0 {
+    fill: none;
+    stroke: #dcdcdc;
+    stroke-miterlimit: 10;
+}
+.st1 {
+    fill: #dcdcdc;
+    @include transition;
+    
+    &:hover{
+        fill: #030104;
+    }
+}
+.st2 {
+    fill: #666;
+}

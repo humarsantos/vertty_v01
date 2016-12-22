@@ -1,0 +1,204 @@
+/* ===================
+ COMPONENT :: SEARCH
+====================== */
+
+.overlay-search {
+    position: fixed;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+}
+
+.stores-search {
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    padding: 50px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    
+    &.help-care {
+        position: relative;
+        top: 0;
+        margin-top: 70px;
+    }
+}
+
+.form-stores {
+    position: relative;
+    
+    .container {
+        position: relative;
+        padding: 0;
+        width: 100%;
+        max-width: 750px;
+        
+        & > div {
+            position: relative;
+
+            &:before, &:after {
+                content: " "; 
+                display: table;
+                position: relative;
+                clear: both;
+            }
+        }
+    }
+    h2 {
+        font: $BariolBd15;
+        margin: 0 auto 10px;
+        letter-spacing: 6px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .visually-hidden {
+        visibility: hidden;
+        height: 0;
+        position: absolute;
+    }
+    input {
+        font: $BariolBd14;
+        letter-spacing: 2px;
+        width: 100%;
+        max-width: 840px;
+        padding: 15px 40px 15px 50px;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background: url(menu.svg) no-repeat #fff;
+        background-position: 10px -358px;
+        border: 1px solid #cbc9c9;
+    }
+}
+
+.form-stores .container > div:after {
+    position: absolute;
+    width: 18px;
+    height: 13px;
+    display: block;
+    top: 21px;
+    right: 15px;
+    background: url(menu.svg) no-repeat transparent;
+    background-position: -5px -479px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.store-lst {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 100%;
+    width: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#open-places-btn {
+    position: absolute;
+    left: 100%;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1;
+    color: #222;
+    z-index: 2;
+    transition: .5s all;
+    
+    &::before {        
+        content: '>';
+    }
+}
+.active #open-places-btn {
+    left: 200px;
+
+    &::before {        
+        content: '<';
+    }
+}
+.place-list-w {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: .5s all;
+    overflow: hidden;
+}
+.active .place-list-w {
+    width: 500px;
+}
+.place-list {
+    width: 100%;
+    background: rgba(255, 255, 255, .9);
+    position: relative;
+    height: 100%;
+    
+    h2 {
+        font-family: $BariolBd;
+        font-size: 20px;
+        letter-spacing: 5px;
+        color: #ccc;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1;
+        padding: 290px 20px 20px;
+        margin: 0;        
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+        overflow: auto;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        max-height: calc(100% - 100px);
+        margin: 0;
+    }
+    li+li {
+        border-top: 1px dotted #ddd
+    }
+    a {
+        padding: 15px 20px;
+        color: #000;
+        line-height: 1;
+        display: block;
+        text-decoration: none; 
+        
+        &:hover {
+            background: #eee;
+        }
+    }
+    h3 {
+        font-family: $BariolBd;
+        letter-spacing: 6px;
+        font-size: 15px;
+        font-weight: lighter;
+        margin: 0 0 10px;
+        text-transform: uppercase;
+    }
+    P {
+        font-family: $Bariol;
+        font-size: 15px;
+        line-height: 18px;
+        color: #999;
+        margin: 0;        
+    }
+}
+
+.main-help-icons {
+    padding-top: 140px;
+}

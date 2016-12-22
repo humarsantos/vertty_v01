@@ -1,0 +1,233 @@
+/* ===========
+LAYOUT: MENU
+============== */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 99999;
+    background: #232425;
+    
+    .menu {
+        @include full-relative;
+        
+        ul {
+            @include full-table;
+            
+            li {
+                display: table-cell;
+                color: #fff;
+                width: 14.2857%;
+                height: 100%;
+                text-align: center;
+                vertical-align: middle;
+                border-right: 1px solid #090a0a;
+                
+                &.logo {
+                    background: url(logo.svg) center center no-repeat;
+                    background-size: 28%;
+                    
+                    a {
+                        
+                        &:hover {
+                            
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &.icons {
+                    overflow: hidden;
+                    
+                    a:before,
+                    a:after {
+                        display: none; 
+                    }
+                }
+                &.i-customer {
+                    background-position: center -212px;
+                }
+                &.i-store {
+                    background-position: center 16px;
+                }
+                &.i-search {
+                    background-position: center -92px;
+                }
+                &.i-vertty,
+                &.i-cart {
+                    display: none;
+                }
+                a {
+                    position: relative;
+                    font: $BariolBd10;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color: white;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    overflow: hidden;
+                    letter-spacing: 7px;
+
+                    &:before {
+                        content: " ";
+                        position: relative;
+                        display: inline-block;
+                        width: 1px;
+                        height: 100%;
+                        vertical-align: middle;  
+                    }
+                    &:after {
+                        content: " ";
+                        position: absolute;
+                        left: 50%;
+                        margin-left: 0;
+                        bottom: 17px;
+                        width: 0;
+                        height: 1px;
+                        background: transparent;
+                        @include transitionAll($target: all, $speed: 0.4s, $ease: ease-out);
+                    }
+                    &:hover {
+                        background: url(hover_menu.png) center no-repeat;
+                        background-size: 100% 100%;
+                        
+                        &:after {
+                            margin-left: -2.5%;
+                            width: 5%;
+                            background: dimgrey;
+                        }
+                    }
+                }
+                h1 {
+                    position: absolute;
+                    left: -99999px;
+                }
+            }                
+            .icons-list {
+
+                li {
+                    width: 50%
+                }
+            }
+            
+        } 
+        .cart-count {
+            position: relative;
+            font-size: 10px;
+            top: 35px;
+            right: -20px;
+            margin: 0 auto;
+            padding: 2px;
+            min-width: 15px;
+            display: inline-block;
+            background: #ff9a28;
+            text-align: center;
+            letter-spacing: 0;
+            border-radius: 6px;
+        }
+    }   
+    .slideDownMenu {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        
+        ul {
+            position: relative;
+            display: table;
+            width: 100%;
+            background: rgba(232, 232, 232, 0.9);
+            
+            li {
+                position: relative;
+                display: table-cell;
+                width: 25%;
+                vertical-align: middle;
+                text-align: center;
+                border-right: none;
+                overflow: hidden;
+                
+                a {
+                    position: relative;
+                    top: -100px;
+                    font: $BariolBd13;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color: $blue;
+                    text-decoration: none;
+                    text-transform: none;
+                    overflow: hidden;
+                    letter-spacing: 6px; 
+                    opacity: 0;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.44);
+                        
+                        &:after {
+                            display: none;
+                        }
+                        div .product-icons {
+                            height: 130px;
+                        }
+                    }
+                    &:before {
+                        content: " ";
+                        position: relative;
+                        display: inline-block;
+                        width: 1px;
+                        height: 100%;
+                        vertical-align: middle;  
+                    }                    
+                    div {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .product-icons {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            width: 120px;
+            height: 120px;
+            @include transition;
+        
+            &.i-towel {
+                background-position: 18px 0;
+            }
+            &.i-backpack {
+                background-position: 19px -138px;
+            }
+            &.i-m-swimwear {
+                background-position: -123px 17px;
+            }
+            &.i-w-swimwear {
+                background-position: -125px -134px;
+            }
+        }
+    }
+    .navigation-mobile {
+        position: fixed;
+        padding-top: 115px;
+        top: 0;
+        left: -401px;
+        width: 400px;
+        height: 100%;
+        background: black;
+        overflow-y: auto;
+        
+        ul {
+            
+            li {
+                display: block;
+                height: 40px;
+            }
+        }
+    }
+}
