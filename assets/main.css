@@ -1203,9 +1203,15 @@ COMPONENTS: SLIDESHOW
     transition: all 0.5s ease-out;
 }
 
+.main-featured .slideItem h2 {
+    font: 16px 'BariolBd', sans-serif;    
+}
+
+.main-featured .featureItem h2 {
+    font: 20px 'BariolBd', sans-serif;    
+}
 .main-featured .slideItem h2,
 .main-featured .featureItem h2 {
-    font: 20px "BariolBd", sans-serif;
     font-weight: 100;
     display: block;
     color: white;
@@ -1246,6 +1252,10 @@ COMPONENTS: SLIDESHOW
     vertical-align: middle;
     background-repeat: no-repeat;
     z-index: 9;
+}
+
+.main-featured.towel .slideItem .container section {
+    opacity: 1;
 }
 
 .main-featured .slideItem .container section,
@@ -1290,10 +1300,6 @@ COMPONENTS: SLIDESHOW
     -moz-opacity: 1;
     -khtml-opacity: 1;
     opacity: 1;
-}
-
-.main-featured.towel .slideItem .container h2 {
-    display: none;
 }
 
 .slide-video {
@@ -3371,6 +3377,9 @@ PAGES: SWIMWEAR & COUNTRY
     display: block;
 }
 
+.country-page ul li a:hover {
+    border: none;
+}
 .country-page ul li.africa a:hover {
     background: #d45d31;
 }
@@ -3434,6 +3443,82 @@ PAGES: STORES
 PAGES: COMMUNITY
 ================ */
 
+#overlay.showUp {
+    cursor: pointer;
+    opacity: 1!important;
+    background: rgba(0, 0, 0, 0.55);        
+}
+.modal-ambassador.showUp {
+    top: 10%;
+    opacity: 1;
+}
+.modal-ambassador.hide {
+    top: 0%;
+    opacity: 0;
+}
+.modal-ambassador {
+    position: absolute;
+    display: table;
+    top: 0%;
+    left: 50%;
+    margin-left: -40%;
+    max-width: 1532px;
+    width: 80%;
+    min-height: 80%;
+    background: white;
+    z-index: 99999;   
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    -moz-transition: all 0.3s ease;
+    -wekkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;     
+}
+.modal-ambassador div {
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    vertical-align: middle;
+}
+.modal-ambassador .bl-text p {
+    text-align: justify;
+    letter-spacing: 0;
+}
+.bl-img {
+    background-size: cover;
+    background-position: center;
+}
+.bl-text {
+    text-align: center;
+    padding: 45px 45px 50px;
+}
+.bl-text h2 {
+    font: 20px "BariolBd", sans-serif;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 6px;
+}
+.bl-text .hashtag {
+    font: 12px "BariolRg", sans-serif;
+    display: block;
+    margin-bottom: 30px;
+    letter-spacing: 6px;        
+}    
+.bl-text hr {
+    width: 25px;
+    color: #abacad;
+    margin-bottom: 20px;
+}
+.bl-text p {
+    font: 15px "BariolRg", sans-serif;
+    line-height: 24px;
+    color: #58595b;
+    letter-spacing: 2px;
+}
+
 .brick {
     display: table;
 }
@@ -3463,6 +3548,26 @@ PAGES: COMMUNITY
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.ambassador h3 {
+    color: white;
+}
+
+.ambassador hr {
+    width: 15px;
+    height: 1px;
+    margin: 8px auto 6px;
+    color: #abacad;
+}
+.ambassador .hashtag {
+    font: 12px BariolBd,sans-serif;
+    letter-spacing: 6px;
+    color: white;
+    padding: 5px  0 0 5px;
+    display: inline-block;
+    border-radius: 20px;
+    text-transform: capitalize;
 }
 
 .brick.size33 {
@@ -3511,16 +3616,8 @@ PAGES: COMMUNITY
     transition: all 0.5s ease-out;
 }
 
-.brick.size33:hover:after {
-    background: rgba(90, 55, 73, 0.9);
-}
-
-.brick.size43:hover:after {
-    background: rgba(59, 75, 136, 0.9);
-}
-
-.brick.size53:hover:after {
-    background: rgba(90, 89, 55, 0.9);
+.brick:hover:after {
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.32));    
 }
 
 @keyframes rotateIcon {
@@ -3658,10 +3755,11 @@ PAGES: COMMUNITY
     .container {
         max-width: 1100px;
     }
-    .main-featured .slideItem h2,
-    .main-featured .featureItem h2 {
-        font-size: 14px;
+    .main-featured .slideItem h2 {
         letter-spacing: 6px;
+    }
+    .main-featured .slideItem h2 {
+        font-size: 14px;
     }
     .quote-dividers h3 {
         line-height: 20px;
@@ -3962,6 +4060,13 @@ PAGES: COMMUNITY
 }
 
 @media screen and (max-width: 768px) {
+    .modal-ambassador div {
+        display: block;
+        width: 100%;
+    }
+    .modal-ambassador .bl-img {
+        min-height: 250px;
+    }
     .main-essence {
         padding-top: 35px;
     }
@@ -4069,7 +4174,7 @@ PAGES: COMMUNITY
         height: 50px;
     }
     .free-wall {
-        margin-top: 50px!important;
+        margin-top: 228px!important;
     }
     header .menu ul li.logo {
         background-size: 45%;

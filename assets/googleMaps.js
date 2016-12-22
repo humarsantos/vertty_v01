@@ -302,7 +302,7 @@ function verifyStores (address, map, _div) {
             
             var noItem = document.createElement('li');
 
-            noItem.innerHTML = "<a href='#'><h3>We could't found a nearby store</h3><p>Please, search another location.</p></a>";
+            noItem.innerHTML = "<a href='#'><h3>We couldn't found a nearby store</h3><p>Please, search another location.</p></a>";
             _div.querySelector('ul').appendChild(noItem);
         }
         
