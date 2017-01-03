@@ -83,7 +83,6 @@ LAYOUT: GLOBALSEARCH
                 &.i-search-msg {
                     width: 19px;
                     height: 19px;
-                    background: url(../img/ws2_alert_icons.png) no-repeat;
                     margin-right: 6px;
                 }
             }        
@@ -127,9 +126,9 @@ LAYOUT: GLOBALSEARCH
             }
         }
         .result-properties {
-            font: $Bariol12;  
+            font: $Bariol10;  
             text-transform: uppercase;
-            letter-spacing: 6px;
+            letter-spacing: 2px;
             
             hr {
                 margin: 20px 0;
@@ -137,6 +136,9 @@ LAYOUT: GLOBALSEARCH
                 border-bottom: 1px solid #b7b7b7;
                 border-top: none; 
             }
+        }
+        .bl-img {
+            border-left: 1px solid #ccc;
         }
         .result-image {
             
@@ -147,15 +149,35 @@ LAYOUT: GLOBALSEARCH
                 
                 img {
                     width: 100%;
-                    display: block;
+                    display: block;                    
                 }
             }
         }
     }
 }
 
+.result-img {
+    width: 120px;
+    height: 130px;
+    display: block;
+    margin: 0 auto;
+    background-position: 18px 11px;
+}
+
+.result-backpack .result-img {
+    background-position: 19px -128px;
+}
+
+.result-trykini .result-img {
+    background-position: 18px -299px;
+}
+
+.result-bikini .result-img {
+    background-position: -124px -124px;
+}
+
 .results-cont .container > div:after {
-    display: none;
+    display: none!important;
 }
 
 .ui-helper-hidden-accessible {

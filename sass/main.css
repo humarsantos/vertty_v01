@@ -1,0 +1,101 @@
+/*
+Error: Invalid CSS after "...ackground: url(": expected ")", was "{{ 'vertty_load..."
+        on line 66 of base/_loading.scss
+        from line 1 of main.scss
+
+61: #loader::before {                
+62:     content: " ";
+63:     position: absolute;
+64:     width: 100%;
+65:     height: 100%;
+66:     background: url({{ 'vertty_loading.gif' | asset_url }}) top center no-repeat;
+67: }
+68: #overlay {
+69:     z-index: 99999;
+70:     background: url({{ 'trama_bg.svg' | asset_url }}) repeat #d9d9d9;
+71:     position: fixed;
+
+Backtrace:
+base/_loading.scss:66
+main.scss:1
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/lexer.rb:229:in `expected!'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:711:in `assert_tok'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:535:in `funcall'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:514:in `ident'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:309:in `unary_not'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:309:in `unary_div'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:309:in `unary_minus'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:309:in `unary_plus'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:286:in `times_div_or_mod'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:286:in `plus_or_minus'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:286:in `relational'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:286:in `eq_or_neq'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:286:in `and_expr'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:286:in `or_expr'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:488:in `space'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:434:in `interpolation'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:359:in `expr'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:702:in `assert_expr'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/parser.rb:75:in `parse'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1051:in `sass_script'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:897:in `value!'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:769:in `block in try_declaration'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1165:in `call'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1165:in `rethrow'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:782:in `try_declaration'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:676:in `block_child'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:657:in `block'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:649:in `ruleset'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:675:in `block_child'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:125:in `stylesheet'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:41:in `parse'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:312:in `to_tree'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:294:in `watch'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin.rb:109:in `method_missing'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+C:/ruby/lib/ruby/gems/2.2.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
+C:/ruby/bin/sass:23:in `load'
+C:/ruby/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ackground: url(\": expected \")\", was \"{{ 'vertty_load...\"\A         on line 66 of base/_loading.scss\A         from line 1 of main.scss\A \A 61: #loader::before {                \A 62:     content: \" \";\A 63:     position: absolute;\A 64:     width: 100%;\A 65:     height: 100%;\A 66:     background: url({{ 'vertty_loading.gif' | asset_url }}) top center no-repeat;\A 67: }\A 68: #overlay {\A 69:     z-index: 99999;\A 70:     background: url({{ 'trama_bg.svg' | asset_url }}) repeat #d9d9d9;\A 71:     position: fixed;"; }

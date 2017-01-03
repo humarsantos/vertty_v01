@@ -158,7 +158,7 @@ header {
                     display: block;
                     width: 100%;
                     height: 100%;
-                    color: $blue;
+                    color: #232425;
                     text-decoration: none;
                     text-transform: none;
                     overflow: hidden;
@@ -220,12 +220,14 @@ header {
         width: 400px;
         height: 100%;
         background: black;
+        z-index: -1;
         overflow-y: auto;
         
         ul {
             
             li {
                 display: block;
+                width: 100%;
                 height: 40px;
             }
         }
