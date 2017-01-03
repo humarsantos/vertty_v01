@@ -3756,7 +3756,7 @@ PAGES: COMMUNITY
         width: 100%!important;
     }
     .main-featured.towel .slideItem .container {
-        display: block;
+        /*display: block;*/
         background-size: cover!important;
     }
     .container {
