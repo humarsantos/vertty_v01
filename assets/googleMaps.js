@@ -170,8 +170,8 @@ var nearStores = [];
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     labelIndex = 0,
     index = 0,
-    markerUrl = 'http://i.stack.imgur.com/JWM0W.png',
-    bigMarkerUrl = 'http://skinnyfishmusic.com.au/wp-content/themes/musicplay/images/gmap_marker.png';
+    markerUrl = 'https://i.stack.imgur.com/JWM0W.png',
+    bigMarkerUrl = 'https://skinnyfishmusic.com.au/wp-content/themes/musicplay/images/gmap_marker.png';
 
 
 function initMap() {
