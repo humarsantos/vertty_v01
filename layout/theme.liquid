@@ -26,6 +26,13 @@
     <meta property="og:image" content="http:{{ 'logo.png' | asset_url }}" />
     <meta property="og:image:secure_url" content="https:{{ 'logo.png' | asset_url }}" />
   {% endif %}
+  
+{% if template == 'page' %}  
+    {% if page.handle == 'stores' %}
+    
+     {% endif %}
+ {% endif %}
+    
 {% endif %}
   
   <meta charset="UTF-8">
@@ -96,7 +103,7 @@
                 </div>
             </li>
             <li class="hide-m"><a href="/pages/essence">Essence</a></li>
-            <li class="hide-m"><a href="/pages/community">Community</a></li>
+            <li class="hide-m"><a href="/blogs/community">Community</a></li>
             <li class="logo">
                 <a href="/pages/home">
                     <h1>Vertty</h1>
@@ -126,7 +133,7 @@
                             <a href="/pages/essence">Essence</a>
                         </li>
                         <li>
-                            <a href="/pages/community">Community</a>
+                            <a href="/blogs/community">Community</a>
                         </li>
                         <li>
                             <a href="/pages/stores">Stores</a>
@@ -156,7 +163,7 @@
                     <li><a href="/products/classic-towel">Beach Towel</a></li>
                     <li><a href="/pages/women-swimwear">Women's Swimwear</a></li>
                     <li><a href="/pages/essence">Essence</a></li>
-                    <li><a href="/pages/community">Community</a></li>
+                    <li><a href="/blogs/community">Community</a></li>
                     <li><a href="/pages/stores">Store</a></li>
                     <li><a href="/pages/help-page">Help</a></li>
                 </ul>

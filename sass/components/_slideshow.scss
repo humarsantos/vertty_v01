@@ -32,6 +32,18 @@ COMPONENTS: SLIDESHOW
         display: table;
         width: 100%;
     }
+    .slideItem {
+    
+        h2 {
+            font: 16px 'BariolBd', sans-serif;
+        }
+    }
+    .featureItem {
+    
+        h2 {
+            font: 20px 'BariolBd', sans-serif;
+        }
+    }
     .slideItem,
     .featureItem {
         top: 0;
@@ -40,11 +52,11 @@ COMPONENTS: SLIDESHOW
         height: 100%;
         background-size: 100%;
         background-position: bottom;
+        background-repeat: no-repeat!important;
         overflow: hidden;
         @include transition;
 
         h2 {
-            font: $BariolBd16;
             font-weight: 100;
             display: block;
             color: white;
@@ -114,6 +126,13 @@ COMPONENTS: SLIDESHOW
     }
     &.towel {
         
+        .slideItem  {
+            .container {
+                section {
+                    opacity: 1;
+                }
+            }
+        }
         .slideCont,
         .slideItem {
             width: 100%!important;

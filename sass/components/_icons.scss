@@ -3,13 +3,14 @@ COMPONENTS: ICONS ASSETS
 ========================= */
 
 .icons {
-    background: url(menu.svg) no-repeat;
-}   
+    background: url({{ 'menu.svg' | asset_url }}) no-repeat;
+}
 
 .product-icons {
-    background: url(sprite_icons.svg) no-repeat;
-}   
+    background-image: url({{ 'sprite_icons.svg' | asset_url }});
+    background-repeat: no-repeat;
+}
 
 .v-icons {
-    background: url(play_sprite.png) no-repeat;
+    background: url({{ 'play_sprite.png' | asset_url }}) no-repeat;
 }
