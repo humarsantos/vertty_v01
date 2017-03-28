@@ -367,7 +367,11 @@
                             <li class="bikini trykini i-pink" data-color="Pink"><a href="#"></a></li>
                         {% endunless %}
                             <li class="close"><a href="#"></a></li>
+                        {% unless product.type == 'Bikini-sport' %}
                             <li class="item-price"><span>{{ product.price | money }}</span></li>
+                        {% else %}  
+                            <li class="item-price"><span>{{ product.selected_or_first_available_variant.price | money }}</span></li>
+                        {% endunless %}
                         </ul>
                 {% endif %}
                     </div>  
