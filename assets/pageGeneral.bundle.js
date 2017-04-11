@@ -16,17 +16,17 @@
             for (var t = (document.getElementsByClassName(".st1"), document.getElementsByClassName(".st2")), e = 0; e < t.length; e++) t[e].removeEventListener("mouseover", !1), t[e].removeEventListener("mouseout", !1);
             var demo = $("#demo");
             window.innerWidth > 1024 ? demo.instastream({
-                instaToken: "417676227.a866f8b.cc8daf2b367c4510beb53a99ccff89dd",
+                instaToken: "417676227.a866f8b.fbe555b450a54538ae9ba8c3d4b04c97",
                 instaUser: "417676227",
                 instaResults: 5,
                 instaMenu: "yes"
             }) : window.innerWidth <= 1024 && window.innerWidth >= 690 ? demo.instastream({
-                instaToken: "417676227.a866f8b.cc8daf2b367c4510beb53a99ccff89dd",
+                instaToken: "417676227.a866f8b.fbe555b450a54538ae9ba8c3d4b04c97",
                 instaUser: "417676227",
                 instaResults: 3,
                 instaMenu: "yes"
             }) : demo.instastream({
-                instaToken: "417676227.a866f8b.cc8daf2b367c4510beb53a99ccff89dd",
+                instaToken: "417676227.a866f8b.fbe555b450a54538ae9ba8c3d4b04c97",
                 instaUser: "417676227",
                 instaResults: 2,
                 instaMenu: "yes"
