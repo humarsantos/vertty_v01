@@ -1,1 +1,1152 @@
-[{"name":"Products General","icon":"collection","settings":[{"type":"checkbox","id":"use_details","label":"Check for show product details","default":true},{"type":"textarea","id":"quote_1","label":"Quote #1"},{"type":"textarea","id":"quote_2","label":"Quote #2"},{"type":"textarea","id":"quote_3","label":"Quote #3"},{"type":"image","id":"bg_vertty.jpg","label":"Swimwear #1"},{"type":"image","id":"bg_sport.jpg","label":"Swimwear #2"},{"type":"image","id":"bg_tryangle.jpg","label":"Swimwear #3"},{"type":"image","id":"bg_trykini.jpg","label":"Swimwear #4"}]},{"name":"Home Page","icon":"home","settings":[{"type":"image","id":"home_slide_1.jpg","label":"First Slide"},{"type":"checkbox","id":"check_home_slide_1","label":"Check to use black texts","default":false},{"type":"text","id":"slideHomeLink1","default":"Link for Slide","label":"Link #1"},{"type":"text","id":"slideHomeText1","default":"Headline for slide #1","label":"Headline for slide #1"},{"type":"image","id":"home_slide_2.jpg","label":"Second Slide"},{"type":"checkbox","id":"check_home_slide_2","label":"Check to use black texts","default":false},{"type":"text","id":"slideHomeLink2","default":"Link for Slide","label":"Link #2"},{"type":"text","id":"slideHomeText2","default":"Headline for slide #2","label":"Headline for slide #2"},{"type":"image","id":"home_slide_3.jpg","label":"Third Slide"},{"type":"checkbox","id":"check_home_slide_3","label":"Check to use black texts","default":false},{"type":"text","id":"slideHomeLink3","default":"Link for Slide","label":"Link #3"},{"type":"text","id":"slideHomeText3","default":"Headline for slide #3","label":"Headline for slide #3"},{"type":"image","id":"home_slide_4.jpg","label":"Third Slide"},{"type":"checkbox","id":"check_home_slide_4","label":"Check to use black texts","default":false},{"type":"text","id":"slideHomeLink4","default":"Link for Slide","label":"Link #4"},{"type":"text","id":"slideHomeText4","default":"Headline for slide #4","label":"Headline for slide #4"},{"type":"textarea","id":"quote_home_1","label":"Quote #1"},{"type":"textarea","id":"quote_home_2","label":"Quote #2"},{"type":"image","id":"home_feature_1.jpg","label":"Feature #1"},{"type":"image","id":"home_feature_2.jpg","label":"Feature #2"},{"type":"image","id":"home_feature_3.jpg","label":"Feature #3"},{"type":"image","id":"home_feature_4.jpg","label":"Feature #4"},{"type":"image","id":"mosaic_1.jpg","label":"Mosaic #1 Image"},{"type":"text","id":"mosaic_subtitle_1","label":"Mosaic #1 - Subtitle","default":"Subtitle"},{"type":"text","id":"mosaic_title_1","label":"Mosaic #1 - Title","default":"Title Here"},{"type":"text","id":"mosaic_link_1","label":"Mosaic #1 - Link","default":"#"},{"type":"image","id":"mosaic_2.jpg","label":"Mosaic #2 Image"},{"type":"text","id":"mosaic_subtitle_2","label":"Mosaic #2 - Subtitle","default":"Subtitle"},{"type":"text","id":"mosaic_title_2","label":"Mosaic #2 - Title","default":"Title Here"},{"type":"text","id":"mosaic_link_2","label":"Mosaic #2 - Link","default":"#"},{"type":"image","id":"mosaic_3.gif","label":"Mosaic #3 Image"},{"type":"text","id":"mosaic_subtitle_3","label":"Mosaic #3 - Subtitle","default":"Subtitle"},{"type":"text","id":"mosaic_title_3","label":"Mosaic #3 - Title","default":"Title Here"},{"type":"text","id":"mosaic_link_3","label":"Mosaic #3 - Link","default":"#"},{"type":"image","id":"mosaic_4.jpg","label":"Mosaic #4 Image"},{"type":"text","id":"mosaic_subtitle_4","label":"Mosaic #4 - Subtitle","default":"Subtitle"},{"type":"text","id":"mosaic_title_4","label":"Mosaic #4 - Title","default":"Title Here"},{"type":"text","id":"mosaic_link_4","label":"Mosaic #4 - Link","default":"#"},{"type":"textarea","id":"press_svg","label":"Place SVG Code here"}]},{"name":"Essence Page","icon":"info","settings":[{"type":"text","id":"essence_title_1","label":"Title #1","default":"Vertty Essence"},{"type":"text","id":"essence_hashtag_1","label":"Hashtag #1","default":"Vertty Essence"},{"type":"textarea","id":"essence_description_1","label":"Description #1","default":"Vertty History"},{"type":"text","id":"essence_title_2","label":"Title #2","default":"#VerttyEssence"},{"type":"text","id":"essence_hashtag_2","label":"Hashtag #2","default":"#VerttyEssence"},{"type":"textarea","id":"essence_description_2","label":"Description #2","default":"Vertty History"},{"type":"text","id":"essence_title_3","label":"Title #3","default":"#VerttyEssence"},{"type":"text","id":"essence_hashtag_3","label":"Hashtag #3","default":"#VerttyEssence"},{"type":"textarea","id":"essence_description_3","label":"Description #3","default":"Vertty History"},{"type":"text","id":"essence_title_4","label":"Title #4","default":"#VerttyEssence"},{"type":"text","id":"essence_hashtag_4","label":"Hashtag #4","default":"#VerttyEssence"},{"type":"textarea","id":"essence_description_4","label":"Description #4","default":"Vertty History"},{"type":"image","id":"essence_background.jpg","label":"Background"}]},{"name":"Products Accordions","icon":"sidebar","settings":[{"type":"textarea","id":"worldwideShipping","default":"Worldwide Shipping text","label":"Worldwide Shipping"},{"type":"image","id":"features_towel.png","label":"Features Towel"},{"type":"image","id":"features_towel_mobile.png","label":"Features Towel #Mobile"},{"type":"image","id":"features_bikini.png","label":"Features Bikini"},{"type":"image","id":"features_bikini_mobile.png","label":"Features Bikini"},{"type":"image","id":"features_trykini.png","label":"Features trykini"},{"type":"image","id":"features_trykini_mobile.png","label":"Features trykini"},{"type":"image","id":"features_backpack.png","label":"Features Backpack"},{"type":"image","id":"features_backpack_mobile.png","label":"Features Backpack #Mobile"}]},{"name":"Towel Details","icon":"product","settings":[{"type":"image","id":"towel_slide_1.png","label":"First Slide"},{"type":"image","id":"towel_feature_1.jpg","label":"Feature #1"},{"type":"text","id":"feature_towel_text_1","label":"Headline for feature #1","default":"headline"},{"type":"checkbox","id":"check_towel_feature_1","label":"Check to use black texts","default":false},{"type":"image","id":"towel_feature_2.jpg","label":"Feature #2"},{"type":"text","id":"feature_towel_text_2","label":"Headline for feature #2","default":"headline"},{"type":"checkbox","id":"check_towel_feature_2","label":"Check to use black texts","default":false},{"type":"image","id":"towel_feature_3.jpg","label":"Feature #3"},{"type":"text","id":"feature_towel_text_3","label":"Headline for feature #3","default":"headline"},{"type":"checkbox","id":"check_towel_feature_3","label":"Check to use black texts","default":false},{"type":"image","id":"towel_feature_4.jpg","label":"Feature #4"},{"type":"text","id":"feature_towel_text_4","label":"Headline for feature #4","default":"headline"},{"type":"checkbox","id":"check_towel_feature_4","label":"Check to use black texts","default":false},{"type":"text","id":"towel_description","default":"Description","label":"Description"},{"type":"textarea","id":"towel_concept","default":"Concept","label":"Product Concept"},{"type":"text","id":"towel_video","label":"Youtube Video-ID"}]},{"name":"Backpack Details","icon":"product","settings":[{"type":"image","id":"backpack_slide_1.jpg","label":"First Slide"},{"type":"checkbox","id":"check_backpack_slide_1","label":"Check to use black texts","default":false},{"type":"text","id":"slideBackpackText1","label":"Headline for slide #1","default":"headline"},{"type":"image","id":"backpack_slide_2.jpg","label":"Second Slide"},{"type":"checkbox","id":"check_backpack_slide_2","label":"Check to use black texts","default":false},{"type":"text","id":"slideBackpackText2","label":"Headline for slide #2","default":"headline"},{"type":"image","id":"backpack_slide_3.jpg","label":"Third Slide"},{"type":"checkbox","id":"check_backpack_slide_3","label":"Check to use black texts","default":false},{"type":"text","id":"slideBackpackText3","label":"Headline for slide #3","default":"headline"},{"type":"image","id":"backpack_slide_4.jpg","label":"Fourth Slide"},{"type":"checkbox","id":"check_backpack_slide_4","label":"Check to use black texts","default":false},{"type":"text","id":"slideBackpackText4","label":"Headline for slide #4","default":"headline"},{"type":"image","id":"backpack_feature_1.jpg","label":"Feature #1"},{"type":"text","id":"feature_backpack_text_1","label":"Headline for feature #1","default":"headline"},{"type":"checkbox","id":"check_backpack_feature_1","label":"Check to use black texts","default":false},{"type":"image","id":"backpack_feature_2.jpg","label":"Feature #2"},{"type":"text","id":"feature_backpack_text_2","label":"Headline for feature #2","default":"headline"},{"type":"checkbox","id":"check_backpack_feature_2","label":"Check to use black texts","default":false},{"type":"image","id":"backpack_feature_3.jpg","label":"Feature #3"},{"type":"text","id":"feature_backpack_text_3","label":"Headline for feature #3","default":"headline"},{"type":"checkbox","id":"check_backpack_feature_3","label":"Check to use black texts","default":false},{"type":"image","id":"backpack_feature_4.jpg","label":"Feature #4"},{"type":"text","id":"feature_backpack_text_4","label":"Headline for feature #4","default":"headline"},{"type":"checkbox","id":"check_backpack_feature_4","label":"Check to use black texts","default":false},{"type":"text","id":"backpack_description","default":"Description","label":"Description"},{"type":"textarea","id":"backpack_concept","default":"Concept","label":"Product Concept"},{"type":"image","id":"backpack_detail_1.jpg","label":"First Detail"},{"type":"image","id":"backpack_detail_2.jpg","label":"Second Detail"},{"type":"image","id":"backpack_detail_3.jpg","label":"Third Detail"},{"type":"image","id":"backpack_detail_4.jpg","label":"Fourth Detail"},{"type":"text","id":"backpack_video","label":"Youtube Video-ID"}]},{"name":"Bikini Shape Details","icon":"product","settings":[{"type":"image","id":"bikini_shape_slide_1.jpg","label":"First Slide"},{"type":"checkbox","id":"check_shape_slide_1","label":"Check to use black texts","default":false},{"type":"text","id":"slideshapeText1","label":"Headline for slide #1","default":"headline"},{"type":"image","id":"bikini_shape_slide_2.jpg","label":"Second Slide"},{"type":"checkbox","id":"check_shape_slide_2","label":"Check to use black texts","default":false},{"type":"text","id":"slideshapeText2","label":"Headline for slide #2","default":"headline"},{"type":"image","id":"bikini_shape_slide_3.jpg","label":"Third Slide"},{"type":"checkbox","id":"check_shape_slide_3","label":"Check to use black texts","default":false},{"type":"text","id":"slideshapeText3","label":"Headline for slide #3","default":"headline"},{"type":"image","id":"bikini_shape_slide_4.jpg","label":"Fourth Slide"},{"type":"checkbox","id":"check_shape_slide_4","label":"Check to use black texts","default":false},{"type":"text","id":"slideshapeText4","label":"Headline for slide #4","default":"headline"},{"type":"image","id":"bikini_shape_feature_1.jpg","label":"Feature #1"},{"type":"text","id":"feature_shape_text_1","label":"Headline for feature #1","default":"headline"},{"type":"checkbox","id":"check_shape_feature_1","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_shape_feature_2.jpg","label":"Feature #2"},{"type":"text","id":"feature_shape_text_2","label":"Headline for feature #2","default":"headline"},{"type":"checkbox","id":"check_shape_feature_2","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_shape_feature_3.jpg","label":"Feature #3"},{"type":"text","id":"feature_shape_text_3","label":"Headline for feature #3","default":"headline"},{"type":"checkbox","id":"check_shape_feature_3","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_shape_feature_4.jpg","label":"Feature #4"},{"type":"text","id":"feature_shape_text_4","label":"Headline for feature #4","default":"headline"},{"type":"checkbox","id":"check_shape_feature_4","label":"Check to use black texts","default":false},{"type":"text","id":"bikini_shape_description","default":"Description","label":"Description"},{"type":"textarea","id":"bikini_shape_concept","default":"Concept","label":"Product Concept"},{"type":"image","id":"bikini_shape_size.png","label":"Vertty Specs"},{"type":"image","id":"bikini_shape_detail_1.jpg","label":"First Detail"},{"type":"image","id":"bikini_shape_detail_2.jpg","label":"Second Detail"},{"type":"image","id":"bikini_shape_detail_3.jpg","label":"Third Detail"},{"type":"image","id":"bikini_shape_detail_4.jpg","label":"Fourth Detail"},{"type":"text","id":"bikini_shape_video","label":"Youtube Video-ID"}]},{"name":"Bikini Sport Details","icon":"product","settings":[{"type":"image","id":"bikini_sport_slide_1.jpg","label":"First Slide"},{"type":"checkbox","id":"check_sport_slide_1","label":"Check to use black texts","default":false},{"type":"text","id":"slideSportText1","label":"Headline for slide #1","default":"headline"},{"type":"image","id":"bikini_sport_slide_2.jpg","label":"Second Slide"},{"type":"checkbox","id":"check_sport_slide_2","label":"Check to use black texts","default":false},{"type":"text","id":"slideSportText2","label":"Headline for slide #2","default":"headline"},{"type":"image","id":"bikini_sport_slide_3.jpg","label":"Third Slide"},{"type":"checkbox","id":"check_sport_slide_3","label":"Check to use black texts","default":false},{"type":"text","id":"slideSportText3","label":"Headline for slide #3","default":"headline"},{"type":"image","id":"bikini_sport_slide_4.jpg","label":"Fourth Slide"},{"type":"checkbox","id":"check_sport_slide_4","label":"Check to use black texts","default":false},{"type":"text","id":"slideSportText4","label":"Headline for slide #4","default":"headline"},{"type":"image","id":"bikini_sport_feature_1.jpg","label":"Feature #1"},{"type":"text","id":"feature_sport_text_1","label":"Headline for feature #1","default":"headline"},{"type":"checkbox","id":"check_sport_feature_1","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_sport_feature_2.jpg","label":"Feature #2"},{"type":"text","id":"feature_sport_text_2","label":"Headline for feature #2","default":"headline"},{"type":"checkbox","id":"check_sport_feature_2","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_sport_feature_3.jpg","label":"Feature #3"},{"type":"text","id":"feature_sport_text_3","label":"Headline for feature #3","default":"headline"},{"type":"checkbox","id":"check_sport_feature_3","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_sport_feature_4.jpg","label":"Feature #4"},{"type":"text","id":"feature_sport_text_4","label":"Headline for feature #4","default":"headline"},{"type":"checkbox","id":"check_sport_feature_4","label":"Check to use black texts","default":false},{"type":"text","id":"bikini_sport_description","default":"Description","label":"Description"},{"type":"textarea","id":"bikini_sport_concept","default":"Concept","label":"Product Concept"},{"type":"image","id":"bikini_sport_size.png","label":"Sport Specs"},{"type":"image","id":"bikini_sport_detail_1.jpg","label":"First Detail"},{"type":"image","id":"bikini_sport_detail_2.jpg","label":"Second Detail"},{"type":"image","id":"bikini_sport_detail_3.jpg","label":"Third Detail"},{"type":"image","id":"bikini_sport_detail_4.jpg","label":"Fourth Detail"},{"type":"text","id":"bikini_sport_video","label":"Youtube Video-ID"}]},{"name":"Bikini Tryangle Details","icon":"product","settings":[{"type":"image","id":"bikini_tryangle_slide_1.jpg","label":"First Slide"},{"type":"checkbox","id":"check_tryangle_slide_1","label":"Check to use black texts","default":false},{"type":"text","id":"slideTryangleText1","label":"Headline for slide #1","default":"headline"},{"type":"image","id":"bikini_tryangle_slide_2.jpg","label":"Second Slide"},{"type":"checkbox","id":"check_tryangle_slide_2","label":"Check to use black texts","default":false},{"type":"text","id":"slideTryangleText2","label":"Headline for slide #2","default":"headline"},{"type":"image","id":"bikini_tryangle_slide_3.jpg","label":"Third Slide"},{"type":"checkbox","id":"check_tryangle_slide_3","label":"Check to use black texts","default":false},{"type":"text","id":"slideTryangleText3","label":"Headline for slide #3","default":"headline"},{"type":"image","id":"bikini_tryangle_slide_4.jpg","label":"Fourth Slide"},{"type":"checkbox","id":"check_tryangle_slide_4","label":"Check to use black texts","default":false},{"type":"text","id":"slideTryangleText4","label":"Headline for slide #4","default":"headline"},{"type":"image","id":"bikini_tryangle_feature_1.jpg","label":"Feature #1"},{"type":"text","id":"feature_tryangle_text_1","label":"Headline for feature #1","default":"headline"},{"type":"checkbox","id":"check_tryangle_feature_1","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_tryangle_feature_2.jpg","label":"Feature #2"},{"type":"text","id":"feature_tryangle_text_2","label":"Headline for feature #2","default":"headline"},{"type":"checkbox","id":"check_tryangle_feature_2","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_tryangle_feature_3.jpg","label":"Feature #3"},{"type":"text","id":"feature_tryangle_text_3","label":"Headline for feature #3","default":"headline"},{"type":"checkbox","id":"check_tryangle_feature_3","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_tryangle_feature_4.jpg","label":"Feature #4"},{"type":"text","id":"feature_tryangle_text_4","label":"Headline for feature #4","default":"headline"},{"type":"checkbox","id":"check_tryangle_feature_4","label":"Check to use black texts","default":false},{"type":"text","id":"bikini_tryangle_description","default":"Description","label":"Description"},{"type":"textarea","id":"bikini_tryangle_concept","default":"Concept","label":"Product Concept"},{"type":"image","id":"bikini_tryangle_size.png","label":"Tryangle Specs"},{"type":"image","id":"bikini_tryangle_detail_1.jpg","label":"First Detail"},{"type":"image","id":"bikini_tryangle_detail_2.jpg","label":"Second Detail"},{"type":"image","id":"bikini_tryangle_detail_3.jpg","label":"Third Detail"},{"type":"image","id":"bikini_tryangle_detail_4.jpg","label":"Fourth Detail"},{"type":"text","id":"bikini_tryangle_video","label":"Youtube Video-ID"}]},{"name":"Bikini trykini Details","icon":"product","settings":[{"type":"image","id":"bikini_trykini_slide_1.jpg","label":"First Slide"},{"type":"checkbox","id":"check_trykini_slide_1","label":"Check to use black texts","default":false},{"type":"text","id":"slidetrykiniText1","label":"Headline for slide #1","default":"headline"},{"type":"image","id":"bikini_trykini_slide_2.jpg","label":"Second Slide"},{"type":"checkbox","id":"check_trykini_slide_2","label":"Check to use black texts","default":false},{"type":"text","id":"slidetrykiniText2","label":"Headline for slide #2","default":"headline"},{"type":"image","id":"bikini_trykini_slide_3.jpg","label":"Third Slide"},{"type":"checkbox","id":"check_trykini_slide_3","label":"Check to use black texts","default":false},{"type":"text","id":"slidetrykiniText3","label":"Headline for slide #3","default":"headline"},{"type":"image","id":"bikini_trykini_slide_4.jpg","label":"Fourth Slide"},{"type":"checkbox","id":"check_trykini_slide_4","label":"Check to use black texts","default":false},{"type":"text","id":"slidetrykiniText4","label":"Headline for slide #4","default":"headline"},{"type":"image","id":"bikini_trykini_feature_1.jpg","label":"Feature #1"},{"type":"text","id":"feature_trykini_text_1","label":"Headline for feature #1","default":"headline"},{"type":"checkbox","id":"check_trykini_feature_1","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_trykini_feature_2.jpg","label":"Feature #2"},{"type":"text","id":"feature_trykini_text_2","label":"Headline for feature #2","default":"headline"},{"type":"checkbox","id":"check_trykini_feature_2","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_trykini_feature_3.jpg","label":"Feature #3"},{"type":"text","id":"feature_trykini_text_3","label":"Headline for feature #3","default":"headline"},{"type":"checkbox","id":"check_trykini_feature_3","label":"Check to use black texts","default":false},{"type":"image","id":"bikini_trykini_feature_4.jpg","label":"Feature #4"},{"type":"text","id":"feature_trykini_text_4","label":"Headline for feature #4","default":"headline"},{"type":"checkbox","id":"check_trykini_feature_4","label":"Check to use black texts","default":false},{"type":"text","id":"bikini_trykini_description","default":"Description","label":"Description"},{"type":"textarea","id":"bikini_trykini_concept","default":"Concept","label":"Product Concept"},{"type":"image","id":"bikini_trykini_size.png","label":"trykini Specs"},{"type":"image","id":"bikini_trykini_detail_1.jpg","label":"First Detail"},{"type":"image","id":"bikini_trykini_detail_2.jpg","label":"Second Detail"},{"type":"image","id":"bikini_trykini_detail_3.jpg","label":"Third Detail"},{"type":"image","id":"bikini_trykini_detail_4.jpg","label":"Fourth Detail"},{"type":"text","id":"bikini_trykini_video","label":"Youtube Video-ID"}]}]
+[{
+  "name": "Products General",
+  "icon": "collection",
+  "class": "slideshow",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote_1",
+      "label": "Quote #1"
+  }, {
+      "type": "textarea",
+      "id": "quote_2",
+      "label": "Quote #2"
+  }, {
+      "type": "textarea",
+      "id": "quote_3",
+      "label": "Quote #3"
+  }, {
+      "type": "image",
+      "id": "bg_vertty.jpg",
+      "label": "Swimwear #1"
+  }, {
+      "type": "image",
+      "id": "bg_sport.jpg",
+      "label": "Swimwear #2"
+  }, {
+      "type": "image",
+      "id": "bg_tryangle.jpg",
+      "label": "Swimwear #3"
+  }, {
+      "type": "image",
+      "id": "bg_trykini.jpg",
+      "label": "Swimwear #4"
+  }]
+}, {
+  "name": "Home Page",
+  "icon": "home",
+  "settings": [{
+    "type": "image",
+    "id": "home_slide_1.jpg",
+    "label": "First Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_home_slide_1",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideHomeLink1",
+    "default": "Link for Slide",
+    "label": "Link #1"
+  }, {
+    "type": "text",
+    "id": "slideHomeText1",
+    "default": "Headline for slide #1",
+    "label": "Headline for slide #1"
+  }, {
+    "type": "image",
+    "id": "home_slide_2.jpg",
+    "label": "Second Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_home_slide_2",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideHomeLink2",
+    "default": "Link for Slide",
+    "label": "Link #2"
+  }, {
+    "type": "text",
+    "id": "slideHomeText2",
+    "default": "Headline for slide #2",
+    "label": "Headline for slide #2"
+  }, {
+    "type": "image",
+    "id": "home_slide_3.jpg",
+    "label": "Third Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_home_slide_3",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideHomeLink3",
+    "default": "Link for Slide",
+    "label": "Link #3"
+  }, {
+    "type": "text",
+    "id": "slideHomeText3",
+    "default": "Headline for slide #3",
+    "label": "Headline for slide #3"
+  }, {
+    "type": "image",
+    "id": "home_slide_4.jpg",
+    "label": "Third Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_home_slide_4",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideHomeLink4",
+    "default": "Link for Slide",
+    "label": "Link #4"
+  }, {
+    "type": "text",
+    "id": "slideHomeText4",
+    "default": "Headline for slide #4",
+    "label": "Headline for slide #4"
+  }, {
+    "type": "textarea",
+    "id": "quote_home_1",
+    "label": "Quote #1"
+  }, {
+    "type": "textarea",
+    "id": "quote_home_2",
+    "label": "Quote #2"
+  }, {
+    "type": "image",
+    "id": "home_feature_1.jpg",
+    "label": "Feature #1"
+  }, {
+    "type": "image",
+    "id": "home_feature_2.jpg",
+    "label": "Feature #2"
+  }, {
+    "type": "image",
+    "id": "home_feature_3.jpg",
+    "label": "Feature #3"
+  }, {
+    "type": "image",
+    "id": "home_feature_4.jpg",
+    "label": "Feature #4"
+  }, {
+    "type": "image",
+    "id": "mosaic_1.jpg",
+    "label": "Mosaic #1 Image"
+  }, {
+    "type": "text",
+    "id": "mosaic_subtitle_1",
+    "label": "Mosaic #1 - Subtitle",
+    "default": "Subtitle"
+  }, {
+    "type": "text",
+    "id": "mosaic_title_1",
+    "label": "Mosaic #1 - Title",
+    "default": "Title Here"
+  }, {
+    "type": "text",
+    "id": "mosaic_link_1",
+    "label": "Mosaic #1 - Link",
+    "default": "#"
+  }, {
+    "type": "image",
+    "id": "mosaic_2.jpg",
+    "label": "Mosaic #2 Image"
+  }, {
+    "type": "text",
+    "id": "mosaic_subtitle_2",
+    "label": "Mosaic #2 - Subtitle",
+    "default": "Subtitle"
+  }, {
+    "type": "text",
+    "id": "mosaic_title_2",
+    "label": "Mosaic #2 - Title",
+    "default": "Title Here"
+  }, {
+    "type": "text",
+    "id": "mosaic_link_2",
+    "label": "Mosaic #2 - Link",
+    "default": "#"
+  }, {
+    "type": "image",
+    "id": "mosaic_3.gif",
+    "label": "Mosaic #3 Image"
+  }, {
+    "type": "text",
+    "id": "mosaic_subtitle_3",
+    "label": "Mosaic #3 - Subtitle",
+    "default": "Subtitle"
+  }, {
+    "type": "text",
+    "id": "mosaic_title_3",
+    "label": "Mosaic #3 - Title",
+    "default": "Title Here"
+  }, {
+    "type": "text",
+    "id": "mosaic_link_3",
+    "label": "Mosaic #3 - Link",
+    "default": "#"
+  }, {
+    "type": "image",
+    "id": "mosaic_4.jpg",
+    "label": "Mosaic #4 Image"
+  }, {
+    "type": "text",
+    "id": "mosaic_subtitle_4",
+    "label": "Mosaic #4 - Subtitle",
+    "default": "Subtitle"
+  }, {
+    "type": "text",
+    "id": "mosaic_title_4",
+    "label": "Mosaic #4 - Title",
+    "default": "Title Here"
+  }, {
+    "type": "text",
+    "id": "mosaic_link_4",
+    "label": "Mosaic #4 - Link",
+    "default": "#"
+  }, {
+    "type": "textarea",
+    "id": "press_svg",
+    "label": "Place SVG Code here"
+  }]
+}, {
+  "name": "Essence Page",
+  "icon": "info",
+  "settings": [{
+    "type": "text",
+    "id": "essence_title_1",
+    "label": "Title #1",
+    "default": "Vertty Essence"
+  }, {
+    "type": "text",
+    "id": "essence_hashtag_1",
+    "label": "Hashtag #1",
+    "default": "Vertty Essence"
+  }, {
+    "type": "textarea",
+    "id": "essence_description_1",
+    "label": "Description #1",
+    "default": "Vertty History"
+  }, {
+    "type": "text",
+    "id": "essence_title_2",
+    "label": "Title #2",
+    "default": "#VerttyEssence"
+  }, {
+    "type": "text",
+    "id": "essence_hashtag_2",
+    "label": "Hashtag #2",
+    "default": "#VerttyEssence"
+  }, {
+    "type": "textarea",
+    "id": "essence_description_2",
+    "label": "Description #2",
+    "default": "Vertty History"
+  }, {
+    "type": "text",
+    "id": "essence_title_3",
+    "label": "Title #3",
+    "default": "#VerttyEssence"
+  }, {
+    "type": "text",
+    "id": "essence_hashtag_3",
+    "label": "Hashtag #3",
+    "default": "#VerttyEssence"
+  }, {
+    "type": "textarea",
+    "id": "essence_description_3",
+    "label": "Description #3",
+    "default": "Vertty History"
+  }, {
+    "type": "text",
+    "id": "essence_title_4",
+    "label": "Title #4",
+    "default": "#VerttyEssence"
+  }, {
+    "type": "text",
+    "id": "essence_hashtag_4",
+    "label": "Hashtag #4",
+    "default": "#VerttyEssence"
+  }, {
+    "type": "textarea",
+    "id": "essence_description_4",
+    "label": "Description #4",
+    "default": "Vertty History"
+  }, {
+    "type": "image",
+    "id": "essence_background.jpg",
+    "label": "Background"
+  }]
+}, {
+  "name": "Products Accordions",
+  "icon": "sidebar",
+  "settings": [{
+    "type": "textarea",
+    "id": "worldwideShipping",
+    "default": "Worldwide Shipping text",
+    "label": "Worldwide Shipping"
+  }, {
+    "type": "image",
+    "id": "features_towel.png",
+    "label": "Features Towel"
+  }, {
+    "type": "image",
+    "id": "features_towel_mobile.png",
+    "label": "Features Towel #Mobile"
+  }, {
+    "type": "image",
+    "id": "features_bikini.png",
+    "label": "Features Bikini"
+  }, {
+    "type": "image",
+    "id": "features_bikini_mobile.png",
+    "label": "Features Bikini"
+  }, {
+    "type": "image",
+    "id": "features_trykini.png",
+    "label": "Features trykini"
+  }, {
+    "type": "image",
+    "id": "features_trykini_mobile.png",
+    "label": "Features trykini"
+  }, {
+    "type": "image",
+    "id": "features_backpack.png",
+    "label": "Features Backpack"
+  }, {
+    "type": "image",
+    "id": "features_backpack_mobile.png",
+    "label": "Features Backpack #Mobile"
+  }]
+}, {
+  "name": "Towel Details",
+  "icon": "product",
+  "settings": [{
+      "type": "image",
+      "id": "towel_slide_1.png",
+      "label": "First Slide"
+  }, {
+      "type": "image",
+      "id": "towel_feature_1.jpg",
+      "label": "Feature #1"
+  }, {
+      "type": "text",
+      "id": "feature_towel_text_1",
+      "label": "Headline for feature #1",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_towel_feature_1",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "towel_feature_2.jpg",
+      "label": "Feature #2"
+  }, {
+      "type": "text",
+      "id": "feature_towel_text_2",
+      "label": "Headline for feature #2",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_towel_feature_2",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "towel_feature_3.jpg",
+      "label": "Feature #3"
+  }, {
+      "type": "text",
+      "id": "feature_towel_text_3",
+      "label": "Headline for feature #3",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_towel_feature_3",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "towel_feature_4.jpg",
+      "label": "Feature #4"
+  }, {
+      "type": "text",
+      "id": "feature_towel_text_4",
+      "label": "Headline for feature #4",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_towel_feature_4",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "towel_description",
+      "default": "Description",
+      "label": "Description"
+  }, {
+      "type": "textarea",
+      "id": "towel_concept",
+      "default": "Concept",
+      "label": "Product Concept"
+  }, {
+      "type": "text",
+      "id": "towel_video",
+      "label": "Youtube Video-ID"
+  }]
+}, {
+  "name": "Backpack Details",
+  "icon": "product",
+  "settings": [{
+      "type": "image",
+      "id": "backpack_slide_1.jpg",
+      "label": "First Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_slide_1",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideBackpackText1",
+      "label": "Headline for slide #1",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "backpack_slide_2.jpg",
+      "label": "Second Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_slide_2",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideBackpackText2",
+      "label": "Headline for slide #2",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "backpack_slide_3.jpg",
+      "label": "Third Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_slide_3",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideBackpackText3",
+      "label": "Headline for slide #3",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "backpack_slide_4.jpg",
+      "label": "Fourth Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_slide_4",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideBackpackText4",
+      "label": "Headline for slide #4",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "backpack_feature_1.jpg",
+      "label": "Feature #1"
+  }, {
+      "type": "text",
+      "id": "feature_backpack_text_1",
+      "label": "Headline for feature #1",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_feature_1",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "backpack_feature_2.jpg",
+      "label": "Feature #2"
+  }, {
+      "type": "text",
+      "id": "feature_backpack_text_2",
+      "label": "Headline for feature #2",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_feature_2",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "backpack_feature_3.jpg",
+      "label": "Feature #3"
+  }, {
+      "type": "text",
+      "id": "feature_backpack_text_3",
+      "label": "Headline for feature #3",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_feature_3",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "backpack_feature_4.jpg",
+      "label": "Feature #4"
+  }, {
+      "type": "text",
+      "id": "feature_backpack_text_4",
+      "label": "Headline for feature #4",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_backpack_feature_4",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "backpack_description",
+      "default": "Description",
+      "label": "Description"
+  }, {
+      "type": "textarea",
+      "id": "backpack_concept",
+      "default": "Concept",
+      "label": "Product Concept"
+  }, {
+      "type": "image",
+      "id": "backpack_detail_1.jpg",
+      "label": "First Detail"
+  }, {
+      "type": "image",
+      "id": "backpack_detail_2.jpg",
+      "label": "Second Detail"
+  }, {
+      "type": "image",
+      "id": "backpack_detail_3.jpg",
+      "label": "Third Detail"
+  }, {
+      "type": "image",
+      "id": "backpack_detail_4.jpg",
+      "label": "Fourth Detail"
+  }, {
+      "type": "text",
+      "id": "backpack_video",
+      "label": "Youtube Video-ID"
+  }]
+}, {
+  "name": "Bikini Shape Details",
+  "icon": "product",
+  "settings": [{
+      "type": "image",
+      "id": "bikini_shape_slide_1.jpg",
+      "label": "First Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_slide_1",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideshapeText1",
+      "label": "Headline for slide #1",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_slide_2.jpg",
+      "label": "Second Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_slide_2",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideshapeText2",
+      "label": "Headline for slide #2",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_slide_3.jpg",
+      "label": "Third Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_slide_3",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideshapeText3",
+      "label": "Headline for slide #3",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_slide_4.jpg",
+      "label": "Fourth Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_slide_4",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideshapeText4",
+      "label": "Headline for slide #4",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_feature_1.jpg",
+      "label": "Feature #1"
+  }, {
+      "type": "text",
+      "id": "feature_shape_text_1",
+      "label": "Headline for feature #1",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_feature_1",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "bikini_shape_feature_2.jpg",
+      "label": "Feature #2"
+  }, {
+      "type": "text",
+      "id": "feature_shape_text_2",
+      "label": "Headline for feature #2",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_feature_2",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "bikini_shape_feature_3.jpg",
+      "label": "Feature #3"
+  }, {
+      "type": "text",
+      "id": "feature_shape_text_3",
+      "label": "Headline for feature #3",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_feature_3",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "bikini_shape_feature_4.jpg",
+      "label": "Feature #4"
+  }, {
+      "type": "text",
+      "id": "feature_shape_text_4",
+      "label": "Headline for feature #4",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_shape_feature_4",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "bikini_shape_description",
+      "default": "Description",
+      "label": "Description"
+  }, {
+      "type": "textarea",
+      "id": "bikini_shape_concept",
+      "default": "Concept",
+      "label": "Product Concept"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_size.png",
+      "label": "Vertty Specs"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_detail_1.jpg",
+      "label": "First Detail"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_detail_2.jpg",
+      "label": "Second Detail"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_detail_3.jpg",
+      "label": "Third Detail"
+  }, {
+      "type": "image",
+      "id": "bikini_shape_detail_4.jpg",
+      "label": "Fourth Detail"
+  }, {
+      "type": "text",
+      "id": "bikini_shape_video",
+      "label": "Youtube Video-ID"
+  }]
+}, {
+  "name": "Bikini Sport Details",
+  "icon": "product",
+  "settings": [{
+      "type": "image",
+      "id": "bikini_sport_slide_1.jpg",
+      "label": "First Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_slide_1",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideSportText1",
+      "label": "Headline for slide #1",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_slide_2.jpg",
+      "label": "Second Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_slide_2",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideSportText2",
+      "label": "Headline for slide #2",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_slide_3.jpg",
+      "label": "Third Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_slide_3",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideSportText3",
+      "label": "Headline for slide #3",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_slide_4.jpg",
+      "label": "Fourth Slide"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_slide_4",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "slideSportText4",
+      "label": "Headline for slide #4",
+      "default": "headline"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_feature_1.jpg",
+      "label": "Feature #1"
+  }, {
+      "type": "text",
+      "id": "feature_sport_text_1",
+      "label": "Headline for feature #1",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_feature_1",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "bikini_sport_feature_2.jpg",
+      "label": "Feature #2"
+  }, {
+      "type": "text",
+      "id": "feature_sport_text_2",
+      "label": "Headline for feature #2",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_feature_2",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "bikini_sport_feature_3.jpg",
+      "label": "Feature #3"
+  }, {
+      "type": "text",
+      "id": "feature_sport_text_3",
+      "label": "Headline for feature #3",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_feature_3",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "image",
+      "id": "bikini_sport_feature_4.jpg",
+      "label": "Feature #4"
+  }, {
+      "type": "text",
+      "id": "feature_sport_text_4",
+      "label": "Headline for feature #4",
+      "default": "headline"
+  }, {
+      "type": "checkbox",
+      "id": "check_sport_feature_4",
+      "label": "Check to use black texts",
+      "default": false
+  }, {
+      "type": "text",
+      "id": "bikini_sport_description",
+      "default": "Description",
+      "label": "Description"
+  }, {
+      "type": "textarea",
+      "id": "bikini_sport_concept",
+      "default": "Concept",
+      "label": "Product Concept"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_size.png",
+      "label": "Sport Specs"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_detail_1.jpg",
+      "label": "First Detail"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_detail_2.jpg",
+      "label": "Second Detail"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_detail_3.jpg",
+      "label": "Third Detail"
+  }, {
+      "type": "image",
+      "id": "bikini_sport_detail_4.jpg",
+      "label": "Fourth Detail"
+  }, {
+      "type": "text",
+      "id": "bikini_sport_video",
+      "label": "Youtube Video-ID"
+  }]
+}, {
+  "name": "Bikini Tryangle Details",
+  "icon": "product",
+  "settings": [{
+    "type": "image",
+    "id": "bikini_tryangle_slide_1.jpg",
+    "label": "First Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_slide_1",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideTryangleText1",
+    "label": "Headline for slide #1",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_slide_2.jpg",
+    "label": "Second Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_slide_2",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideTryangleText2",
+    "label": "Headline for slide #2",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_slide_3.jpg",
+    "label": "Third Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_slide_3",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideTryangleText3",
+    "label": "Headline for slide #3",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_slide_4.jpg",
+    "label": "Fourth Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_slide_4",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slideTryangleText4",
+    "label": "Headline for slide #4",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_feature_1.jpg",
+    "label": "Feature #1"
+  }, {
+    "type": "text",
+    "id": "feature_tryangle_text_1",
+    "label": "Headline for feature #1",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_feature_1",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_feature_2.jpg",
+    "label": "Feature #2"
+  }, {
+    "type": "text",
+    "id": "feature_tryangle_text_2",
+    "label": "Headline for feature #2",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_feature_2",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_feature_3.jpg",
+    "label": "Feature #3"
+  }, {
+    "type": "text",
+    "id": "feature_tryangle_text_3",
+    "label": "Headline for feature #3",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_feature_3",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_feature_4.jpg",
+    "label": "Feature #4"
+  }, {
+    "type": "text",
+    "id": "feature_tryangle_text_4",
+    "label": "Headline for feature #4",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_tryangle_feature_4",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "bikini_tryangle_description",
+    "default": "Description",
+    "label": "Description"
+  }, {
+    "type": "textarea",
+    "id": "bikini_tryangle_concept",
+    "default": "Concept",
+    "label": "Product Concept"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_size.png",
+    "label": "Tryangle Specs"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_detail_1.jpg",
+    "label": "First Detail"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_detail_2.jpg",
+    "label": "Second Detail"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_detail_3.jpg",
+    "label": "Third Detail"
+  }, {
+    "type": "image",
+    "id": "bikini_tryangle_detail_4.jpg",
+    "label": "Fourth Detail"
+  }, {
+    "type": "text",
+    "id": "bikini_tryangle_video",
+    "label": "Youtube Video-ID"
+  }]
+}, {
+  "name": "Bikini trykini Details",
+  "icon": "product",
+  "settings": [{
+    "type": "image",
+    "id": "bikini_trykini_slide_1.jpg",
+    "label": "First Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_slide_1",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slidetrykiniText1",
+    "label": "Headline for slide #1",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_slide_2.jpg",
+    "label": "Second Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_slide_2",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slidetrykiniText2",
+    "label": "Headline for slide #2",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_slide_3.jpg",
+    "label": "Third Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_slide_3",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slidetrykiniText3",
+    "label": "Headline for slide #3",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_slide_4.jpg",
+    "label": "Fourth Slide"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_slide_4",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "slidetrykiniText4",
+    "label": "Headline for slide #4",
+    "default": "headline"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_feature_1.jpg",
+    "label": "Feature #1"
+  }, {
+    "type": "text",
+    "id": "feature_trykini_text_1",
+    "label": "Headline for feature #1",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_feature_1",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_feature_2.jpg",
+    "label": "Feature #2"
+  }, {
+    "type": "text",
+    "id": "feature_trykini_text_2",
+    "label": "Headline for feature #2",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_feature_2",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_feature_3.jpg",
+    "label": "Feature #3"
+  }, {
+    "type": "text",
+    "id": "feature_trykini_text_3",
+    "label": "Headline for feature #3",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_feature_3",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_feature_4.jpg",
+    "label": "Feature #4"
+  }, {
+    "type": "text",
+    "id": "feature_trykini_text_4",
+    "label": "Headline for feature #4",
+    "default": "headline"
+  }, {
+    "type": "checkbox",
+    "id": "check_trykini_feature_4",
+    "label": "Check to use black texts",
+    "default": false
+  }, {
+    "type": "text",
+    "id": "bikini_trykini_description",
+    "default": "Description",
+    "label": "Description"
+  }, {
+    "type": "textarea",
+    "id": "bikini_trykini_concept",
+    "default": "Concept",
+    "label": "Product Concept"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_size.png",
+    "label": "trykini Specs"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_detail_1.jpg",
+    "label": "First Detail"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_detail_2.jpg",
+    "label": "Second Detail"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_detail_3.jpg",
+    "label": "Third Detail"
+  }, {
+    "type": "image",
+    "id": "bikini_trykini_detail_4.jpg",
+    "label": "Fourth Detail"
+  }, {
+    "type": "text",
+    "id": "bikini_trykini_video",
+    "label": "Youtube Video-ID"
+  }]
+}]

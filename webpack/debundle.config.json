@@ -1,9 +1,0 @@
-{
-    "type": "webpack",
-    "entryPoint": 0,
-    "knownPaths": {
-        "0": "./",
-        "2": "./",
-        "3": "./"
-    }
-}

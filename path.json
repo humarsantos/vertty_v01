@@ -19,6 +19,10 @@
     Eu_Password: '7ea9f0b42ff302525199725eca0fe83d',
     Eu_Secret: '9ee114617f1f9fa73fad378aae8b4ab2'
 },
+
+{
+    Eu_testing_id: '183776015'
+},
 {
     themeKit_Au: {
         theme_bootstrap: 'theme bootstrap --password=b4327aaee07306b7399535d256e664c2 --store=vertty-au.myshopify.com',
@@ -31,6 +35,9 @@
     themeKit_Eu: {
         theme_bootstrap: 'theme bootstrap --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com',
         theme_configuration: 'theme configure --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com --themeid=171581508'
+    },
+    themeKit_Testing: {
+        theme_configuration: 'theme configure --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com --themeid=183776015'
     }
     
 }

@@ -1,15 +1,29 @@
 {
-  "name": "my-project-name",
-  "version": "0.1.0",
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-shopify-sass": "^0.2.1",
-    "webpack": "^2.3.3"
+  "name": "vertty",
+  "version": "1.0.0",
+  "description": "vertty_dependencies",
+  "main": "../index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "npm-git-install": "^0.3.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humarsantos/vertty_v01.git"
+  },
+  "keywords": [
+    "vertty",
+    "shop",
+    "ecommerce"
+  ],
+  "author": "Humar Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/humarsantos/vertty_v01/issues"
+  },
+  "homepage": "https://github.com/humarsantos/vertty_v01#readme",
+  "devDependencies": {
+    "babili-webpack-plugin": "0.0.11",
+    "script-loader": "^0.7.0",
+    "uglifyjs-webpack-plugin": "^0.4.3"
   }
 }

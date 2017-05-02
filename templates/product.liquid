@@ -285,24 +285,20 @@
 {% else %}
     <div class="product {{ product.type | downcase }}">
 {% endif %}    
-            <div id="loader-operations"></div>
-            <div id="overlay-operations"></div>
+          <div id="loader-operations"></div>
+          <div id="overlay-operations"></div>
 
-{% if product.type != 'Towel' %}
-    {% if settings.use_details == true %}
-            <div class="img-details">
-                <ul>
-                {% if product.featured_image %}
-                    {% for image in product.images %}
-                        {% if image.src contains 'detail' %}
-                            <li><a class="fancybox" href="{{ image.src | product_img_url: 'original' }}"><img src="{{ image.src | product_img_url: 'original' }}" alt=""></a></li> 
-                        {% endif %}
-                    {% endfor %} 
-               {% endif %}                    
-                </ul>
-            </div>    
-    {% endif %}
-{% endif %}
+          <div class="img-details">
+              <ul>
+              {% if product.featured_image %}
+                  {% for image in product.images %}
+                      {% if image.src contains 'detail' %}
+                          <li><a class="fancybox" href="{{ image.src | product_img_url: 'original' }}"><img src="{{ image.src | product_img_url: 'original' }}" alt=""></a></li> 
+                      {% endif %}
+                  {% endfor %} 
+             {% endif %}                    
+              </ul>
+          </div>   
 
             <div class="container">
                 <div class="col w-50 preview">

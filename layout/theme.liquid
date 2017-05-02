@@ -252,9 +252,9 @@
     
     {% elsif product.type == 'Towel' or product.type == 'Backpack' %}
 
+        {{ 'boot_product.bundle.js' | asset_url | script_tag }}
+        {{ 'ProductVideo.js' | asset_url | script_tag }}
         {{ 'towel.bundle.js' | asset_url | script_tag }}
-        {{ 'productVideo.js' | asset_url | script_tag }}
-        {{ 'pageTowel.bundle.js' | asset_url | script_tag }}
         <script type="text/javascript">
             window.product.init({{ product | json }});
         </script>
