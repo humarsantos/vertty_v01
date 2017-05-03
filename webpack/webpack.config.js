@@ -17,7 +17,11 @@ module.exports = {
             './boot/jquery-1.9.1.min',
             './boot/jquery-2.1.7.fancybox'
         ],
-        towel: [ './towel/Towel', './components/FeaturesSlide' ]
+        towel: [
+            './towel/Towel',
+            './components/FeaturesSlide', 
+            './components/Accordion' 
+        ]
     },
     module: {
         
