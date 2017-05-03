@@ -83,10 +83,10 @@ var product = {
 
                 isAvailable(towelType);
                 
-                if (obj.isBackpack) {
+                //if (obj.isBackpack) {
                     var u = null;
                     obj.runDetails(u, this.pos)
-                }
+                //}
                 if (productDescription !== undefined && productTitle.innerHTML !== undefined) {
                     description = obj.descripTemporary.getElementsByClassName(towelType)[0].innerText;
                     productTitle.innerHTML = towelType;
@@ -120,43 +120,53 @@ var product = {
             }
         }
     },
-    createActive: function (e) {
-        var t = [],
-            i = document.getElementsByClassName("nav-towel"),
-            n = document.getElementsByClassName("preview")[0].getElementsByTagName("img")[0],
-            s = i.length > 1 ? this.towelType.length / 2 : this.towelType.length;
+    createActive: function (productName) {
+        var arrColors = [],
+            itemsNav = document.getElementsByClassName("nav-towel"),
+            productPreview = document.getElementsByClassName("preview")[0].getElementsByTagName("img")[0],
+            totalItems = itemsNav.length > 1 ? this.towelType.length / 2 : this.towelType.length;
         
-        this.isBackpack = document.getElementsByClassName("product")[0].className.indexOf("backpack") > -1 ? true : false;
+        //this.isBackpack = document.getElementsByClassName("product")[0].className.indexOf("backpack") > -1 ? true : false;
         this.allDetails = document.getElementsByClassName("fancybox");
         this.detailsCont = document.getElementsByClassName("img-details")[0];
         
-        for (var o = 0; o < s; o++) {
-            t.push(this.towelType[o].getAttribute("data-color").toLowerCase())
+        for (var o = 0; o < totalItems; o++) {
+            arrColors.push(this.towelType[o].getAttribute("data-color").toLowerCase())
         }
         
-        for (var a = 0; a < t.length; a++) {
-            if (n.src.indexOf(t[a]) > -1) {
-                var r = t[a];
-                if (i.length > 1) {
-                    $("li." + e + "", $(".nav-towel")[0])[a].className = $("li." + e + "", $(".nav-towel")[0])[a].className + " active";
-                    $("li." + e + "", $(".nav-towel")[1])[a].className = $("li." + e + "", $(".nav-towel")[1])[a].className + " active"
+        for (var a = 0; a < arrColors.length; a++) {
+            
+            if (productPreview.src.indexOf(arrColors[a]) > -1) {
+                
+                var currColor = arrColors[a];
+                
+                if (itemsNav.length > 1) {
+                    $("li." + productName + "",
+                    $(".nav-towel")[0])[a].className = $("li." + productName + "",
+                    $(".nav-towel")[0])[a].className + " active";
+                    
+                    $("li." + productName + "",
+                    $(".nav-towel")[1])[a].className = $("li." + productName + "",
+                    $(".nav-towel")[1])[a].className + " active"
                 }
                 else {
-                    $("li." + e + "", $(".nav-towel")[0])[a].className = $("li." + e + "", $(".nav-towel")[0])[a].className + " active"
+                    $("li." + productName + "",
+                    $(".nav-towel")[0])[a].className = $("li." + productName + "",
+                    $(".nav-towel")[0])[a].className + " active"
                 }
             }
         }
         
-        if (this.isBackpack) {
-            this.runDetails(r, 0)
-        }
+        //if (this.isBackpack) {
+            this.runDetails(currColor, 0)
+        //}
     },
-    runDetails: function (e, t) {
-        var e = e == null ? this.towelType[t].getAttribute("data-color").toLowerCase() : e;
+    runDetails: function (color, pos) {
+        var color = color == null ? this.towelType[pos].getAttribute("data-color").toLowerCase() : color;
         
         for (var i = 0; i < this.allDetails.length; i++) {
             
-            var n = this.allDetails[i].href.indexOf("_" + e) > -1 ? true : false;
+            var n = this.allDetails[i].href.indexOf("_" + color) > -1 ? true : false;
             
             switch (n) {
                 case true:
@@ -259,6 +269,16 @@ var product = {
         return false
     }
 };
+
+$(document).ready(function () {
+    if ($(".fancybox")[0] !== undefined) {
+        $(".fancybox").fancybox({
+            height: 600,
+            maxHeight: 600,
+            fitToView: true
+        })
+    }
+});
 
 window.product = product;
 module.exports = product;

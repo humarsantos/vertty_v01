@@ -39,39 +39,43 @@ var productBikini = {
             e.createDetails()
         });
         
-        for (var l = 0; l < this.close.length; l++) this.close[l].onclick = function (t) {
+        for (var l = 0; l < this.close.length; l++) {
+            this.close[l].onclick = function (t) {
             
-            var e = this.parentElement;
-            
-            if (e.className.indexOf("disabled") < 0) {
-                var i = $(".fancybox.top", ".img-details"),
-                    n = $(".fancybox.bottom", ".img-details"),
-                    s = $(".other", ".img-details");
-                
-                e.className = "disabled",
-                i[0] !== undefined ? "top" == this.parentElement.id ? (i.removeClass("fancybox").addClass("disabled"), i.click(function (t) {
-                    t.preventDefault()
-                })) : (n.removeClass("fancybox").addClass("disabled"), n.click(function (t) {
-                    t.preventDefault()
-                })) : (s.removeClass("fancybox").addClass("disabled"), s.click(function (t) {
-                    t.preventDefault()
-                }))
-            } else {
-                var i = $(".top", ".img-details"),
-                    n = $(".bottom", ".img-details"),
-                    s = $(".other", ".img-details");
-                
-                e.className = e.className.replace("disabled", ""), i[0] !== undefined ? "top" == this.parentElement.id ? (i.removeClass("disabled").addClass("fancybox"), i.click(function (t) {
-                    return true;
-                })) : (n.removeClass("disabled").addClass("fancybox"), n.click(function (t) {
-                    return true;
-                })) : (s.removeClass("disabled").addClass("fancybox"), s.click(function (t) {
-                    t.preventDefault()
-                }))
+                var e = this.parentElement;
+
+                if (e.className.indexOf("disabled") < 0) {
+                    var bikiniTop = $(".fancybox.top", ".img-details"),
+                        bikiniBottom = $(".fancybox.bottom", ".img-details"),
+                        s = $(".other", ".img-details");
+
+                    e.className = "disabled",
+                    bikiniTop[0] !== undefined ? "top" == this.parentElement.id ? (bikiniTop.removeClass("fancybox").addClass("disabled"), bikiniTop.click(function (t) {
+                        t.preventDefault()
+                    })) : (bikiniBottom.removeClass("fancybox").addClass("disabled"), bikiniBottom.click(function (t) {
+                        t.preventDefault()
+                    })) : (s.removeClass("fancybox").addClass("disabled"), s.click(function (t) {
+                        t.preventDefault()
+                    }))
+                } 
+                else {
+                    var bikiniTop = $(".top", ".img-details"),
+                        bikiniBottom = $(".bottom", ".img-details"),
+                        s = $(".other", ".img-details");
+
+                    e.className = e.className.replace("disabled", ""), bikiniTop[0] !== undefined ? "top" == this.parentElement.id ? (bikiniTop.removeClass("disabled").addClass("fancybox"), bikiniTop.click(function (t) {
+                        return true;
+                    })) : (bikiniBottom.removeClass("disabled").addClass("fancybox"), bikiniBottom.click(function (t) {
+                        return true;
+                    })) : (s.removeClass("disabled").addClass("fancybox"), s.click(function (t) {
+                        t.preventDefault()
+                    }))
+                }
+                return false;
             }
-            return false;
-        };
-        for (var h = 0; h < this.bikiniType.length; h++)
+        }
+        
+        for (var h = 0; h < this.bikiniType.length; h++) {
             this.bikiniType[h].pos = h,
             this.bikiniType[h].onclick = function (t) {
                 
@@ -120,11 +124,12 @@ var productBikini = {
                     }, 400)
                 }), e.showDetails(this.pos), !1
         }
+        }
     },
     createDetails: function () {
         var t = [],
-            e = document.getElementsByClassName("nav-towel"),
-            i = e.length > 1 ? this.bikiniType.length / 2 : this.bikiniType.length,
+            itemsNav = document.getElementsByClassName("nav-towel"),
+            i = itemsNav.length > 1 ? this.bikiniType.length / 2 : this.bikiniType.length,
             n = document.getElementsByClassName("preview")[0].getElementsByTagName("img")[0];
         
         this.allDetails = document.getElementsByClassName("fancybox"),
@@ -137,8 +142,20 @@ var productBikini = {
             
             if (n.src.indexOf(t[o]) > -1) {
                 var a = t[o];
-                e.length > 1 ? ($(".bikini", $(".nav-towel")[0])[o].className = $(".bikini", $(".nav-towel")[0])[o].className + " active",
-                                $(".bikini", $(".nav-towel")[1])[o].className = $(".bikini", $(".nav-towel")[1])[o].className + " active") : $(".bikini")[o].className = $(".bikini")[o].className + " active";
+                /*
+                itemsNav.length > 1 ? (
+                    $(".bikini", $(".nav-towel")[0])[o].className = $(".bikini", $(".nav-towel")[0])[o].className + " active",
+                    $(".bikini", $(".nav-towel")[1])[o].className = $(".bikini", $(".nav-towel")[1])[o].className + " active"
+                )
+                : $(".bikini")[o].className = $(".bikini")[o].className + " active";
+                */
+                if (itemsNav.length > 1 ) {
+                    $(".bikini", $(".nav-towel")[0])[o].className = $(".bikini", $(".nav-towel")[0])[o].className + " active";
+                    $(".bikini", $(".nav-towel")[1])[o].className = $(".bikini", $(".nav-towel")[1])[o].className + " active";
+                }
+                else {
+                    $(".bikini")[o].className = $(".bikini")[o].className + " active";  
+                }
             }
         }
         

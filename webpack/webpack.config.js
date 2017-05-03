@@ -15,7 +15,7 @@ module.exports = {
             './boot/CSSPlugin',
             './boot/EasePack',
             './boot/jquery-1.9.1.min',
-            './boot/jquery.fancybox'
+            './boot/jquery-2.1.7.fancybox'
         ],
         towel: [ './towel/Towel', './components/FeaturesSlide' ]
     },
