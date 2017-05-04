@@ -1,6 +1,5 @@
 require('../components/Menu');
 require('../components/Slideshow');
-require('../components/FeaturesSlide');
 
 var product = {
     init: function (e) {
@@ -83,10 +82,10 @@ var product = {
 
                 isAvailable(towelType);
                 
-                //if (obj.isBackpack) {
-                    var u = null;
-                    obj.runDetails(u, this.pos)
-                //}
+                var u = null;
+                
+			  	obj.runDetails(u, this.pos)
+                
                 if (productDescription !== undefined && productTitle.innerHTML !== undefined) {
                     description = obj.descripTemporary.getElementsByClassName(towelType)[0].innerText;
                     productTitle.innerHTML = towelType;
@@ -125,8 +124,7 @@ var product = {
             itemsNav = document.getElementsByClassName("nav-towel"),
             productPreview = document.getElementsByClassName("preview")[0].getElementsByTagName("img")[0],
             totalItems = itemsNav.length > 1 ? this.towelType.length / 2 : this.towelType.length;
-        
-        //this.isBackpack = document.getElementsByClassName("product")[0].className.indexOf("backpack") > -1 ? true : false;
+       
         this.allDetails = document.getElementsByClassName("fancybox");
         this.detailsCont = document.getElementsByClassName("img-details")[0];
         
@@ -156,10 +154,8 @@ var product = {
                 }
             }
         }
-        
-        //if (this.isBackpack) {
-            this.runDetails(currColor, 0)
-        //}
+  
+        this.runDetails(currColor, 0)
     },
     runDetails: function (color, pos) {
         var color = color == null ? this.towelType[pos].getAttribute("data-color").toLowerCase() : color;
@@ -202,6 +198,7 @@ var product = {
             this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
             return this.successTowel
         };
+	  
         Shopify.onError = function (XMLHttpRequest, textStatus) {
             var data = eval("(" + XMLHttpRequest.responseText + ")");
             swal({
@@ -271,13 +268,13 @@ var product = {
 };
 
 $(document).ready(function () {
-    if ($(".fancybox")[0] !== undefined) {
-        $(".fancybox").fancybox({
-            height: 600,
-            maxHeight: 600,
-            fitToView: true
-        })
-    }
+  if ($(".fancybox")[0] !== undefined) {
+	  $(".fancybox").fancybox({
+		  height: 600,
+		  maxHeight: 600,
+		  fitToView: true
+	  })
+  }
 });
 
 window.product = product;

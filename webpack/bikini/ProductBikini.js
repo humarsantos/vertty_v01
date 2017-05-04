@@ -1,3 +1,6 @@
+require('../components/Menu');
+require('../components/Slideshow');
+
 var productBikini = {
     init: function (t) {
         var e = this,
@@ -305,3 +308,16 @@ var productBikini = {
         })), !1
     }
 };
+
+$(document).ready(function () {
+  if ($(".fancybox")[0] !== undefined) {
+	  $(".fancybox").fancybox({
+		  height: 600,
+		  maxHeight: 600,
+		  fitToView: true
+	  })
+  }
+});
+
+window.productBikini = productBikini;
+module.exports = productBikini;
