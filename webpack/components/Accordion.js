@@ -20,7 +20,7 @@ var Accordion = {
 				  
 				  TweenLite.to(currEl, .6, {
 					  className: "+=active",
-					  height: currHeight + "px",
+					  height: currHeight,
 					  marginBottom: "20px",
 					  ease: Power4.easeOut
 				  });				  

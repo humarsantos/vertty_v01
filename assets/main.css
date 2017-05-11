@@ -2007,7 +2007,8 @@ COMPONENTS: PRODUCT
     -o-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-    background: url({{ 'towel_sprite.png' | asset_url }}) no-repeat;
+    background: url({{ 'towel_sprite.svg' | asset_url }}) no-repeat;
+	background-size: auto 81px; 
     background-color: transparent;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
     filter: alpha(opacity=30);
@@ -2016,40 +2017,32 @@ COMPONENTS: PRODUCT
     opacity: 0.3;
 }
 
-.nav-towel ul li.towel.i-blue {
+.nav-towel ul li.towel.i-chili {
     background-position: 0 0;
 }
 
-.nav-towel ul li.towel.i-orange {
+.nav-towel ul li.towel.i-midnight-blue {
     background-position: -74px 0;
 }
 
-.nav-towel ul li.towel.i-yellow {
+.nav-towel ul li.towel.i-peacock {
     background-position: -148px 0;
 }
 
-.nav-towel ul li.towel.i-violet {
+.nav-towel ul li.towel.i-coconut {
     background-position: -222px 0;
 }
 
-.nav-towel ul li.towel.i-light-blue {
+.nav-towel ul li.towel.i-graphite {
     background-position: -296px 0;
-}
-
-.nav-towel ul li.towel.i-grey {
-    background-position: -370px 0;
 }
 
 .nav-towel ul li.towel.i-green {
     background-position: -444px 0;
 }
 
-.nav-towel ul li.towel.i-dark-blue {
-    background-position: -518px 0;
-}
-
-.nav-towel ul li.towel.i-pink {
-    background-position: -592px 0;
+.nav-towel ul li.towel.i-orange {
+    background-position: -370px 0;
 }
 
 .nav-towel ul li.towel:hover {
@@ -3812,6 +3805,7 @@ PAGES: COMMUNITY
         margin-right: -5px;
     }
     .product.towel .nav-towel ul li {
+		width: 54px;
         height: 77px;
     }
     .product .container .details {
@@ -3821,32 +3815,35 @@ PAGES: COMMUNITY
         width: 47px;
     }
     .nav-towel ul li.towel {
-        background-size: 528px auto;
+        background-size: auto 77px;
     }
-    .nav-towel ul li.towel.i-orange {
-        background-position: -58px 0;
-    }
-    .nav-towel ul li.towel.i-yellow {
-        background-position: -120px 0;
-    }
-    .nav-towel ul li.towel.i-violet {
-        background-position: -180px 0;
-    }
-    .nav-towel ul li.towel.i-light-blue {
-        background-position: -241px 0;
-    }
-    .nav-towel ul li.towel.i-grey {
-        background-position: -301px 0;
-    }
-    .nav-towel ul li.towel.i-green {
-        background-position: -362px 0;
-    }
-    .nav-towel ul li.towel.i-dark-blue {
-        background-position: -423px 0;
-    }
-    .nav-towel ul li.towel.i-pink {
-        background-position: -484px 0;
-    }
+	.nav-towel ul li.towel.i-chili {
+		background-position: 0 0;
+	}
+
+	.nav-towel ul li.towel.i-midnight-blue {
+		background-position: -68px 0;
+	}
+
+	.nav-towel ul li.towel.i-peacock {
+		background-position: -138px 0;
+	}
+
+	.nav-towel ul li.towel.i-coconut {
+		background-position: -210px 0;
+	}
+
+	.nav-towel ul li.towel.i-graphite {
+		background-position: -279px 0;
+	}
+
+	.nav-towel ul li.towel.i-green {
+		background-position: -422px 0;
+	}
+
+	.nav-towel ul li.towel.i-orange {
+		background-position: -350px 0;
+	}
     .main-featured .slideItem,
     .main-featured .featureItem {
         background-size: cover;
@@ -3866,6 +3863,9 @@ PAGES: COMMUNITY
 }
 
 @media screen and (max-width: 1024px) {
+	.product.towel .container .details {
+		margin-top: 20px;
+	}
     .country-wrap {
         padding-top: 50px;
     }
@@ -4386,6 +4386,36 @@ PAGES: COMMUNITY
 }
 
 @media screen and (max-width: 480px) {
+	.product.towel .nav-towel ul li {
+		margin-bottom: 10px;
+	}
+	.nav-towel ul li.towel.i-chili {
+		background-position: 0 0;
+	}
+
+	.nav-towel ul li.towel.i-midnight-blue {
+		background-position: -67px 0;
+	}
+
+	.nav-towel ul li.towel.i-peacock {
+		background-position: -134px 0;
+	}
+
+	.nav-towel ul li.towel.i-coconut {
+		background-position: -206px 0;
+	}
+
+	.nav-towel ul li.towel.i-graphite {
+		background-position: -278px 0;
+	}
+
+	.nav-towel ul li.towel.i-green {
+		background-position: -417px 0;
+	}
+
+	.nav-towel ul li.towel.i-orange {
+		background-position: -346px 0;
+	}
     ._overlay-search .search-results .grid .w-50,
     .container.search-results {
         width: 95%;

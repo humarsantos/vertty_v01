@@ -1,6 +1,3 @@
-require('../components/Menu');
-require('../components/Slideshow');
-
 var product = {
     init: function (e) {
 
@@ -276,5 +273,3 @@ $(document).ready(function () {
 });
 
 window.product = product;
-module.exports = product;
-

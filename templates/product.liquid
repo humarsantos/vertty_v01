@@ -68,7 +68,7 @@
                   {% when 'Backpack' %}
                                 <h2>{{ settings.slideBackpackText1 }}</h2>
                   {% else %}
-                                <h2> reinventing the beach towel concept </h2>
+                                <h2> {{ settings.towel_slide_1_text }} </h2>
             {% endcase %}                                   
                                 <div class='btn-box'>
                                     <a href='#' class='shop'></a>
@@ -257,11 +257,11 @@
             </div> 
         {% else %}
             <div class="slideCont">
-                <div class="slideItem active" style="background-image: url({{ 'towel_feature_2.jpg' | asset_url }}); background-size: cover; background-position: center;">
+                <div class="slideItem active" style="background-image: url({{ 'towel_slide_1.png' | asset_url }}); background-size: cover; background-position: center;">
                     <div class="container">
                         <section>
                             <div>
-                                <h2> reinventing the beach towel concept </h2>
+                                <h2> {{ settings.towel_slide_1_text }} </h2>
                                 <a href="#" class="btn-box shop-now"></a>
                             </div>
                         </section>  
@@ -339,15 +339,13 @@
                         </ul>
                 {% elsif product.type == 'Towel' %}                        
                         <ul>
-                            <!--li class="towel i-violet" data-color="Savvy"><a href="#"></a></li>
-                            <li class="towel i-light-blue" data-color="Classic-blue"><a href="#"></a></li>
-                            <li class="towel i-grey" data-color="Enigma"><a href="#"></a></li>
-                            <li class="towel i-dark-blue" data-color="Midnight-blue"><a href="#"></a></li-->
-                            <li class="towel i-green" data-color="Classic-green"><a href="#"></a></li>
+                            <li class="towel i-chili" data-color="Chili"><a href="#"></a></li>
+                            <li class="towel i-midnight-blue" data-color="Midnight-blue"><a href="#"></a></li>
+                            <li class="towel i-peacock" data-color="Peacock"><a href="#"></a></li>
+                            <li class="towel i-coconut" data-color="Coconut"><a href="#"></a></li>
+                            <li class="towel i-graphite" data-color="Graphite"><a href="#"></a></li>
                             <li class="towel i-orange" data-color="Classic-orange"><a href="#"></a></li>
-                            <li class="towel i-yellow" data-color="Classic-yellow"><a href="#"></a></li>
-                            <li class="towel i-blue" data-color="Jade"><a href="#"></a></li>
-                            <!--li class="towel i-pink" data-color="Coral"><a href="#"></a></li-->
+                            <li class="towel i-green" data-color="Classic-green"><a href="#"></a></li>
                             <li class="item-price"><span>{{ product.price | money }}</span></li>
                         </ul>
                 {% endif %}                 
