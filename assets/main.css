@@ -3793,7 +3793,7 @@ PAGES: COMMUNITY
         max-width: none;
         max-height: 480px;
     }
-    .nav-towel ul li.towel:hover {
+	.nav-towel ul li.towel:hover {
         margin-top: 0;
     }
     .product .container {

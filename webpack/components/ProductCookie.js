@@ -20,13 +20,17 @@ function getCookie (name) {
 	return null;
 }
 
-if (window.location.href.indexOf('home') < 0) {
-	switch(getCookie('isFromHome')) {
-		case 'true': 
-			var distanceY = document.getElementsByClassName('product')[0].offsetTop;
-			window.scrollBy(0, distanceY); 
-		break;
-		case false: ''; 
-		break;
-	} 	
-}
+window.addEventListener('load', function () {
+
+	if (window.location.href.indexOf('home') < 0) {
+		switch(getCookie('isFromHome')) {
+			case 'true': 
+				var distanceY = document.getElementsByClassName('product')[0].offsetTop;
+				window.scrollBy(0, distanceY); 
+			break;
+			case false: ''; 
+			break;
+		} 	
+	}
+	
+})
