@@ -1,6 +1,3 @@
-require('../components/Menu');
-require('../components/Slideshow');
-
 var productBikini = {
     init: function (t) {
         var e = this,
@@ -330,4 +327,3 @@ $(document).ready(function () {
 });
 
 window.productBikini = productBikini;
-module.exports = productBikini;
