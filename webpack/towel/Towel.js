@@ -1,267 +1,408 @@
-require('../components/Menu');
-require('../components/Slideshow');
-
-var product = {
-    init: function (e) {
-
-        var obj = this,
-            productName = e == undefined ? "" : e.handle.toLowerCase();
-
-        var backgrounds = {
-            chili: "linear-gradient(to right, #c65050, #c65050, #c65050)",
-            "midnight-blue": "linear-gradient(to right, #6eabb8, #6eabb8, #6eabb8)",
-            "peacock": "linear-gradient(to right, #bce5e8, #bce5e8, #bce5e8)",
-            "coconut": "linear-gradient(to right, #efe5d3, #efe5d3, #efe5d3)",
-            graphite: "linear-gradient(to right, #d7d7d6, #d7d7d6, #d7d7d6)",
-            "classic-orange": "linear-gradient(to right, #e7cb7e, #e7cb7e, #e7cb7e)",
-            "classic-green": "linear-gradient(to right, #cde874, #cde874, #cde874)",
-            teal: "linear-gradient(to right, #fcfcfc, #f3f3f3, #cccdc8)",
-            chilli: "linear-gradient(to right, #c9cac5, #e3e3e3, #f0f0f0)",
-            stealth: "linear-gradient(to right, #fafafa, #e5e5e5, #cecfca)"
-        };
-
+var productBikini = {
+    init: function (t) {
+        var e = this,
+            i = void 0 == t ? "" : t.handle.toLowerCase(),
+            n = {
+                green: "linear-gradient(#1d8782, #34b9b2, #34b9b2, #2bb4ac, #6cccc6)",
+                pink: "linear-gradient(#9d6072, #be7e90, #be7e90, #b16a7e, #c995a7)"
+            };
+            
+        this.mainCont = document.getElementsByClassName("main-featured")[0];
+        this.close = document.getElementsByClassName("close");
+        this.top = document.getElementById("top");
+        this.briefs = document.getElementById("briefs");
         this.productContainer = document.getElementsByClassName("product")[0];
         this.imgPreview = document.getElementsByClassName("col w-50 preview")[0].getElementsByTagName("img")[0];
-        this.product = e;
+        this.product = t;
         this.loading = $("#loader-operations, #overlay-operations");
-        this.towelType;
         this.descripTemporary = document.createElement("div");
 
-        if (this.product !== undefined) {
-            this.product.handle.indexOf("-") > -1 ? productName = this.product.handle.split("-")[1] : productName;
-            this.towelType = document.getElementsByClassName("nav-towel")[0].getElementsByClassName(productName);
-            this.product.description == undefined ? undefined : this.descripTemporary.innerHTML = this.product.description;
-            
-            var name = this.towelType[0].getAttribute("data-color").toLowerCase();
-            var productTitle = document.getElementById("title");
-            var productDescription = document.getElementById("prod-description");
-            var description = this.descripTemporary.getElementsByClassName(name)[0].innerText;
-
-            if (productDescription !== undefined && productTitle !== undefined) {
-                productDescription.innerHTML = this.descripTemporary.getElementsByClassName(name)[0].innerText;
-                productTitle.innerHTML = name
-            }
-
-            this.productContainer.style.backgroundImage = backgrounds[this.towelType[0].getAttribute("data-color").toLowerCase()]
-
-        } 
-        else {
-            return false
-        }
+        if (this.product === undefined) return false;
+        
+        this.product.handle.indexOf("-") > -1 ? i = this.product.handle.split("-")[0] : i;
+        this.bikiniType = document.getElementsByClassName(i);
+        this.product.description === undefined ? undefined : this.descripTemporary.innerHTML = this.product.description;
+        
+        var s = this.bikiniType[0].getAttribute("data-color").toLowerCase(),
+            o = document.getElementById("prod-description"),
+            a = this.descripTemporary.getElementsByClassName(s)[0].innerText;
+        
+        o !== undefined && (o.innerHTML = this.descripTemporary.getElementsByClassName(s)[0].innerText);
+        
+        var r = this.imgPreview.src.indexOf("_p") > -1 ? "pink" : "green";
+        
+        i.split("-")[0];
+        
+        this.productContainer.style.backgroundImage = n[r];
+        
         window.addEventListener("load", function () {
-            obj.createActive(productName)
+            e.createDetails()
         });
+        
+        for (var l = 0; l < this.close.length; l++) {
+            this.close[l].onclick = function (t) {
+            
+                var e = this.parentElement;
 
-        for (var l = 0; l < this.towelType.length; l++) {
-            this.towelType[l].pos = l;
-            this.towelType[l].onclick = function (e) {
+                if (e.className.indexOf("disabled") < 0) {
+                    var bikiniTop = $(".fancybox.top", ".img-details"),
+                        bikiniBottom = $(".fancybox.bottom", ".img-details"),
+                        s = $(".other", ".img-details");
 
-                var towelType = this.getAttribute("data-color").toLowerCase(),l;
+                    e.className = "disabled",
+                    bikiniTop[0] !== undefined ? "top" == this.parentElement.id ? (bikiniTop.removeClass("fancybox").addClass("disabled"), bikiniTop.click(function (t) {
+                        t.preventDefault()
+                    })) : (bikiniBottom.removeClass("fancybox").addClass("disabled"), bikiniBottom.click(function (t) {
+                        t.preventDefault()
+                    })) : (s.removeClass("fancybox").addClass("disabled"), s.click(function (t) {
+                        t.preventDefault()
+                    }))
+                } 
+                else {
+                    var bikiniTop = $(".top", ".img-details"),
+                        bikiniBottom = $(".bottom", ".img-details"),
+                        s = $(".other", ".img-details");
+
+                    e.className = e.className.replace("disabled", ""), bikiniTop[0] !== undefined ? "top" == this.parentElement.id ? (bikiniTop.removeClass("disabled").addClass("fancybox"), bikiniTop.click(function (t) {
+                        return true;
+                    })) : (bikiniBottom.removeClass("disabled").addClass("fancybox"), bikiniBottom.click(function (t) {
+                        return true;
+                    })) : (s.removeClass("disabled").addClass("fancybox"), s.click(function (t) {
+                        t.preventDefault()
+                    }))
+                }
+                return false;
+            }
+        }
+        
+        for (var h = 0; h < this.bikiniType.length; h++) {
+            this.bikiniType[h].pos = h,
+            this.bikiniType[h].onclick = function (t) {
                 
-                var isAvailable = function (e) {
-                    for (var i = 0; i < obj.product.variants.length; i++) {
-
-                        if (obj.product.variants[i].title.toLowerCase() == e) {
-
-                            if (obj.product.variants[i].available !== true) {
-                                var button = document.getElementById("purchase-button");
-                                button.className = "solded-out";
-                            } 
-                            else {
-                                var button = document.getElementById("purchase-button");
-
-                                if (button.className.indexOf("solded-out") > -1) {
-                                    button.className = button.className.replace("solded-out", "add-cart")
+                var i,
+                    s = this.getAttribute("data-color").toLowerCase(),
+                    r = function (t) {
+                        for (var i = 0; i < e.product.variants.length; i++) {                            
+                            if (e.product.variants[i].title.toLowerCase() == t) {
+                                
+                                if (e.product.variants[i].available !== !0) {
+                                    var n = document.getElementById("purchase-button");
+                                    n.className = "solded-out"
+                                } else {
+                                    var n = document.getElementById("purchase-button");
+                                    n.className.indexOf("solded-out") > -1 && (n.className = n.className.replace("solded-out", "add-cart"))
                                 }
                             }
                         }
-                    }
-                };
-
-                isAvailable(towelType);
+                    };
                 
-                var u = null;
+                if (r(s), void 0 !== o && (a = e.descripTemporary.getElementsByClassName(s)[0].innerText), !(this.className.indexOf("active") < 0)) return false;
                 
-			  	obj.runDetails(u, this.pos)
+                e.loading.fadeIn();
                 
-                if (productDescription !== undefined && productTitle.innerHTML !== undefined) {
-                    description = obj.descripTemporary.getElementsByClassName(towelType)[0].innerText;
-                    productTitle.innerHTML = towelType;
-                    productDescription.innerHTML = description
-                }
-                if (this.className.indexOf("active") < 0) {
-                    obj.loading.fadeIn();
-                    for (var c = 0; c < obj.towelType.length; c++) {
-                        var d = obj.towelType[c].className.indexOf("active") < 0 ? true : false;
-                        if (!d) {
-                            obj.towelType[c].className = obj.towelType[c].className.replace(" active", "")
-                        }
-                    }
-                    this.className = this.className + " active";
-                    for (var f = 0; f < obj.product.images.length; f++) {
-                        obj.product.handle.indexOf("-") > -1 ? productName = obj.product.handle.split("-")[1] : productName;
-                        if (obj.product.images[f].indexOf(productName + "-" + towelType) > -1) {
-                            l = obj.product.images[f];
-                            obj.productContainer.style.backgroundImage = backgrounds[towelType]
-                        }
-                    }
-                    $(obj.imgPreview).attr("src", l).on("load", function () {
-                        obj.loading.delay(3).fadeOut()
-                    })
-                }
-                else {
-                    return false
-                }
-                
-                return false
-            }
-        }
-    },
-    createActive: function (productName) {
-        var arrColors = [],
-            itemsNav = document.getElementsByClassName("nav-towel"),
-            productPreview = document.getElementsByClassName("preview")[0].getElementsByTagName("img")[0],
-            totalItems = itemsNav.length > 1 ? this.towelType.length / 2 : this.towelType.length;
-       
-        this.allDetails = document.getElementsByClassName("fancybox");
-        this.detailsCont = document.getElementsByClassName("img-details")[0];
-        
-        for (var o = 0; o < totalItems; o++) {
-            arrColors.push(this.towelType[o].getAttribute("data-color").toLowerCase())
-        }
-        
-        for (var a = 0; a < arrColors.length; a++) {
-            
-            if (productPreview.src.indexOf(arrColors[a]) > -1) {
-                
-                var currColor = arrColors[a];
-                
-                if (itemsNav.length > 1) {
-                    $("li." + productName + "",
-                    $(".nav-towel")[0])[a].className = $("li." + productName + "",
-                    $(".nav-towel")[0])[a].className + " active";
+                for (var l = 0; l < e.bikiniType.length; l++) {
+                    var h = e.bikiniType[l].className.indexOf("active") > -1,
+                        c = e.bikiniType[l].className.indexOf("briefs") > -1;
                     
-                    $("li." + productName + "",
-                    $(".nav-towel")[1])[a].className = $("li." + productName + "",
-                    $(".nav-towel")[1])[a].className + " active"
+                    h && (c && this.className.indexOf("briefs") > -1 && (e.bikiniType[l].className = e.bikiniType[l].className.replace(" active", "")),
+                    !c && this.className.indexOf("briefs") < 0 && (e.bikiniType[l].className = e.bikiniType[l].className.replace(" active", "")))
+                }                
+                this.className = this.className + " active";
+                
+                for (var u = 0; u < e.product.images.length; u++) {    
+                    var d = e.product.handle;
+                    
+                    if (e.product.images[u].indexOf(d + "-" + s) > -1) {
+                        i = e.product.images[u];
+                        var p = i.indexOf("_g") > -1 ? "green" : "pink";
+                        e.productContainer.style.backgroundImage = n[p]
+                    }
+                }
+                return $(e.imgPreview).attr("src", i).on("load", function () {
+                    setTimeout(function () {
+                        e.loading.delay(2).fadeOut()
+                    }, 400)
+                }), e.showDetails(this.pos), !1
+        }
+        }
+    },
+    createDetails: function () {
+        var t = [],
+            itemsNav = document.getElementsByClassName("nav-towel"),
+            i = itemsNav.length > 1 ? this.bikiniType.length / 2 : this.bikiniType.length,
+            n = document.getElementsByClassName("preview")[0].getElementsByTagName("img")[0];
+        
+        this.allDetails = document.getElementsByClassName("fancybox"),
+        this.detailsCont = document.getElementsByClassName("img-details")[0],
+        this.imgDetails = this.detailsCont.getElementsByClassName("fancybox");
+        
+        for (var s = 0; s < i; s++) t.push(this.bikiniType[s].getAttribute("data-color").toLowerCase());
+        
+        for (var o = 0; o < t.length; o++) {
+            
+            if (n.src.indexOf(t[o]) > -1) {
+                var a = t[o];
+				
+                if (itemsNav.length > 1 ) {
+                    $(".bikini", $(".nav-towel")[0])[o].className = $(".bikini", $(".nav-towel")[0])[o].className + " active";
+                    $(".bikini", $(".nav-towel")[1])[o].className = $(".bikini", $(".nav-towel")[1])[o].className + " active";
                 }
                 else {
-                    $("li." + productName + "",
-                    $(".nav-towel")[0])[a].className = $("li." + productName + "",
-                    $(".nav-towel")[0])[a].className + " active"
+                    $(".bikini")[o].className = $(".bikini")[o].className + " active";  
                 }
             }
         }
-  
-        this.runDetails(currColor, 0)
-    },
-    runDetails: function (color, pos) {
-        var color = color == null ? this.towelType[pos].getAttribute("data-color").toLowerCase() : color;
         
-        for (var i = 0; i < this.allDetails.length; i++) {
+        for (var r = 0; r < this.allDetails.length; r++) {
             
-            var n = this.allDetails[i].href.indexOf("_" + color) > -1 ? true : false;
+            var l = this.allDetails[r].href.indexOf("top") > -1 ? "top" : this.allDetails[r].href.indexOf("bottom") > -1 ? "bottom" : "other";
             
-            switch (n) {
-                case true:
-                    this.allDetails[i].className = "fancybox has-color";
+            switch (l) {
+                case "top":
+                    this.allDetails[r].className = this.allDetails[r].className + " top";
                     break;
-                case false:
-                    this.allDetails[i].className = "fancybox no-color";
-                    break
+                case "bottom":
+                    this.allDetails[r].className = this.allDetails[r].className + " bottom";
+                    break;
+                case "other":
+                    this.allDetails[r].className = this.allDetails[r].className + " other";
             }
         }
-        
-        $(".no-color").hide();
-        $(".has-color").show();
-        this.detailsCont.style.height = this.detailsCont.children[0].offsetHeight + "px";
-        this.detailsCont.style.top = (this.detailsCont.parentElement.offsetHeight - this.detailsCont.children[0].offsetHeight) / 2 + "px"
+        this.hideDetails(a);
+        this.detailsCont !== undefined && (this.detailsCont.style.height = this.detailsCont.children[0].offsetHeight + "px", this.detailsCont.style.top = (this.detailsCont.parentElement.offsetHeight - this.detailsCont.children[0].offsetHeight) / 2 + "px");
+    },
+    hideDetails: function (t) {
+        for (var e = 0; e < this.imgDetails.length; e++) {
+            this.imgDetails[e].getElementsByTagName("img")[0].src.indexOf(t) < 0 && (this.imgDetails[e].style.display = "none");
+        }
+    },
+    showDetails: function (t) {
+        for (var e = [], i = ["top", "bottom"], n = 0; n < this.bikiniType.length; n++) this.bikiniType[n].className.indexOf("active") > -1 && e.push(this.bikiniType[n].getAttribute("data-color").toLowerCase());
+        for (var s = 0; s < this.imgDetails.length; s++) this.imgDetails[s].style.display = "none";
+        for (var o = 0; o < this.imgDetails.length; o++)
+            for (var a = 0; a < e.length; a++) this.imgDetails[o].className.indexOf("other") < 0 ? this.imgDetails[o].getElementsByTagName("img")[0].src.indexOf(e[a]) > -1 && this.imgDetails[o].className.indexOf(i[a]) > -1 && (this.imgDetails[o].style.display = "block") : this.imgDetails[o].getElementsByTagName("img")[0].src.indexOf(e[a]) > -1 && (this.imgDetails[o].style.display = "block");
+        this.detailsCont.style.height = this.detailsCont.children[0].offsetHeight + "px", this.detailsCont.style.top = (this.detailsCont.parentElement.offsetHeight - this.detailsCont.children[0].offsetHeight) / 2 + "px"
     },
     addItem: function () {
-        if (document.getElementById("purchase-button").className.indexOf("solded-out") > -1) {
-            return false
+        function getVariantId(firstItem, secondItem) {
+			
+			var cond = secondItem !== undefined ? me.variantToAdd = [] : false;
+				
+            for (var i = 0; i < me.variants.length; i++) {				
+				
+				if (cond) {
+					
+					if (me.variants[i].title == firstItem) {
+						me.variantToAdd.push(me.variants[i].id);
+					}
+					else if (me.variants[i].title == secondItem) {
+						me.variantToAdd.push(me.variants[i].id);
+					}					
+				}
+				else {
+					if (me.variants[i].title == firstItem) {
+						me.variantToAdd = me.variants[i].id;
+					}					
+				}
+			}
         }
+		
+        this.topStatus = this.top.className.indexOf("disabled") < 0 ? "active" : "disabled",
+        this.product.handle !== "trykini" && (this.briefsStatus = this.briefs.className.indexOf("disabled") < 0 ? "active" : "disabled"),
+        this.sizesContainer = document.getElementsByClassName("sizes"),
+		this.sizeName = [];
         
-        this.towelColour;
-        this.variants = this.product.variants;
-        this.variantToAdd;
-        this.cartCounter = document.getElementsByClassName("cart-count");
-        this.applyModal = function (e, t, i, n, s, o) {
-            this.title = e == "Towel" ? "Beach Towel" : e;
-            this.price = t;
-            this.subtotal = i;
-            this.variant = s;
-            this.size = o == undefined ? "" : o;
-            this.image = n;
-            this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
-            return this.successTowel
+        var me = this,
+            count = 0;
+        
+        this.applyModal = function (t, e, i, n, s, o) {
+			this.title = "Towel" == t ? "Beach Towel" : t;
+			this.price = e;
+			this.subtotal = i;
+			this.variant = s;
+			this.size = o == undefined ? "" : o,
+			this.image = n,
+			this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
+			return this.successTowel
         };
-	  
+
+        for (var j = 0; j < this.sizesContainer.length; j++) {
+            this.sizesContainer[j].sizes = this.sizesContainer[j].getElementsByTagName("LI");
+            
+            for (var b = 0; b < this.sizesContainer[j].sizes.length; b++) {
+				
+				if (b + 1 == this.sizesContainer[j].sizes.length && count + 1 == this.sizesContainer[j].sizes.length) {
+					this.sizeName.push(undefined);
+				}
+				else {
+					if (this.sizesContainer[j].sizes[b].className.indexOf("active") < 0) count++;
+					else this.sizeName.push(this.sizesContainer[j].sizes[b].getElementsByTagName("a")[0].innerText);	
+				}
+			}
+			count = 0; 
+        }
+		
+		if (this.sizeName[0] == undefined && this.sizeName[1] == undefined) {
+			return swal({
+				title: "Warning!",
+				text: "Select your product size",
+				type: "warning",
+				allowOutsideClick: !0,
+				customClass: "sweet-old"
+			});				
+		}
+	
+        this.bikiniColour = [],
+		this.variants = this.product.variants,
+		this.variantToAdd = null,
+		this.cartCounter = document.getElementsByClassName("cart-count");
+		
+        for (var m = 0; m < this.bikiniType.length; m++) {
+			this.bikiniType[m].className.indexOf("active") > -1 && this.bikiniType[m].className.indexOf("briefs") > -1 ? this.bikiniColour.push(this.bikiniType[m].getAttribute("data-color")) : this.bikiniType[m].className.indexOf("active") > -1 && this.bikiniType[m].className.indexOf("briefs") < 0 && this.bikiniColour.push(this.bikiniType[m].getAttribute("data-color"));			
+		}
+
         Shopify.onError = function (XMLHttpRequest, textStatus) {
-            var data = eval("(" + XMLHttpRequest.responseText + ")");
-            swal({
-                title: "Error!",
-                text: data.description,
-                type: "warning",
-                allowOutsideClick: true,
-                customClass: "sweet-old"
-            });
-            me.loading.fadeOut()
-        };
-        var me = this;
-        for (var m = 0; m < this.towelType.length; m++) {
-            if (this.towelType[m].className.indexOf("active") > -1) {
-                this.towelColour = this.towelType[m].getAttribute("data-color")
+			var data = eval("(" + XMLHttpRequest.responseText + ")");
+			swal({
+				title: "Error!",
+				text: data.description,
+				type: "warning",
+				allowOutsideClick: !0,
+				customClass: "sweet-old"
+			}), me.loading.fadeOut()
+		}; 
+			
+		if (this.product.handle !== "trykini") {
+
+            if (this.topStatus == "active" && this.briefsStatus == "active" && this.sizeName[0] !== undefined && this.sizeName[1] !== undefined) {
+				
+				if (this.sizeName[0] == this.sizeName[1] && this.bikiniColour[0] == this.bikiniColour[1]) {
+					var currentItem = "TopAndBrief / " + this.bikiniColour[0] + " / " + this.sizeName[0];
+					getVariantId(currentItem);
+				} else {
+					var currentItem = "Top / " + this.bikiniColour[0] + " / " + this.sizeName[0],
+						otherItem = "Brief / " + this.bikiniColour[1] + " / " + this.sizeName[1];
+					me.variantToAdd = [];
+					getVariantId(currentItem, otherItem);
+				}
             }
+			else {
+				if (this.topStatus == "active" && this.sizeName[0] !== undefined) {
+					var currentItem = "Top / " + this.bikiniColour[0] + " / " + this.sizeName[0];
+					getVariantId(currentItem);					
+				}
+				else if (this.briefsStatus == "active" && this.sizeName[1] !== undefined) {
+					var currentItem = "Brief / " + this.bikiniColour[1] + " / " + this.sizeName[1];
+					getVariantId(currentItem);					
+				}
+				else {
+					return swal({
+						title: "Warning!",
+						text: "Please select a product",
+						type: "warning",
+						allowOutsideClick: !0,
+						customClass: "sweet-old"
+					});			
+				}					
+			}
+        }
+        else {			
+			if (this.topStatus == "active" && this.sizeName[0] !== undefined) {
+				var currentItem = "Trykini - " + this.sizeName[0] + " / " + this.bikiniColour[0];
+				getVariantId(currentItem);				
+			}
+			else {
+				return swal({
+					title: "Warning!",
+					text: "Cart is currently empty",
+					type: "warning",
+					allowOutsideClick: !0,
+					customClass: "sweet-old"
+				});
+			}
         }
 
-        function getVariantId(e) {
-            for (var t = 0; t < me.variants.length; t++) {
-                if (me.variants[t].title == e) {
-                    me.variantToAdd = me.variants[t].id
-                }
-            }
-        }
-        getVariantId(this.towelColour);
-        
         if (this.variantToAdd == undefined) {
-            swal({
-                title: "Warning!",
-                text: "Cart is currently empty",
-                type: "warning",
-                allowOutsideClick: true,
-                customClass: "sweet-old"
-            })
-        }
-        else {
-            this.loading.fadeIn();
-            
-            Shopify.addItem(this.variantToAdd, 1, function (e) {
-                Shopify.getCart(function (e) {
-                    var t, i, n, s;
-                    for (var o = 0; o < me.cartCounter.length; o++) {
-                        me.cartCounter[o].innerHTML = e.item_count + 1
-                    }
-                    $(e.items).each(function (o, a) {
-                        if (a.id == me.variantToAdd) {
-                            i = Shopify.formatMoney(a.price).replace("$", "€");
-                            n = Shopify.formatMoney(e.total_price).replace("$", "€");
-                            s = a.variant_title;
-                            t = a.image
-                        }
-                    });
-                    me.loading.fadeOut();
-                    swal({
-                        title: '<div style="display:none">Beach Towel</div>',
-                        text: me.applyModal(me.product.type, i, n, t, s),
-                        html: true,
-                        showConfirmButton: false,
-                        allowOutsideClick: true
-                    })
-                })
-            })
-        }
-        return false
+		
+			swal({
+				title: "Warning!",
+				text: "Cart is currently empty",
+				type: "warning",
+				allowOutsideClick: !0,
+				customClass: "sweet-old"
+			})
+		
+		}
+		else {
+			this.loading.fadeIn();
+			
+			if (this.variantToAdd.length > 0) {
+				
+				Shopify.addItem(this.variantToAdd[0], 1, function (t) {	
+
+					swal({
+						title: '<div style="display:none">Bikini [2 Added]</div>',
+						text: me.applyModal(me.product.type, price, total, image, product_name),
+						html: true,
+						showConfirmButton: false,
+						allowOutsideClick: true
+					})
+					
+					Shopify.addItem(me.variantToAdd[1], 1, function (t) {
+						Shopify.getCart(function (cart) {
+							var image, price, total, product_name;
+							for (var o = 0; o < me.cartCounter.length; o++) {
+								me.cartCounter[o].innerHTML = cart.item_count;							
+							}
+							$(cart.items).each(function (i, item) {
+								if (item.id == me.variantToAdd) {
+									price = Shopify.formatMoney(item.price).replace("$", "€");
+									total = Shopify.formatMoney(cart.total_price).replace("$", "€");
+									product_name = item.variant_title;
+									image = item.image;								
+								}
+							});
+							me.loading.fadeOut();/*
+							swal({
+								title: '<div style="display:none">Bikini [2 Added]</div>',
+								text: me.applyModal(me.product.type, price, total, image, product_name),
+								html: true,
+								showConfirmButton: false,
+								allowOutsideClick: true
+							})
+							*/
+						});
+					});
+				});				
+			}
+			else {
+				
+				Shopify.addItem(this.variantToAdd, 1, function (t) {
+					Shopify.getCart(function (t) {
+						var e, i, n, s;
+						for (var o = 0; o < me.cartCounter.length; o++) {
+							me.cartCounter[o].innerHTML = t.item_count;							
+						}
+						$(t.items).each(function (o, a) {
+							if (a.id == me.variantToAdd) {
+								i = Shopify.formatMoney(a.price).replace("$", "€");
+								n = Shopify.formatMoney(t.total_price).replace("$", "€");
+								s = a.variant_title;
+								e = a.image;								
+							}
+						});
+						me.loading.fadeOut();
+						swal({
+							title: '<div style="display:none">Bikini</div>',
+							text: me.applyModal(me.product.type, i, n, e, s),
+							html: true,
+							showConfirmButton: false,
+							allowOutsideClick: true
+						})
+					})
+				});
+			}
+		}
     }
 };
 
@@ -275,6 +416,4 @@ $(document).ready(function () {
   }
 });
 
-window.product = product;
-module.exports = product;
-
+window.productBikini = productBikini;

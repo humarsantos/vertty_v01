@@ -184,37 +184,82 @@ var productBikini = {
         this.detailsCont.style.height = this.detailsCont.children[0].offsetHeight + "px", this.detailsCont.style.top = (this.detailsCont.parentElement.offsetHeight - this.detailsCont.children[0].offsetHeight) / 2 + "px"
     },
     addItem: function () {
-        function getVariantId(t, e) {
-            for (var i = 0; i < me.variants.length; i++) void 0 !== e ? me.variants[i].title == t ? me.variantToAdd.push(me.variants[i].id) : me.variants[i].title == e && me.variantToAdd.push(me.variants[i].id) : (me.variants[i].title == t || t.indexOf(me.variants[i].title) > -1) && (me.variantToAdd = me.variants[i].id)
+        function getVariantId(firstItem, secondItem) {
+			
+			var cond = secondItem !== undefined ? me.variantToAdd = [] : false;
+				
+            for (var i = 0; i < me.variants.length; i++) {				
+				
+				if (cond) {
+					
+					if (me.variants[i].title == firstItem) {
+						me.variantToAdd.push(me.variants[i].id);
+					}
+					else if (me.variants[i].title == secondItem) {
+						me.variantToAdd.push(me.variants[i].id);
+					}					
+				}
+				else {
+					if (me.variants[i].title == firstItem) {
+						me.variantToAdd = me.variants[i].id;
+					}					
+				}
+			}
         }
+		
         this.topStatus = this.top.className.indexOf("disabled") < 0 ? "active" : "disabled",
         this.product.handle !== "trykini" && (this.briefsStatus = this.briefs.className.indexOf("disabled") < 0 ? "active" : "disabled"),
-        this.sizesContainer = document.getElementsByClassName("sizes"), this.sizeName = [];
+        this.sizesContainer = document.getElementsByClassName("sizes"),
+		this.sizeName = [];
         
         var me = this,
             count = 0;
         
         this.applyModal = function (t, e, i, n, s, o) {
-            return this.title = "Towel" == t ? "Beach Towel" : t, this.price = e, this.subtotal = i, this.variant = s, this.size = void 0 == o ? "" : o, this.image = n, this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>", this.successTowel
+			this.title = "Towel" == t ? "Beach Towel" : t;
+			this.price = e;
+			this.subtotal = i;
+			this.variant = s;
+			this.size = o == undefined ? "" : o,
+			this.image = n,
+			this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
+			return this.successTowel
         };
-        
+
         for (var j = 0; j < this.sizesContainer.length; j++) {
             this.sizesContainer[j].sizes = this.sizesContainer[j].getElementsByTagName("LI");
             
-            for (var b = 0; b < this.sizesContainer[j].sizes.length; b++)
-                
-                if (this.sizesContainer[j].sizes[b].className.indexOf("active") < 0 ? count++ : this.sizeName.push(this.sizesContainer[j].sizes[b].getElementsByTagName("a")[0].innerText),
-                    count == this.sizesContainer[j].sizes.length * this.sizesContainer.length)
-                    return swal({
-                        title: "Warning!",
-                        text: "Select your product size",
-                        type: "warning",
-                        allowOutsideClick: !0,
-                        customClass: "sweet-old"
-                    }), !1
+            for (var b = 0; b < this.sizesContainer[j].sizes.length; b++) {
+				
+				if (b + 1 > this.sizesContainer[j].sizes.length && count + 1 > this.sizesContainer[j].sizes.length) {
+					this.sizeName.push(undefined);
+				}
+				else {
+					if (this.sizesContainer[j].sizes[b].className.indexOf("active") < 0) count++;
+					else this.sizeName.push(this.sizesContainer[j].sizes[b].getElementsByTagName("a")[0].innerText);	
+				}
+			}
+			count = 0; 
         }
-        this.bikiniColour = [], this.variants = this.product.variants, this.variantToAdd = null, this.cartCounter = document.getElementsByClassName("cart-count");
-        for (var m = 0; m < this.bikiniType.length; m++) this.bikiniType[m].className.indexOf("active") > -1 && this.bikiniType[m].className.indexOf("briefs") > -1 ? this.bikiniColour.push(this.bikiniType[m].getAttribute("data-color")) : this.bikiniType[m].className.indexOf("active") > -1 && this.bikiniType[m].className.indexOf("briefs") < 0 && this.bikiniColour.push(this.bikiniType[m].getAttribute("data-color"));
+		
+		if (this.sizeName[0] == undefined && this.sizeName[1] == undefined) {
+			return swal({
+				title: "Warning!",
+				text: "Select your product size",
+				type: "warning",
+				allowOutsideClick: !0,
+				customClass: "sweet-old"
+			});				
+		}
+	
+        this.bikiniColour = [],
+		this.variants = this.product.variants,
+		this.variantToAdd = null,
+		this.cartCounter = document.getElementsByClassName("cart-count");
+		
+        for (var m = 0; m < this.bikiniType.length; m++) {
+			this.bikiniType[m].className.indexOf("active") > -1 && this.bikiniType[m].className.indexOf("briefs") > -1 ? this.bikiniColour.push(this.bikiniType[m].getAttribute("data-color")) : this.bikiniType[m].className.indexOf("active") > -1 && this.bikiniType[m].className.indexOf("briefs") < 0 && this.bikiniColour.push(this.bikiniType[m].getAttribute("data-color"));			
+		}
 
         Shopify.onError = function (XMLHttpRequest, textStatus) {
 			var data = eval("(" + XMLHttpRequest.responseText + ")");
@@ -230,17 +275,16 @@ var productBikini = {
 		if (this.product.handle !== "trykini") {
 
             if (this.topStatus == "active" && this.briefsStatus == "active" && this.sizeName[0] !== undefined && this.sizeName[1] !== undefined) {
-
-				//if (this.sizeName[0] !== undefined && this.sizeName[1] !== undefined) {					
+				
 				if (this.sizeName[0] == this.sizeName[1] && this.bikiniColour[0] == this.bikiniColour[1]) {
 					var currentItem = "TopAndBrief / " + this.bikiniColour[0] + " / " + this.sizeName[0];
 					getVariantId(currentItem);
 				} else {
 					var currentItem = "Top / " + this.bikiniColour[0] + " / " + this.sizeName[0],
 						otherItem = "Brief / " + this.bikiniColour[1] + " / " + this.sizeName[1];
-					me.variantToAdd = [], getVariantId(currentItem, otherItem);
+					me.variantToAdd = [];
+					getVariantId(currentItem, otherItem);
 				}
-				//}
             }
 			else {
 				if (this.topStatus == "active" && this.sizeName[0] !== undefined) {
@@ -278,41 +322,107 @@ var productBikini = {
 			}
         }
 
-        return void 0 == this.variantToAdd ? swal({
-            title: "Warning!",
-            text: "Cart is currently empty",
-            type: "warning",
-            allowOutsideClick: !0,
-            customClass: "sweet-old"
-        }) : (this.loading.fadeIn(), this.variantToAdd.length > 0 ? Shopify.addItem(this.variantToAdd[0], 1, function (t) {
-            Shopify.addItem(me.variantToAdd[1], 1, function (t) {
-                Shopify.getCart(function (t) {
-                    for (var e, i, n, s, o = 0; o < me.cartCounter.length; o++) me.cartCounter[o].innerHTML = t.item_count;
-                    $(t.items).each(function (o, a) {
-                        a.id == me.variantToAdd[1] && (i = Shopify.formatMoney(a.price).replace("$", "€"), n = Shopify.formatMoney(t.total_price).replace("$", "€"), s = a.variant_title, e = a.image)
-                    }), me.loading.fadeOut(), swal({
-                        title: '<div style="display:none">Bikini [2 Added]</div>',
-                        text: me.applyModal(me.product.type, i, n, e, s),
-                        html: !0,
-                        showConfirmButton: !1,
-                        allowOutsideClick: !0
-                    })
-                })
-            })
-        }) : Shopify.addItem(this.variantToAdd, 1, function (t) {
-            Shopify.getCart(function (t) {
-                for (var e, i, n, s, o = 0; o < me.cartCounter.length; o++) me.cartCounter[o].innerHTML = t.item_count;
-                $(t.items).each(function (o, a) {
-                    a.id == me.variantToAdd && (i = Shopify.formatMoney(a.price).replace("$", "€"), n = Shopify.formatMoney(t.total_price).replace("$", "€"), s = a.variant_title, e = a.image)
-                }), me.loading.fadeOut(), swal({
-                    title: '<div style="display:none">Bikini</div>',
-                    text: me.applyModal(me.product.type, i, n, e, s),
-                    html: !0,
-                    showConfirmButton: !1,
-                    allowOutsideClick: !0
-                })
-            })
-        })), !1
+        if (this.variantToAdd == undefined) {
+		
+			swal({
+				title: "Warning!",
+				text: "Cart is currently empty",
+				type: "warning",
+				allowOutsideClick: !0,
+				customClass: "sweet-old"
+			})
+		
+		}
+		else {
+			this.loading.fadeIn();
+			
+			if (this.variantToAdd.length > 0) {
+				
+				$.each(me.variantToAdd, function( index ) {
+					
+					var value = this.valueOf(),
+						position = index;
+					
+					Shopify.addItem(this.valueOf(), 1, function (t) {
+						
+						Shopify.getCart(function (cart) {
+						
+							var image, price, total, product_name;
+							
+							for (var o = 0; o < me.cartCounter.length; o++) {
+								me.cartCounter[o].innerHTML = cart.item_count;				
+							}
+							
+							$(cart.items).each(function (i, item) {
+								if (item.id == value) {
+									price = Shopify.formatMoney(item.price).replace("$", "€");
+									total = Shopify.formatMoney(cart.total_price).replace("$", "€");
+									product_name = item.variant_title;
+									image = item.image;								
+								}
+							});
+							me.loading.fadeOut();
+							
+							var	currentModal = document.getElementsByClassName('vertty-order-modal')[0];
+							
+							if (currentModal !== undefined && position > 0) {
+
+								var temp = document.createElement('div'),
+									newModal = me.applyModal(me.product.type, price, total, image, product_name);
+
+								temp.innerHTML += newModal;
+								temp.className = 'double-modal-wrapper';
+								
+								currentModal.parentNode.insertBefore(temp, currentModal.nextElementSibling);
+							}
+							else {
+
+								swal({
+									title: '<div style="display:none">Bikini [2 Added]</div>',
+									text: me.applyModal(me.product.type, price, total, image, product_name),
+									html: true,
+									showConfirmButton: false,
+									allowOutsideClick: true,
+									closeOnConfirm: false
+								})
+								
+							}
+						});
+					});
+					
+				});
+
+			}
+			else {
+				
+				Shopify.addItem(this.variantToAdd, 1, function (t) {
+					Shopify.getCart(function (cart) {
+						
+						var image, price, total, product_name;
+						
+						for (var o = 0; o < me.cartCounter.length; o++) {
+							me.cartCounter[o].innerHTML = cart.item_count;							
+						}
+						$(cart.items).each(function (i, item) {
+							if (item.id == me.variantToAdd) {
+								price = Shopify.formatMoney(item.price).replace("$", "€");
+								total = Shopify.formatMoney(cart.total_price).replace("$", "€");
+								product_name = item.variant_title;
+								image = item.image;								
+							}
+						});
+						me.loading.fadeOut();
+						swal({
+							title: '<div style="display:none">Bikini</div>',
+							text: me.applyModal(me.product.type, price, total, image, product_name),
+							html: true,
+							showConfirmButton: false,
+							allowOutsideClick: true
+						})
+					})
+				});
+			}
+		}
     }
 };
 

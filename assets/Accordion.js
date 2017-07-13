@@ -59,7 +59,11 @@ var Accordion = {
             for (var s = 0; s < this.sizePickers[n].length; s++) {
                 this.sizePickers[n][s].pos = n, this.sizePickers[n][s].onclick = function (t) {
 
-                    if (!(this.parentElement.className.indexOf("active") < 0)) return !1;
+                    //if (!(this.parentElement.className.indexOf("active") < 0)) return !1;
+                    if (this.parentElement.className.indexOf("active") > -1) {
+						this.parentElement.className = " ";
+						return false;
+					}
 
                     for (var t = 0; t < e.sizePickers[this.pos].length; t++) {
                         e.sizePickers[this.pos][t].parentElement.className = "";
