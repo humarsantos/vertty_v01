@@ -811,6 +811,50 @@ header .slideDownMenu .product-icons.i-w-swimwear {
     background-position: -125px -134px;
 }
 
+#sub-nav-menu {
+	position: relative;
+	display: table;
+	width: 100%;
+	height: 70px;	
+}
+
+#sub-nav-menu li {
+	position: relative;
+	display: table-cell;
+	width: 25%;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}	
+
+#sub-nav-menu li a {
+	display: block;
+	font: 10px "BariolBd",sans-serif;
+	color: #232425;
+	height: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	background: #fcfcfc;
+	-moz-transition: all 0.4s ease-out;
+	-webkit-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
+}
+
+#sub-nav-menu li a:before {
+	position: relative;
+	content: " ";
+	display: inline-block;
+	width: 1px;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#sub-nav-menu li a:hover {
+	color: white;
+	background: #343434;
+}
+
 header .navigation-mobile {
     position: fixed;
     padding-top: 115px;
@@ -1154,7 +1198,7 @@ COMPONENTS: SLIDESHOW
 
 .main-featured {
     position: relative;
-    margin-top: 70px;
+    margin-top: 140px;
     overflow: hidden;
     background: black;
 }
@@ -4248,6 +4292,9 @@ PAGES: COMMUNITY
 }
 
 @media screen and (max-width: 767px) {
+	#sub-nav-menu {
+		display: none;
+	}
     #mc_embed_signup {
         width: 75%;
         margin: 0 auto;

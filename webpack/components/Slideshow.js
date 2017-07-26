@@ -47,7 +47,13 @@ var slideObj = {
             this.items[i].style.width = this.itemsWidth + "px";
             this.items[i].pos = i;
             this.items[i].slideTitle = this.items[i].getElementsByTagName("h1")[0] == undefined ? this.items[i].getElementsByTagName("h2")[0] : this.items[i].getElementsByTagName("h1")[0];
-            this.items[i].bts = this.items[i].getElementsByClassName("btn-box")[0] == undefined ? "" : this.items[i].getElementsByClassName("btn-box")[0]
+            this.items[i].bts = this.items[i].getElementsByClassName("btn-box")[0] == undefined ? "" : this.items[i].getElementsByClassName("btn-box")[0];
+			this.items[i].bts.onclick = function () {
+				if (this.className.indexOf('active') > -1) {
+					window.scrollBy(0, window.innerHeight);
+					return false;					
+				}
+			};
         }
         this.navBullet = this.navCont.getElementsByTagName("UL")[0].getElementsByTagName("LI");
         this.navBullet[0].className += "active";
@@ -267,7 +273,7 @@ var slideObj = {
             if (s.items[e + o].slideTitle !== undefined) {
                 setTimeout(function () {
                     s.items[e + o].slideTitle.className = "active";
-                    s.items[e + o].bts.className = "btn-box active"
+                    s.items[e + o].bts.className = "btn-box active";
                 }, 900)
             }
         } else if (t == "r") {
@@ -302,7 +308,7 @@ var slideObj = {
             if (s.items[e - o].slideTitle !== undefined) {
                 setTimeout(function () {
                     s.items[e - o].slideTitle.className = "active";
-                    s.items[e - o].bts.className = "btn-box active"
+                    s.items[e - o].bts.className = "btn-box active";
                 }, 900)
             }
         } else {

@@ -184,28 +184,6 @@ var productBikini = {
         this.detailsCont.style.height = this.detailsCont.children[0].offsetHeight + "px", this.detailsCont.style.top = (this.detailsCont.parentElement.offsetHeight - this.detailsCont.children[0].offsetHeight) / 2 + "px"
     },
     addItem: function () {
-        function getVariantId(firstItem, secondItem) {
-			
-			var cond = secondItem !== undefined ? me.variantToAdd = [] : false;
-				
-            for (var i = 0; i < me.variants.length; i++) {				
-				
-				if (cond) {
-					
-					if (me.variants[i].title == firstItem) {
-						me.variantToAdd.push(me.variants[i].id);
-					}
-					else if (me.variants[i].title == secondItem) {
-						me.variantToAdd.push(me.variants[i].id);
-					}					
-				}
-				else {
-					if (me.variants[i].title == firstItem) {
-						me.variantToAdd = me.variants[i].id;
-					}					
-				}
-			}
-        }
 		
         this.topStatus = this.top.className.indexOf("disabled") < 0 ? "active" : "disabled",
         this.product.handle !== "trykini" && (this.briefsStatus = this.briefs.className.indexOf("disabled") < 0 ? "active" : "disabled"),
@@ -229,14 +207,21 @@ var productBikini = {
         for (var j = 0; j < this.sizesContainer.length; j++) {
             this.sizesContainer[j].sizes = this.sizesContainer[j].getElementsByTagName("LI");
             
-            for (var b = 0; b < this.sizesContainer[j].sizes.length; b++) {
+            for (var b = 0; b <= this.sizesContainer[j].sizes.length; b++) {
 				
-				if (b + 1 > this.sizesContainer[j].sizes.length && count + 1 > this.sizesContainer[j].sizes.length) {
+				if (b == count && count == this.sizesContainer[j].sizes.length) {
 					this.sizeName.push(undefined);
 				}
 				else {
-					if (this.sizesContainer[j].sizes[b].className.indexOf("active") < 0) count++;
-					else this.sizeName.push(this.sizesContainer[j].sizes[b].getElementsByTagName("a")[0].innerText);	
+					if (b !== this.sizesContainer[j].sizes.length) {
+						
+						if (this.sizesContainer[j].sizes[b].className.indexOf("active") < 0) {
+							count++;
+						}
+						else {
+							this.sizeName.push(this.sizesContainer[j].sizes[b].getElementsByTagName("a")[0].innerText);	
+						}
+					}
 				}
 			}
 			count = 0; 
@@ -276,24 +261,19 @@ var productBikini = {
 
             if (this.topStatus == "active" && this.briefsStatus == "active" && this.sizeName[0] !== undefined && this.sizeName[1] !== undefined) {
 				
-				if (this.sizeName[0] == this.sizeName[1] && this.bikiniColour[0] == this.bikiniColour[1]) {
-					var currentItem = "TopAndBrief / " + this.bikiniColour[0] + " / " + this.sizeName[0];
-					getVariantId(currentItem);
-				} else {
-					var currentItem = "Top / " + this.bikiniColour[0] + " / " + this.sizeName[0],
-						otherItem = "Brief / " + this.bikiniColour[1] + " / " + this.sizeName[1];
-					me.variantToAdd = [];
-					getVariantId(currentItem, otherItem);
-				}
+				var currentItem = "Top / " + this.bikiniColour[0] + " / " + this.sizeName[0],
+					otherItem = "Brief / " + this.bikiniColour[1] + " / " + this.sizeName[1];
+				me.variantToAdd = [];
+				me.getVariantId(currentItem, otherItem);
             }
 			else {
 				if (this.topStatus == "active" && this.sizeName[0] !== undefined) {
 					var currentItem = "Top / " + this.bikiniColour[0] + " / " + this.sizeName[0];
-					getVariantId(currentItem);					
+					me.getVariantId(currentItem);					
 				}
 				else if (this.briefsStatus == "active" && this.sizeName[1] !== undefined) {
 					var currentItem = "Brief / " + this.bikiniColour[1] + " / " + this.sizeName[1];
-					getVariantId(currentItem);					
+					me.getVariantId(currentItem);					
 				}
 				else {
 					return swal({
@@ -309,7 +289,7 @@ var productBikini = {
         else {			
 			if (this.topStatus == "active" && this.sizeName[0] !== undefined) {
 				var currentItem = "Trykini - " + this.sizeName[0] + " / " + this.bikiniColour[0];
-				getVariantId(currentItem);				
+				me.getVariantId(currentItem);				
 			}
 			else {
 				return swal({
@@ -338,83 +318,106 @@ var productBikini = {
 			
 			if (this.variantToAdd.length > 0) {
 				
-				$.each(me.variantToAdd, function( index ) {
+				var position = 0;
+				
+				Shopify.queue = [];
+				
+				for (variant in me.variantToAdd) {
+
+					var value = `${me.variantToAdd[variant]}`;
 					
-					var value = this.valueOf(),
-						position = index;
-					
-					Shopify.addItem(this.valueOf(), 1, function (t) {
-						
-						Shopify.getCart(function (cart) {
-						
-							var image, price, total, product_name;
-							
-							for (var o = 0; o < me.cartCounter.length; o++) {
-								me.cartCounter[o].innerHTML = cart.item_count;				
-							}
-							
-							$(cart.items).each(function (i, item) {
-								if (item.id == value) {
-									price = Shopify.formatMoney(item.price).replace("$", "€");
-									total = Shopify.formatMoney(cart.total_price).replace("$", "€");
-									product_name = item.variant_title;
-									image = item.image;								
-								}
-							});
-							me.loading.fadeOut();
-							
-							var	currentModal = document.getElementsByClassName('vertty-order-modal')[0];
-							
-							if (currentModal !== undefined && position > 0) {
-
-								var temp = document.createElement('div'),
-									newModal = me.applyModal(me.product.type, price, total, image, product_name);
-
-								temp.innerHTML += newModal;
-								temp.className = 'double-modal-wrapper';
-								
-								currentModal.parentNode.insertBefore(temp, currentModal.nextElementSibling);
-							}
-							else {
-
-								swal({
-									title: '<div style="display:none">Bikini [2 Added]</div>',
-									text: me.applyModal(me.product.type, price, total, image, product_name),
-									html: true,
-									showConfirmButton: false,
-									allowOutsideClick: true,
-									closeOnConfirm: false
-								})
-								
-							}
-						});
+					Shopify.queue.push({
+						variantId: value
 					});
 					
-				});
+				}
+
+				Shopify.moveAlong = function() {
+					
+					if (Shopify.queue.length) {
+
+						var request = Shopify.queue.shift(),
+							Obj = Shopify;
+
+						Shopify.addItem(request.variantId, 1, function (cart) {
+
+							var currentValue = cart.id;
+
+							Shopify.getCart(function (cart) {
+
+								var item = me.getProductDetails(cart, currentValue);
+
+								for (var o = 0; o < me.cartCounter.length; o++) {
+									me.cartCounter[o].innerHTML = cart.item_count;				
+								}
+
+								me.loading.fadeOut();
+
+								var	currentModal = $('.vertty-order-modal')[0];
+
+								if (currentModal !== undefined && position > 0) {
+
+									var temp = document.createElement('div'),
+										newModal = me.applyModal(me.product.type, item.price, item.total, item.image, item.product_name);
+
+									temp.innerHTML += newModal;
+									temp.className = 'double-modal-wrapper';
+
+									$(temp).insertBefore(currentModal.nextElementSibling);
+								}
+								else {
+									
+									position++;
+
+									swal({
+										title: '<div style="display:none">Bikini [2 Added]</div>',
+										text: me.applyModal(me.product.type, item.price, item.total, item.image, item.product_name),
+										html: true,
+										showConfirmButton: false,
+										allowOutsideClick: true,
+										closeOnConfirm: false
+									});
+
+								}
+							});
+
+						});
+						
+						setTimeout(function () {
+
+							Obj.moveAlong();
+							
+						}, 100)
+
+					}
+					else {
+						return false;
+					}
+					
+				};
+
+				Shopify.moveAlong();
 
 			}
 			else {
 				
 				Shopify.addItem(this.variantToAdd, 1, function (t) {
+					
+					var value = t.id;
+						
 					Shopify.getCart(function (cart) {
 						
-						var image, price, total, product_name;
+						var item = me.getProductDetails(cart, value);
 						
 						for (var o = 0; o < me.cartCounter.length; o++) {
 							me.cartCounter[o].innerHTML = cart.item_count;							
 						}
-						$(cart.items).each(function (i, item) {
-							if (item.id == me.variantToAdd) {
-								price = Shopify.formatMoney(item.price).replace("$", "€");
-								total = Shopify.formatMoney(cart.total_price).replace("$", "€");
-								product_name = item.variant_title;
-								image = item.image;								
-							}
-						});
+						
 						me.loading.fadeOut();
+						
 						swal({
 							title: '<div style="display:none">Bikini</div>',
-							text: me.applyModal(me.product.type, price, total, image, product_name),
+							text: me.applyModal(me.product.type, item.price, item.total, item.image, item.product_name),
 							html: true,
 							showConfirmButton: false,
 							allowOutsideClick: true
@@ -423,7 +426,59 @@ var productBikini = {
 				});
 			}
 		}
-    }
+    },
+    getVariantId: function (firstItem, secondItem) {
+		
+		var me = this,
+			cond = secondItem !== undefined ? me.variantToAdd = [] : false;
+
+		for (var i = 0; i < me.variants.length; i++) {				
+
+			if (cond) {
+
+				if (me.variants[i].title == firstItem) {
+					me.variantToAdd.push(me.variants[i].id);
+				}
+				else if (me.variants[i].title == secondItem) {
+					me.variantToAdd.push(me.variants[i].id);
+				}					
+			}
+			else {
+				if (me.product.type.indexOf('trykini') > -1) {
+					if (me.variants[i].name == firstItem) {
+						me.variantToAdd = me.variants[i].id;
+					}						
+				}		
+
+				else if (me.variants[i].title == firstItem) {
+					me.variantToAdd = me.variants[i].id;
+				}			
+			}
+		}
+	},
+	getProductDetails: function (cart, value) {
+		
+		for (var i = 0; i < cart.items.length; i++) {
+
+			var item = cart.items[i];
+
+			if (item.id == value) {
+
+				var price = Shopify.formatMoney(item.price).replace("$", "€"),
+					total = Shopify.formatMoney(cart.total_price).replace("$", "€"),
+					product_name = item.variant_title,
+					image = item.image;								
+			}									
+		}
+		
+		return {
+			price: price,
+			total: total,
+			product_name: product_name,
+			image: image
+		}
+		
+	}
 };
 
 $(document).ready(function () {

@@ -76,8 +76,11 @@
 
 {{ 'ProductCookie.js' | asset_url | script_tag }}
 
+{% comment %}
+
 {{ content_for_header }}
 
+{% endcomment %}
 </head>
 
 <body>
@@ -150,7 +153,20 @@
                 </div>
             </li>
         </ul>
-    </nav>  
+    </nav>
+	<nav>
+		<ul id="sub-nav-menu">
+			<li>
+				<a href="/products/classic-towel">Beach Towel</a>
+			</li>
+			<li>
+				<a href="/pages/women-swimwear">Women's Swimwear</a>
+			</li>
+			<li>
+				<a href="/products/backpack">Backpack</a>
+			</li>
+		</ul>
+	</nav>
 </header>
 
 {{ content_for_layout }}
@@ -210,6 +226,7 @@
     {% if page.handle == 'home' %}
         {{ 'general.bundle.js' | asset_url | script_tag }}
         {{ 'pageGeneral.bundle.js' | asset_url | script_tag }}
+        {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
     {% endif %}
 {% endif %}
 
@@ -237,8 +254,13 @@
                 }
             }); 
             
-            console.log("DOM fully loaded and parsed");      
-    });    
+            console.log("DOM fully loaded and parsed");
+		
+    		var content_for_header = "{{ content_for_header | replace: '/', '\/' | replace: '"', '\"'| strip_newlines }}";
+		
+    		$('head').append(content_for_header.replace(/}        /g, "}        \n").replace(/\/\/<!\[CDATA\[/g, "//<![CDATA[\n").replace(/\/\/]]>/g, "//]]>\n"));
+  })
+  
 </script>
 
 {% endunless %}
@@ -249,9 +271,7 @@
         {{ 'boot_product.bundle.js' | asset_url | script_tag }}
         {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
         {{ 'ProductVideo.js' | asset_url | script_tag }}
-        {{ 'FeaturesSlide.js' | asset_url | script_tag }}
-        {{ 'Accordion.js' | asset_url | script_tag }}
-        {{ 'ProductBikini.js' | asset_url | script_tag }}
+        {{ 'bikini.bundle.js' | asset_url | script_tag }}
         <script type="text/javascript">
             window.productBikini.init({{ product | json }});
         </script>
@@ -262,7 +282,7 @@
         {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
         {{ 'ProductVideo.js' | asset_url | script_tag }}
         {{ 'towel.bundle.js' | asset_url | script_tag }}
-        <script type="text/javascript">
+        <script type="text/javascript">			
             window.product.init({{ product | json }});
         </script>
         

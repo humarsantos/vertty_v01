@@ -37,7 +37,7 @@
         theme_configuration: 'theme configure --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com --themeid=183776015'
     },
     themeKit_Testing: {
-        theme_configuration: 'theme configure --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-2.myshopify.com --themeid=183776015'
+        theme_configuration: 'theme configure --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com --themeid=183155345'
     }
     
 }
@@ -46,4 +46,4 @@
 
 //theme configure --password=7ea9f0b42ff302525199725eca0fe83d --store=vertty-au.myshopify.com --themeid=183155345
 
-theme configure --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com --themeid=183155345
+theme configure --password=c60657f39822bf4f07d7d96a517a5d73 --store=vertty-us.myshopify.com --themeid=181949521
