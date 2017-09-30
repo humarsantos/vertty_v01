@@ -201,9 +201,12 @@ var productBikini = {
 			this.price = e;
 			this.subtotal = i;
 			this.variant = s;
-			this.size = o == undefined ? "" : o,
-			this.image = n,
-			this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
+			this.size = o == undefined ? "" : o;
+			this.image = n;
+			
+			var cond = this.variant.indexOf('Top') > -1 ? 'top' : 'brief';
+				
+			this.successTowel = "<div class='vertty-order-modal'> <div class='order-img'> <img src='" + this.image + "'> </div> <div class='order-info'> <span class='tlt'>" + this.title + "</span> <span>Qty: <b>1</b></span> <span>TP: <b>" + this.variant + "</b></span> <span class='item-price'>" + this.price + "</span> <div class='quantity-contraption-container'><div class='arrow-up' onclick='this.disabled = true;productBikini.incrementItem(this);' data-type=" + cond + "></div><div class='quantity-box'><span class='qty-val'>1</span></div><div class='arrow-down' onclick='this.disabled = true;productBikini.decrementItem(this);' data-type=" + cond + "></div></div> </div> <div class='order-price'> <span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span> </div> </div> <div class='btn-box' style='text-align: right;'> <a href='/cart' class='view-cart'></a> </div>";
 			return this.successTowel
         };
 
@@ -325,6 +328,8 @@ var productBikini = {
 				
 				Shopify.queue = [];
 				
+				me.incrementId = [];
+				
 				for (variant in me.variantToAdd) {
 
 					var value = `${me.variantToAdd[variant]}`;
@@ -345,6 +350,8 @@ var productBikini = {
 						Shopify.addItem(request.variantId, 1, function (cart) {
 
 							var currentValue = cart.id;
+							
+							me.incrementId.push(currentValue);
 
 							Shopify.getCart(function (cart) {
 
@@ -403,11 +410,15 @@ var productBikini = {
 
 			}
 			else {
+					
+				me.incrementId = [];
 				
 				Shopify.addItem(this.variantToAdd, 1, function (t) {
 					
 					var value = t.id;
-						
+					
+					me.incrementId.push(value);
+					
 					Shopify.getCart(function (cart) {
 						
 						var item = me.getProductDetails(cart, value);
@@ -481,7 +492,71 @@ var productBikini = {
 			image: image
 		}
 		
+	},
+	incrementItem: function (el) {
+		
+		var me = this;
+		
+		if (document.getElementsByClassName('vertty-order-modal').length > 1) {
+			var pos = el.getAttribute('data-type') == 'top' ? 0 : 1,
+				modal = document.getElementsByClassName('vertty-order-modal')[0],
+				quantityBox = document.getElementsByClassName('qty-val')[pos];
+		}
+		else {
+			var pos = 0,				
+				modal = el.parentNode.parentElement.parentElement,
+				quantityBox = document.getElementsByClassName('qty-val')[0];
+		}
+		
+		var quantity = parseInt(quantityBox.innerText);
+		
+		this.price = modal.getElementsByClassName('total-value')[0].innerText.replace(modal.getElementsByClassName('total-value')[0].innerText[0], '');
+		
+		Shopify.addItem(this.incrementId[pos], 1, function (cart) {
+			
+			var totalPrice = Shopify.formatMoney(parseInt(productBikini.price.replace('.','')) + cart.price);
+			
+			quantityBox.innerText = quantity + 1;
+			modal.getElementsByClassName('total-value')[0].innerText = totalPrice;
+		});
+	},
+	decrementItem: function (el) {
+		
+		var me = this;
+		
+		if (document.getElementsByClassName('vertty-order-modal').length > 1) {
+			var pos = el.getAttribute('data-type') == 'top' ? 0 : 1,
+				modal = document.getElementsByClassName('vertty-order-modal')[0],
+				quantityBox = document.getElementsByClassName('qty-val')[pos];
+		}
+		else {
+			var pos = 0,				
+				modal = el.parentNode.parentElement.parentElement,
+				quantityBox = document.getElementsByClassName('qty-val')[0];
+		}
+		
+		Shopify.pos = pos;
+		
+		var quantity = parseInt(quantityBox.innerText),
+			newQty;
+		
+		if (quantity !== 0) newQty = quantity - 1;
+		else return false;
+		
+		this.price = modal.getElementsByClassName('total-value')[0].innerText.replace(modal.getElementsByClassName('total-value')[0].innerText[0], '');
+		
+		Shopify.changeItem(this.incrementId[pos], newQty, function (cart) {
+			
+			var currentPos = cart.items.length > 1 ? Shopify.pos : 0;
+			
+			var totalPrice = Shopify.formatMoney(parseInt(productBikini.price.replace('.','')) - cart.items[currentPos].price);
+			
+			quantityBox.innerText = newQty;
+			
+			modal.getElementsByClassName('total-value')[0].innerText = totalPrice;
+		});
 	}
+	
 };
 
 $(document).ready(function () {

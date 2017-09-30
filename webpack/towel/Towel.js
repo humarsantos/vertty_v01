@@ -193,7 +193,10 @@ var product = {
             this.variant = s;
             this.size = o == undefined ? "" : o;
             this.image = n;
-            this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
+			
+			var cond = this.title.indexOf('Towel') > -1 ? 'towel' : 'backpack';
+			
+            this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span><div class='quantity-contraption-container'><div class='arrow-up' onclick='this.disabled = true;product.incrementItem(this);' data-type=" + cond + "></div><div class='quantity-box'><span class='qty-val'>1</span></div><div class='arrow-down' onclick='this.disabled = true;product.decrementItem(this);' data-type=" + cond + "></div></div></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
             return this.successTowel
         };
 	  
@@ -235,8 +238,15 @@ var product = {
         }
         else {
             this.loading.fadeIn();
+			
+			this.incrementId = [];
             
             Shopify.addItem(this.variantToAdd, 1, function (e) {
+
+				var currentValue = e.id;
+
+				me.incrementId.push(currentValue);
+				
                 Shopify.getCart(function (e) {
                     var t, i, n, s;
                     for (var o = 0; o < me.cartCounter.length; o++) {
@@ -262,7 +272,52 @@ var product = {
             })
         }
         return false
-    }
+    },
+	incrementItem: function (el) {
+		
+		var me = this,
+			pos = 0,				
+			modal = el.parentNode.parentElement.parentElement,
+			quantityBox = document.getElementsByClassName('qty-val')[0];
+		
+		var quantity = parseInt(quantityBox.innerText);
+		
+		this.price = modal.getElementsByClassName('total-value')[0].innerText.replace(modal.getElementsByClassName('total-value')[0].innerText[0], '');
+		
+		Shopify.addItem(this.incrementId[pos], 1, function (cart) {
+			
+			var totalPrice = Shopify.formatMoney(parseInt(product.price.replace('.','')) + cart.price);
+			
+			quantityBox.innerText = quantity + 1;
+			modal.getElementsByClassName('total-value')[0].innerText = totalPrice;
+		});
+	},
+	decrementItem: function (el) {
+		
+		var me = this,
+			pos = 0,				
+			modal = el.parentNode.parentElement.parentElement,
+			quantityBox = document.getElementsByClassName('qty-val')[0];
+		
+		var quantity = parseInt(quantityBox.innerText),
+			newQty;
+		
+		if (quantity !== 0) newQty = quantity - 1;
+		else return false;
+		
+		this.price = modal.getElementsByClassName('total-value')[0].innerText.replace(modal.getElementsByClassName('total-value')[0].innerText[0], '');
+		
+		quantityBox.innerText = newQty;
+		
+		Shopify.changeItem(this.incrementId[pos], newQty, function (cart) {
+			
+			if (cart.items[0] == undefined) return false;
+			
+			var totalPrice = Shopify.formatMoney(parseInt(product.price.replace('.','')) - cart.items[0].price);
+			
+			modal.getElementsByClassName('total-value')[0].innerText = totalPrice;
+		});
+	}
 };
 
 $(document).ready(function () {

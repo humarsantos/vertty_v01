@@ -48,7 +48,7 @@ var player, done = !1,
 				
 				if (window.pageYOffset >= n && window.pageYOffset <= this.contTop + this.videoHeight) {
 					t.playVideo();
-					t.setPlaybackQuality('default');
+					t.setPlaybackQuality('hd1080');
 				}
 				else {				
 					t.pauseVideo()

@@ -6,7 +6,7 @@
                        
 {% assign detailname = prodType | append: '_detail' %}
 {% assign slidename = prodType | append: '_slide' %}
-{% assign featurename = prodType | append: '_feature' %}
+{% assign featurename = prodType | append: '_feature' %}    		
        
         <div class="main-featured {{ product.type | downcase }}">
             <div id="loader"></div>
@@ -316,6 +316,7 @@
             {% case product.type %}
               {% when 'Towel' %}
                     <p id="prod-description">{{ settings.towel_description }}</p>
+                    <p class="choose-color">Choose your color</p>
               {% when 'Bikini-shape' %}
                     <p id="prod-description">{{ settings.bikini_shape_description }}</p>
               {% when 'Bikini-sport' %}

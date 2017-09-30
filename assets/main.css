@@ -815,7 +815,7 @@ header .slideDownMenu .product-icons.i-w-swimwear {
 	position: relative;
 	display: table;
 	width: 100%;
-	height: 70px;	
+	height: 50px;	
 }
 
 #sub-nav-menu li {
@@ -824,7 +824,8 @@ header .slideDownMenu .product-icons.i-w-swimwear {
 	width: 25%;
 	height: 100%;
 	text-align: center;
-	vertical-align: middle;
+	vertical-align: middle;	
+    border-right: 1px solid #ccc;
 }	
 
 #sub-nav-menu li a {
@@ -835,7 +836,7 @@ header .slideDownMenu .product-icons.i-w-swimwear {
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 6px;
-	background: #fcfcfc;
+	background: rgba(252, 252, 252, 0.8);
 	-moz-transition: all 0.4s ease-out;
 	-webkit-transition: all 0.4s ease-out;
 	transition: all 0.4s ease-out;
@@ -941,7 +942,48 @@ LAYOUT: FOOTER
     display: block;
 }
 
+.footer .advertisement.container {
+	margin-top: 40px;
+}
+.footer .advertisement.container > ul {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 50px;
+}
 
+.footer .advertisement > ul li {
+    display: table-cell;
+    width: 14.2857%;
+    height: 50px;
+    max-width: none;
+    margin-right: 0;
+    background-image: url({{ 'logos.svg' | asset_url }});
+    background-repeat: no-repeat;
+    background-size: auto 200px;
+}
+
+.i-shopify {
+    background-position: 0px 0px;
+}
+.i-visa {
+    background-position: 0 -131px;
+}
+.i-paypal {
+    background-position: -245px 4px;
+}
+.i-mastercard {
+    background-position: -245px -132px;
+}
+.i-lisboa20 {
+    background-position: -509px 1px;
+}
+.i-ue {
+    background-position: -798px 2px;
+}
+.i-2020 {
+    background-position: -1071px 2px;
+}
 /* ==============
 LAYOUT: DIVIDERS
 ================= */
@@ -1198,7 +1240,7 @@ COMPONENTS: SLIDESHOW
 
 .main-featured {
     position: relative;
-    margin-top: 140px;
+    margin-top: 70px;
     overflow: hidden;
     background: black;
 }
@@ -1424,6 +1466,11 @@ COMPONENTS: BUTTONS
     height: 83px;
 }
 
+.btn-box .add-cart {
+    width: 167px;
+    height: 93px;	
+}
+
 .btn-box .add-cart:before,
 .btn-box .add-cart:after,
 .btn-box .shop:before,
@@ -1452,6 +1499,15 @@ COMPONENTS: BUTTONS
     transition: all 0.2s ease-out;
 }
 
+.btn-box .add-cart:before,
+.btn-box .add-cart:after {
+	background-size: 728px 285px;
+}
+
+.btn-box .add-cart:before {
+    background-position: -368px 6px;
+}
+
 .btn-box .add-cart:hover:before,
 .btn-box .shop:hover:before,
 .btn-box .submit:hover:before,
@@ -1474,7 +1530,9 @@ COMPONENTS: BUTTONS
 .btn-box .view-cart:hover:after,
 .btn-box .solded-out:hover:after,
 .backpack .btn-box .add-cart:after,
-.backpack .btn-box .add-cart:hover:before {
+.backpack .btn-box .add-cart:hover:before,
+.main-featured.home .btn-box .shop:hover:after,
+.main-featured.home .btn-box .shop:hover:after{
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100);
     -moz-opacity: 1;
@@ -1506,6 +1564,49 @@ COMPONENTS: BUTTONS
     -moz-opacity: 0;
     -khtml-opacity: 0;
     opacity: 0;
+}
+
+.main-featured.home .btn-box .shop {
+    width: 177px;
+    height: 103px;
+}
+
+.main-featured.home .btn-box .shop:before {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+	background-position: 0 -216px;
+}
+
+.main-featured.home .btn-box .shop:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+	background-position: 1px -105px;
+}
+
+.main-featured.home .btn-box .shop:hover:before {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.main-featured.home .btn-box .shop:hover:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;	
+}
+
+.main-featured.home .btn-box .shop:before, .main-featured.home .btn-box .shop:after {
+	background-size: 800px 314px;
 }
 
 .btn-box .submit:before {
@@ -1565,11 +1666,11 @@ COMPONENTS: BUTTONS
 }
 
 .txt-black .add-cart:before {
-    background-position: -362px -197px;
+    background-position: -365px -197px;
 }
 
 .txt-black .add-cart:after {
-    background-position: -362px -98px;
+    background-position: -365px -96px;
 }
 
 .txt-black .shop:before {
@@ -1872,6 +1973,17 @@ COMPONENTS: PRODUCT
     margin: 0 auto;
     position: relative;
     bottom: 0;
+}
+
+.product .choose-color {
+    font: 12px "BariolRg",sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 .product .container .details {
@@ -2909,7 +3021,7 @@ COMPONENTS: MODAL
     padding: 20px 25px;
     display: block;
     background: #E8E8E8;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: -25px;
     margin-right: -25px;
     bottom: 0;
@@ -2926,6 +3038,26 @@ COMPONENTS: MODAL
 .vertty-order-modal .order-price .total-value {
     float: right;
     font: 18px "BariolBd", sans-serif;
+}
+
+.vertty-order-modal .quantity-contraption-container {
+	margin-top: 0;	
+}
+
+.arrow-up,
+.arrow-down {
+	width: 100%;	
+	height: 15px; 
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.arrow-up {
+	background-image: url({{ 'quantity-arrow-up.png' | asset_url }});
+}
+
+.arrow-down {
+	background-image: url({{ 'quantity-arrow-down.png' | asset_url }});	
 }
 
 .sweet-old {
@@ -3519,7 +3651,7 @@ PAGES: COMMUNITY
 
 .modal-ambassador {
     position: fixed;
-    display: table;
+    display: block;
     top: 0%;
     left: 50%;
     margin-left: -40%;
@@ -3539,11 +3671,13 @@ PAGES: COMMUNITY
     transition: all 0.3s ease;
 }
 
-.modal-ambassador div {
-    display: table-cell;
+.modal-ambassador .bl-img,
+.modal-ambassador .bl-text {
+    display: inline-block;
     width: 50%;
     height: 100%;
     vertical-align: middle;
+	margin-right: -4px;
 }
 
 .modal-ambassador .bl-text p {
@@ -3559,6 +3693,8 @@ PAGES: COMMUNITY
 .bl-text {
     text-align: center;
     padding: 45px 45px 50px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .bl-text h2 {
@@ -3861,7 +3997,7 @@ PAGES: COMMUNITY
         margin-right: -5px;
     }
     .product.towel .nav-towel ul li {
-		width: 54px;
+		width: 55px;
         height: 77px;
     }
     .product .container .details {
@@ -3894,7 +4030,7 @@ PAGES: COMMUNITY
 	}
 
 	.nav-towel ul li.towel.i-green {
-		background-position: -422px 0;
+		background-position: -419px 0;
 	}
 
 	.nav-towel ul li.towel.i-orange {
@@ -3919,6 +4055,33 @@ PAGES: COMMUNITY
 }
 
 @media screen and (max-width: 1024px) {
+	.footer .advertisement > ul li {
+    	display: inline-block;
+		width: 33.333%!important;
+		height: 50px;
+		margin-bottom: 50px;
+	}
+	.i-shopify {
+		background-position: 26px 0;
+	}
+	.i-visa {
+		background-position: 23px -131px;
+	}
+	.i-paypal {
+		background-position: -220px 4px;
+	}
+	.i-mastercard {
+		background-position: -222px -132px;
+	}
+	.i-lisboa20 {
+		background-position: -485px 1px;
+	}
+	.i-ue {
+		background-position: -767px 2px;
+	}
+	.i-2020 {
+		background-position: -1044px 2px;
+	}
 	.product.towel .container .details {
 		margin-top: 20px;
 	}
@@ -4144,11 +4307,11 @@ PAGES: COMMUNITY
         top: 3%;
     }
     .modal-ambassador {
-        left: 5%;
+        left: 2.2%;
         margin-left: 0;
         width: 96%;
     }
-    .modal-ambassador div {
+    .modal-ambassador .bl-img, .modal-ambassador .bl-text {
         display: block;
         width: 100%;
     }
@@ -4289,6 +4452,27 @@ PAGES: COMMUNITY
         top: 26px;
         right: -12px;
     }
+	.i-shopify {
+		background-position: -20px 0;
+	}
+	.i-visa {
+		background-position: -28px -131px;
+	}
+	.i-paypal {
+		background-position: -270px 4px;
+	}
+	.i-mastercard {
+		background-position: -277px -132px;
+	}
+	.i-lisboa20 {
+		background-position: -536px 1px;
+	}
+	.i-ue {
+		background-position: -828px 2px;
+	}
+	.i-2020 {
+		background-position: -1096px 2px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -4445,6 +4629,9 @@ PAGES: COMMUNITY
 }
 
 @media screen and (max-width: 480px) {
+	.bl-img.w-30 .vertty-link {
+		right: 120px!important;
+	}
 	.product.towel .nav-towel ul li {
 		margin-bottom: 10px;
 	}

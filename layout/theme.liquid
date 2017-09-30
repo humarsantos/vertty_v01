@@ -76,11 +76,8 @@
 
 {{ 'ProductCookie.js' | asset_url | script_tag }}
 
-{% comment %}
-
 {{ content_for_header }}
 
-{% endcomment %}
 </head>
 
 <body>
@@ -220,13 +217,23 @@
             </li>
         </ul>
     </div>
+	<div class="advertisement container">
+		<ul>
+			<li class="i-shopify">&nbsp;</li>
+			<li class="i-visa">&nbsp;</li>
+			<li class="i-paypal">&nbsp;</li>
+			<li class="i-mastercard">&nbsp;</li>
+			<li class="i-lisboa20">&nbsp;</li>
+			<li class="i-ue">&nbsp;</li>
+			<li class="i-2020">&nbsp;</li>
+		</ul>
+	</div>
 </footer>
 
 {% if template == 'page' %}
     {% if page.handle == 'home' %}
         {{ 'general.bundle.js' | asset_url | script_tag }}
         {{ 'pageGeneral.bundle.js' | asset_url | script_tag }}
-        {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
     {% endif %}
 {% endif %}
 
@@ -256,9 +263,19 @@
             
             console.log("DOM fully loaded and parsed");
 		
+			/*
     		var content_for_header = "{{ content_for_header | replace: '/', '\/' | replace: '"', '\"'| strip_newlines }}";
 		
+			content_for_header = content_for_header.replace(/}        /g, "}        \n").replace(/\/\/<!\[CDATA\[/g, "//<![CDATA[\n").replace(/\/\/]]>/g, "//]]>\n");
+		
+			var nodeEl =  document.createElement("SPAN"); 
+		
+			nodeEl.innerHTML += content_for_header;
+		
+			document.getElementsByTagName('head')[0].appendChild(nodeEl);
+		
     		$('head').append(content_for_header.replace(/}        /g, "}        \n").replace(/\/\/<!\[CDATA\[/g, "//<![CDATA[\n").replace(/\/\/]]>/g, "//]]>\n"));
+			*/
   })
   
 </script>
