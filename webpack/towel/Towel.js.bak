@@ -8,14 +8,14 @@ var product = {
             productName = e == undefined ? "" : e.handle.toLowerCase();
 
         var backgrounds = {
-            chili: "#fff",
-            "midnight-blue": "#fff",
-            "peacock": "#fff",
-            "coconut": "#fff",
-            graphite: "#fff",
-            "classic-orange": "#fff",
-            "classic-green": "#fff",
-            teal: "#fff",
+            chili: "linear-gradient(to right, #fda3b3, #fdb1be, #ffbcc8)",
+            "midnight-blue": "linear-gradient(to right, #3dd3de, #3fd4e0, #63e3ee)",
+            "peacock": "linear-gradient(to right, #6cb199, #76c1a7, #84d1b6)",
+            "coconut": "linear-gradient(to right, #bfb57b, #bfb57b, #ded28d)",
+            graphite: "linear-gradient(to right, #c1bcbb, #c4bfbe, #d1cecd)",
+            "classic-orange": "linear-gradient(to right, #eab78e, #edba91, #f8c69e)",
+            "classic-green": "linear-gradient(to right, #aebf7b, #b8c986, #c6d795)",
+            teal: "linear-gradient(to right, #fcfcfc, #f3f3f3, #cccdc8)",
             chilli: "linear-gradient(to right, #c9cac5, #e3e3e3, #f0f0f0)",
             stealth: "linear-gradient(to right, #fafafa, #e5e5e5, #cecfca)"
         };
@@ -193,10 +193,7 @@ var product = {
             this.variant = s;
             this.size = o == undefined ? "" : o;
             this.image = n;
-			
-			var cond = this.title.indexOf('Towel') > -1 ? 'towel' : 'backpack';
-			
-            this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span><div class='quantity-contraption-container'><div class='arrow-up' onclick='this.disabled = true;product.incrementItem(this);' data-type=" + cond + "></div><div class='quantity-box'><span class='qty-val'>1</span></div><div class='arrow-down' onclick='this.disabled = true;product.decrementItem(this);' data-type=" + cond + "></div></div></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
+            this.successTowel = "<div class='vertty-order-modal'><div class='order-img'><img src='" + this.image + "'></div><div class='order-info'><span class='tlt'>" + this.title + "</span><span>Qty:  <b>1</b></span><span>TP:  <b>" + this.variant + "</b></span><span class='item-price'>" + this.price + "</span></div><div class='order-price'><span>Subtotal <span class='total-value'>" + this.subtotal + "</span></span></div></div><div class='btn-box' style='text-align: right;'><a href='/cart' class='view-cart'></a></div>";
             return this.successTowel
         };
 	  
@@ -238,15 +235,8 @@ var product = {
         }
         else {
             this.loading.fadeIn();
-			
-			this.incrementId = [];
             
             Shopify.addItem(this.variantToAdd, 1, function (e) {
-
-				var currentValue = e.id;
-
-				me.incrementId.push(currentValue);
-				
                 Shopify.getCart(function (e) {
                     var t, i, n, s;
                     for (var o = 0; o < me.cartCounter.length; o++) {
@@ -272,52 +262,7 @@ var product = {
             })
         }
         return false
-    },
-	incrementItem: function (el) {
-		
-		var me = this,
-			pos = 0,				
-			modal = el.parentNode.parentElement.parentElement,
-			quantityBox = document.getElementsByClassName('qty-val')[0];
-		
-		var quantity = parseInt(quantityBox.innerText);
-		
-		this.price = modal.getElementsByClassName('total-value')[0].innerText.replace(modal.getElementsByClassName('total-value')[0].innerText[0], '');
-		
-		Shopify.addItem(this.incrementId[pos], 1, function (cart) {
-			
-			var totalPrice = Shopify.formatMoney(parseInt(product.price.replace('.','')) + cart.price);
-			
-			quantityBox.innerText = quantity + 1;
-			modal.getElementsByClassName('total-value')[0].innerText = totalPrice;
-		});
-	},
-	decrementItem: function (el) {
-		
-		var me = this,
-			pos = 0,				
-			modal = el.parentNode.parentElement.parentElement,
-			quantityBox = document.getElementsByClassName('qty-val')[0];
-		
-		var quantity = parseInt(quantityBox.innerText),
-			newQty;
-		
-		if (quantity !== 0) newQty = quantity - 1;
-		else return false;
-		
-		this.price = modal.getElementsByClassName('total-value')[0].innerText.replace(modal.getElementsByClassName('total-value')[0].innerText[0], '');
-		
-		quantityBox.innerText = newQty;
-		
-		Shopify.changeItem(this.incrementId[pos], newQty, function (cart) {
-			
-			if (cart.items[0] == undefined) return false;
-			
-			var totalPrice = Shopify.formatMoney(parseInt(product.price.replace('.','')) - cart.items[0].price);
-			
-			modal.getElementsByClassName('total-value')[0].innerText = totalPrice;
-		});
-	}
+    }
 };
 
 $(document).ready(function () {

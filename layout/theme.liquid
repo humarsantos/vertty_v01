@@ -8,46 +8,46 @@
     <meta property="og:image" content="http:{{ product.featured_image.src | product_img_url: 'grande' }}" />
     <meta property="og:image:secure_url" content="https:{{ product.featured_image.src | product_img_url: 'grande' }}" />
     {% elsif template contains 'article' %}
-    
+
     {% assign img_tag = '<' | append: 'img' %}
 
-    {% if article.content contains img_tag %}   
+    {% if article.content contains img_tag %}
         {% assign src = article.content | split: 'src="' %}
         {% assign src = src[1] | split: '"' | first | remove: 'https:' | remove: 'http:' %}
-        
+
         {% if src %}
           <meta property="og:image" content="http:{{ src }}" />
           <meta property="og:image:secure_url" content="https:{{ src }}" />
         {% endif %}
     {% endif %}
-    
+
 {% else %}
   {% if settings.use_logo %}
     <meta property="og:image" content="http:{{ 'logo.png' | asset_url }}" />
     <meta property="og:image:secure_url" content="https:{{ 'logo.png' | asset_url }}" />
   {% endif %}
-  
-{% if template == 'page' %}  
+
+{% if template == 'page' %}
     {% if page.handle == 'stores' %}
-    
+
      {% endif %}
  {% endif %}
-    
+
 {% endif %}
-  
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
   <link rel="canonical" href="{{ canonical_url }}" />
   <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon" />
-  <link rel="publisher" href="https://plus.google.com/114701931248467973037" /> 
-  
-  <meta name="description" content="Reinventing the beach towel concept. Try a different tryangle. hello@tryvertty.com" />	
+  <link rel="publisher" href="https://plus.google.com/114701931248467973037" />
+
+  <meta name="description" content="Reinventing the beach towel concept. Try a different tryangle. hello@tryvertty.com" />
  <title>{{ page_title }}</title>
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
+
 {{ 'vendor.css' | asset_url | stylesheet_tag }}
 {{ 'main.css' | asset_url | stylesheet_tag }}
 
@@ -62,14 +62,14 @@
 {% if template == 'page' %}
     {% if page.handle == 'women-swimwear' %}
     <style>
-        .footer { display: none; }   
+        .footer { display: none; }
     </style>
     {% endif %}
 {% endif %}
 
 {% if template == 'index' %}
     <style>
-        .footer, header { display: none;} 
+        .footer, header { display: none;}
     </style>
     {{ 'country.js' | asset_url | script_tag }}
 {% endif %}
@@ -83,7 +83,7 @@
 <body>
 
 {% include 'search' %}
-    
+
 <header>
     <nav class="menu">
         <ul>
@@ -168,7 +168,7 @@
 
 {{ content_for_layout }}
 
-  
+
 <footer class="footer">
     <div class="container">
         <ul>
@@ -240,9 +240,9 @@
 {% unless template == 'index' %}
 
 <script type="text/javascript">
-  
-    window.addEventListener('load', function () {    
-        
+
+    window.addEventListener('load', function () {
+
             var loader = document.getElementById('loader'),
                 overlay = document.getElementById('overlay'),
                 body = document.getElementsByTagName('BODY')[0];
@@ -256,35 +256,49 @@
                         display: 'none',
                         alpha: 0,
                         ease : Expo.easeOut
-                    });       
+                    });
                     body.className += ' loaded';
                 }
-            }); 
-            
-            console.log("DOM fully loaded and parsed");
-		
+            });
+
+            console.log("DOM fully loaded and parsed testing");
+
 			/*
     		var content_for_header = "{{ content_for_header | replace: '/', '\/' | replace: '"', '\"'| strip_newlines }}";
-		
+
 			content_for_header = content_for_header.replace(/}        /g, "}        \n").replace(/\/\/<!\[CDATA\[/g, "//<![CDATA[\n").replace(/\/\/]]>/g, "//]]>\n");
-		
-			var nodeEl =  document.createElement("SPAN"); 
-		
+
+			var nodeEl =  document.createElement("SPAN");
+
 			nodeEl.innerHTML += content_for_header;
-		
+
 			document.getElementsByTagName('head')[0].appendChild(nodeEl);
-		
+
     		$('head').append(content_for_header.replace(/}        /g, "}        \n").replace(/\/\/<!\[CDATA\[/g, "//<![CDATA[\n").replace(/\/\/]]>/g, "//]]>\n"));
 			*/
   })
-  
+
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-940248987"></script>
+
+<script>
+
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag(){dataLayer.push(arguments);}
+
+	gtag('js', new Date());
+
+	gtag('config', 'AW-940248987');
+
 </script>
 
 {% endunless %}
 
 {% if template == 'product' %}
     {% if product.type == 'Bikini-shape' or product.type == 'Bikini-sport' or product.type == 'Bikini-tryangle' or product.type == 'Bikini-trykini' %}
-       
+
         {{ 'boot_product.bundle.js' | asset_url | script_tag }}
         {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
         {{ 'ProductVideo.js' | asset_url | script_tag }}
@@ -292,25 +306,25 @@
         <script type="text/javascript">
             window.productBikini.init({{ product | json }});
         </script>
-    
+
     {% elsif product.type == 'Towel' or product.type == 'Backpack' %}
-        
+
         {{ 'boot_product.bundle.js' | asset_url | script_tag }}
         {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
         {{ 'ProductVideo.js' | asset_url | script_tag }}
         {{ 'towel.bundle.js' | asset_url | script_tag }}
-        <script type="text/javascript">			
+        <script type="text/javascript">
             window.product.init({{ product | json }});
         </script>
-        
+
     {% endif %}
 {% endif %}
 
-{% if template == 'page' %}  
+{% if template == 'page' %}
     {% unless page.handle == 'home' %}
 
         {% case page.handle %}
-    
+
             {% when 'essence' %}
                 {{ 'essence.bundle.js' | asset_url | script_tag }}
                 {{ 'jquery-1.9.1.min.js' | asset_url | script_tag }}
@@ -327,7 +341,7 @@
             {% when 'help-page' %}
                 {{ 'general.bundle.js' | asset_url | script_tag }}
                 {{ 'menu.bundle.js' | asset_url | script_tag }}
-                {{ 'help.bundle.js' | asset_url | script_tag }}    
+                {{ 'help.bundle.js' | asset_url | script_tag }}
             {% else %}
                 {{ 'general.bundle.js' | asset_url | script_tag }}
                 {{ 'menu.bundle.js' | asset_url | script_tag }}
@@ -342,5 +356,5 @@
         {{ 'community.bundle.js' | asset_url | script_tag }}
     {% endif %}
 {% endif %}
-</body>  
+</body>
 </html>

@@ -7,15 +7,15 @@ var product = {
         var obj = this,
             productName = e == undefined ? "" : e.handle.toLowerCase();
 
-        var backgrounds = {
-            chili: "#fff",
-            "midnight-blue": "#fff",
-            "peacock": "#fff",
-            "coconut": "#fff",
-            graphite: "#fff",
-            "classic-orange": "#fff",
-            "classic-green": "#fff",
-            teal: "#fff",
+		var backgrounds = {
+            chili: "linear-gradient(to right, #c65050, #c65050, #c65050)",
+            "midnight-blue": "linear-gradient(to right, #6eabb8, #6eabb8, #6eabb8)",
+            "peacock": "linear-gradient(to right, #bce5e8, #bce5e8, #bce5e8)",
+            "coconut": "linear-gradient(to right, #efe5d3, #efe5d3, #efe5d3)",
+            graphite: "linear-gradient(to right, #d7d7d6, #d7d7d6, #d7d7d6)",
+            "classic-orange": "linear-gradient(to right, #e7cb7e, #e7cb7e, #e7cb7e)",
+            "classic-green": "linear-gradient(to right, #cde874, #cde874, #cde874)",
+            teal: "linear-gradient(to right, #fcfcfc, #f3f3f3, #cccdc8)",
             chilli: "linear-gradient(to right, #c9cac5, #e3e3e3, #f0f0f0)",
             stealth: "linear-gradient(to right, #fafafa, #e5e5e5, #cecfca)"
         };

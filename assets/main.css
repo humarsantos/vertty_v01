@@ -1666,11 +1666,11 @@ COMPONENTS: BUTTONS
 }
 
 .txt-black .add-cart:before {
-    background-position: -365px -197px;
+    background-position: -365px -96px;
 }
 
 .txt-black .add-cart:after {
-    background-position: -365px -96px;
+    background-position: -365px -197px;
 }
 
 .txt-black .shop:before {
